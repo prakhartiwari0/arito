@@ -21,7 +21,7 @@ body {
 }
 
 .front img {
-  width: 50%;
+  width: 20%;
 }
 
 .front h1 {
@@ -30,10 +30,8 @@ body {
   text-shadow: 2px 5px 2px var(--pink);
 }
 
-.front a {
+.front a{
   text-decoration: none;
-}
-.front a button {
   color: black;
   padding: 1em 1em;
   border: black 5px solid;
