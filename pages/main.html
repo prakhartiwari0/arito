@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arito | Test your Arithmetic Skills</title>
+    <link rel="stylesheet" href="../css/basic.css" />
+    <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+<div class="result_page">
+    <div class="front_results_page">
+        <header>
+            <h1>Results</h1>
+        </header>
+        <h3><em>Dear <span class="user_name">Kavya</span>,</em></h3>
+        <span>You have scored <strong class="marks_obtained">9</strong> out of <strong class="total_marks">10</strong> marks.</span>
+        <span>Which in terms of pecentage means, <strong><span class="percent_obtained">90</span>%</strong></span>
+    </div>
+</div>
+
+    <div class="start_test_div">
+        <span class="starting_text">Starting the Test <span class="start_countdown"></span></span>
+        <ul>
+            <li>Keep a pencil/pen, rough copy and eraser with you.</li>
+            <li>When a question comes, write the question carefully and then start solving it.</li>
+            <li>After solving the question, write the anwer in the input area below and press Enter or Click on "Done" Button Below.</li>
+            <li>BELIEVE IN YOURSELF!</li>
+        </ul>
+        <button class="start_now_btn">Start Now!</button>
+    </div>
+
+
+
+
+    <div class="test_page">
+    <header>
+        <h1 class="test_title"></h1>
+        <h2 class="question_details">Question: <span class="q_number"></span>/<span class="total_qs"></span> </h2>
+    </header>
+
+      <div class="question_div">
+        <div class="question_numbers_div">
+            <div class="upNumber_div">
+                <span class="upNumber"></span>
+            </div>
+            
+            <div class="downNumber_and_sign_div">
+                <span class="sign"></span>
+                <span class="downNumber"></span>
+            </div>
+        </div>
+
+        <div class="input_answer_div">
+          <input type="number" name="answer_from_user" class="answer_from_user" min="0" max="9999800001" required/>
+        </div>
+        <div class="division_answer_div">
+            <div>
+                <span>Q: </span><input type="number" name="quotient_from_user" class="quotient_from_user"  min="0" max="9999800001" required/>
+            </div>
+            <div>
+                <span>R: </span><input type="number" name="remainder_from_user" class="remainder_from_user"  min="0" max="9999800001" required/>
+            </div>
+        </div>
+
+        <div class="submit_btn_div">
+            <button type="submit" class="question_done_btn">Done!</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="test_form">
+      <h1>Fill them!</h1>
+      <div class="main_form">
+        <form action="">
+          <div class="form_element">
+            <label for="student_name">Your Name</label>
+            <input type="text" name="student_name" id="student_name" required/>
+          </div>
+          <div class="form_element">
+            <label for="questions_type">Questions of</label>
+            <select name="questions_type" id="questions_type" required>
+              <option value="addition">Addition</option>
+              <option value="subtraction">Subtraction</option>
+              <option value="multiplication">Multiplication</option>
+              <option value="division">Division</option>
+            </select>
+          </div>
+          <div class="form_element">
+            <label for="difficulty">Difficulty Level</label>
+            <select name="difficulty" id="difficulty" required>
+              <option value="very_easy">Very Easy (1-10)</option>
+              <option value="easy">Easy (11-50)</option>
+              <option value="medium">Medium (50-100)</option>
+              <option value="hard">Hard (100-1000)</option>
+              <option value="very_hard">Very Hard (1000-10,000)</option>
+            </select>
+          </div>
+          <div class="form_element">
+            <label for="no_of_ques">Number of Questions</label>
+            <input type="number" name="no_of_ques" id="no_of_ques" min="1" max="10000" required/>
+          </div>
+
+          <div class="form_element negmark_div">
+            <input type="checkbox" name="negmarking" id="negmarking" />
+            <label for="negmarking">Negative Marking (-1 for every wrong answer)</label>
+          </div>
+
+          <!-- <div class="form_element">
+            <label for="time_limit">Time Limit (Optional)</label>
+            <input type="number" name="time_limit" id="time_limit" />
+            <select name="H_M" id="H_M">
+              <option value="hours">Hours</option>
+              <option value="minutes">Minutes</option>
+            </select>
+          </div> -->
+          <div class="form_element">
+            <input type="submit" value="GET SET GO!!!" id="submit_test_form" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="../js/main.js"></script>
+</html>

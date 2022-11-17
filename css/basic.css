@@ -1,0 +1,30 @@
+/* Color Theme ->
+https://colorhunt.co/palette/ff8787f8c4b4e5ebb2bce29e */
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --pink: #FF8787;
+    --light-pink: #F8C4B4;
+    --green: #BCE29E;
+    --light-green: #E5EBB2;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

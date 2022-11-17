@@ -1,0 +1,43 @@
+body {
+  min-height: 100vh;
+  background: rgb(255, 135, 135);
+  background: linear-gradient(
+    121deg,
+    rgba(255, 135, 135, 1) 0%,
+    rgba(188, 226, 158, 1) 60%
+  );
+  font-family: "Indie Flower", cursive;
+  display: flex;
+  flex-direction: column;
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.front img {
+  width: 50%;
+}
+
+.front h1 {
+  font-size: 4em;
+  text-align: center;
+  text-shadow: 2px 5px 2px var(--pink);
+}
+
+.front a {
+  text-decoration: none;
+}
+.front a button {
+  color: black;
+  padding: 1em 1em;
+  border: black 5px solid;
+  border-radius: 23% 77% 19% 81% / 56% 41% 59% 44%;
+  background-color: var(--light-pink);
+  font-weight: 900;
+}
