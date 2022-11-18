@@ -169,6 +169,9 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
             right_or_wrong_array.push('right')
         }
         else {
+            if (negative_marking==true) {
+                marks = marks-1
+            }
             right_or_wrong_array.push('wrong')
         }
         
@@ -182,6 +185,9 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
             right_or_wrong_array.push('right')
         }
         else {
+            if (negative_marking == true) {
+                marks = marks - 1
+            }
             right_or_wrong_array.push('wrong')
         }
     }
