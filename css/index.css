@@ -1,9 +1,14 @@
 body {
-  min-height: 100vh;
-  background-color: var(--pink);
   font-family: "Indie Flower", cursive;
   display: flex;
   flex-direction: column;
+  /* background-color: var(--pink); */
+  background: rgb(255, 135, 135);
+  background: radial-gradient(
+    circle,
+    rgba(255, 225, 0, 0.709) 0%,
+    rgba(255, 135, 135, 1) 70%
+  );
 }
 
 .front {
@@ -14,18 +19,68 @@ body {
   align-items: center;
 }
 
-.front .logo_img {
+.about_div {
+  padding: 1em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_div_img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo_img {
   width: 100%;
   height: auto;
+  animation-name: kiddy;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  z-index: -1;
 }
 
-.front h1 {
-  font-size: 4em;
+@keyframes kiddy {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+.about_div_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_arito {
+  color: black;
+  margin: 1em 1em;
+  font-weight: 600;
+  font-size: 1.5em;
   text-align: center;
-  text-shadow: 2px 5px 2px var(--pink), 1px 8px 2px black;
+  transition: 0.25s ease-in-out;
+}
+.about_arito:hover {
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.344);
 }
 
-.front a{
+h1 {
+  color: var(--pink);
+  font-size: 3em;
+  text-align: center;
+  text-shadow: 2px 3px 0px var(--light-green), 0px 0px 12px black;
+}
+
+.links {
   text-decoration: none;
   color: black;
   padding: 1em 1em;
@@ -33,44 +88,78 @@ body {
   border-radius: 23% 77% 19% 81% / 56% 41% 59% 44%;
   background-color: var(--light-pink);
   font-weight: 900;
-  transition: transform .2s;
+  transition: transform 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.links:hover {
+  transform: scale(1.2);
 }
 
-.front a:hover{
-  transform: scale(1.5);
+.bg_light_green {
+  background-color: var(--light-green);
+}
+.bg_light_pink {
+  background-color: var(--light-pink);
+}
+.bg_pink {
+  background-color: var(--pink);
+}
+.bg_green {
+  background-color: var(--green);
 }
 
+.other_links_div {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 1em;
+}
 
-
-footer{
+footer {
   display: flex;
   justify-content: center;
 }
 
-footer .contact_link{
-  text-decoration: none;;
-  font-size: 2em;
+footer .contact_link {
+  text-decoration: none;
+  font-size: 1.5em;
   font-weight: 900;
   margin: 1em 1em;
+  color: yellow;
+  text-shadow: 1px 2px 5px black;
+  transition: transform 0.2s;
+}
+
+footer .contact_link:hover {
+  transform: scale(1.1);
   color: black;
-  text-shadow: 1px 2px 5px white;
-  transition: transform .2s;
 }
 
-footer .contact_link:hover{
-  transform: scale(1.5);
-}
-
-
-@media (min-width:700px) {
-  .front .logo_img{
+@media (min-width: 700px) {
+  body {
+    font-size: 26px;
+  }
+  .front .logo_img {
     width: 60%;
   }
-  
 }
-@media (min-width:1000px) {
-  .front .logo_img{
-    width: 30%;
+@media (min-width: 1000px) {
+  .about_div {
+    flex-direction: row;
+    align-items: flex-start;
   }
-  
+  .about_div_img {
+    width: 50%;
+  }
+  .about_div_text {
+    width: 100%;
+    padding: 1em 1em;
+  }
+  .about_div .links {
+    width: 50%;
+  }
+  .front .logo_img {
+    width: 100%;
+  }
 }

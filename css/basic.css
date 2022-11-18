@@ -10,6 +10,11 @@ https://colorhunt.co/palette/ff8787f8c4b4e5ebb2bce29e */
     box-sizing: border-box;
 }
 
+::selection{
+  color: black;
+  background-color: var(--pink);
+}
+
 
 :root{
     --pink: #FF8787;
