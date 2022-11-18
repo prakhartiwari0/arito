@@ -12,6 +12,7 @@ body {
 
 /* --------------- TEST FORM --------------- */
 .test_form {
+  /* display: none; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -258,15 +259,91 @@ cursor: pointer;
 
 /* --------------- RESULT PAGE --------------- */
 .result_page{
-    min-height: 100vh;
-    font-size: 3em;
-    display: none;
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--green);
-    padding: 1em 1em;
+  width: 100%;
+  font-size: 3em;
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--green);
+  /* padding: 1em 1em; */
+}
+
+.result_page .front_results_page{
+  width: 100%;
+  padding: 1em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* display: none; */
+}
+
+
+.result_page .all_questions_div{
+  padding: 1em 0em;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+  justify-items: center;
+}
+
+.result_page .all_questions_div .question-serialno{
+  padding: 0em 0.5em;
+  max-width: 300px;
+  background-image: url(../media/grid.jpg);
+  border: 1px black solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+.result_page .all_questions_div .question-serialno .q_numbers_div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.result_page .all_questions_div .question-serialno .q_numbers_div .upNum_div{
+  display: flex;
+  
+}
+.result_page .all_questions_div .question-serialno .q_numbers_di .downNum_and_sign_divv{
+  display: flex;
+}
+
+
+.result_page .all_questions_div .question-serialno .answers_div {
+  margin: 0.5em 0em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result_page .all_questions_div .question-serialno .answers_div .user_answer_div{
+  width: 40%;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.result_page .all_questions_div .question-serialno .answers_div .real_answer_div{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 
 
+
+.is_correct{
+  color: green;
+}
+.is_wrong{
+  text-decoration: line-through;
+  color: red;
+
+}
