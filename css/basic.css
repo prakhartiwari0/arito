@@ -28,3 +28,20 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+
+body::before {
+  content: "Under Development  | V 0.1";
+  font-family: sans-serif;
+  color: black ;
+  background-color: var(--light-green);
+  padding: 0.1em 0.5em;
+  border-radius: 5px;
+  width: 13em;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 40vw;
+  right: 40vw;
+  z-index: 3;
+}

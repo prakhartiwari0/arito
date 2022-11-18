@@ -268,6 +268,25 @@ cursor: pointer;
   background-color: var(--green);
   /* padding: 1em 1em; */
 }
+.result_page .results_page_navigation_div{
+  display: flex;
+  
+}
+.result_page .results_page_navigation_div .retest_button{
+  font-family: "Indie Flower", cursive;
+  font-size: 1em;
+  background-color: var(--pink);
+  border: 2px solid black;
+  padding: 0.2em 0.2em;
+  transition: transform .1s;
+  
+}
+.result_page .results_page_navigation_div .retest_button:active{
+  background-color: var(--light-pink);
+  transform: scale(0.8);
+
+}
+
 
 .result_page .front_results_page{
   width: 100%;
