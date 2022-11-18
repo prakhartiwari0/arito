@@ -190,6 +190,7 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
     current_q_no = current_q_no+1
 
     if (current_q_no == amount_of_questions + 1) {
+        sound_player("final_question", "start")
         resultGenerator()
     }
     else if (current_q_no == amount_of_questions){
@@ -201,8 +202,7 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
 }
 
 function resultGenerator(){
-    sound_player("final_question", "stop")
-    sound_player("results_page_background_music", "start", "loop")
+    sound_player("results_page_background_music", "stop")
     test_page.style.display = 'none';
     total_marks.textContent = `${amount_of_questions}`
     marks_obtained.textContent = `${marks}`
@@ -314,6 +314,7 @@ function sound_player(audio_name, start_or_stop="start", loop_or_noloops="noloop
 
 function createTestpage(){
     sound_player("background_music", "stop")
+    sound_player("results_page_background_music", "start", "loop")
     start_test_div.remove();
     test_page.style.display = 'flex';
 
