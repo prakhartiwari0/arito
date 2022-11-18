@@ -336,6 +336,14 @@ cursor: pointer;
   align-items: flex-end;
 }
 
+.result_page .return_to_form{
+  font-size: 0.5em;
+  font-family: "Indie Flower", cursive;
+  padding: 0.5em 0.5em;
+  border: 2px solid black;
+  border-radius: 12% 88% 11% 89% / 91% 13% 87% 9%;
+}
+
 
 
 

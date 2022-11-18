@@ -30,6 +30,10 @@ const user_name = document.querySelector('.user_name')
 const marks_obtained = document.querySelector('.marks_obtained')
 const total_marks = document.querySelector('.total_marks')
 const percent_obtained = document.querySelector('.percent_obtained')
+const return_to_form = document.querySelector(".return_to_form")
+return_to_form.addEventListener("click",  () => {
+    location.href = "main.html";
+})
 
 // const answer_from_user = document.querySelector('.answer_from_user').value
 // const quotient_from_user = document.querySelector('.quotient_from_user').value
@@ -252,8 +256,11 @@ function resultGenerator(){
         `
         all_questions_div.innerHTML = all_questions_div.innerHTML + question_code
         n = n+1
+
+        
     }
 
+    
     result_page.style.display = 'flex'
 
 
