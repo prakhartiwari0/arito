@@ -1,6 +1,10 @@
 # Contributing Guidelines
 This documentation contains a set of guidelines to help you during the contribution process.
 
+**This project is actively looking for contributors!**
+
+Because it is built purely in HTML, CSS & JavaScript! and No frameworks or libraries have been used, it's **Beginners-Friendly**  too.
+
 I'm happy to welcome all the contributions from anyone willing to add new scripts to this repository. 
 Thank you for helping out and remember, no contribution is too small.
 
