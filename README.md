@@ -3,6 +3,19 @@
 <p align="center">
 <a href="https://www.producthunt.com/posts/arito?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-arito" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=367945&theme=light" alt="Arito - Your&#0032;place&#0032;to&#0032;play&#0032;with&#0032;DAMS | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a></p>
 
+
+<p align="center">
+</a>
+<a href="https://github.com/prakhartiwari0/Arito/issues"><img src="https://img.shields.io/github/issues/prakhartiwari0/arito?style=plastic"></a>
+<a href=""><img src="https://img.shields.io/github/stars/prakhartiwari0/arito?style=plastic?label=forks"></a>
+<a href=""><img src="https://img.shields.io/github/forks/prakhartiwari0/arito?style=plastic"></a>
+<a href="https://github.com/prakhartiwari0/Arito/discussions"><img src="https://img.shields.io/github/discussions/prakhartiwari0/arito?style=plastic"></a>
+<a href=""><img src="https://img.shields.io/github/v/release/prakhartiwari0/arito?style=plastic"></a>
+<img src="https://api.netlify.com/api/v1/badges/651333f0-6bd5-4b60-b0f3-6573c569a279/deploy-status">
+<a href="https://www.buymeacoffee.com/prakhartiwari0"><img src="https://img.shields.io/github/sponsors/prakhartiwari0?style=plastic"></a>
+
+</p>
+
 **Note: This Project is being actively developed and will be having a lot of improvements and features in the future.** 
 
 # About Arito
