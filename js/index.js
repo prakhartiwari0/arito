@@ -31,5 +31,5 @@ function sound_player(audio_name, start_or_stop = "start", loop_or_noloops = "no
 
 }
 
-setTimeout(sound_player("homepage", "start", "loop"), 1000)
+setTimeout(sound_player("homepage", "start", "loop", 0.2), 1000)
 
