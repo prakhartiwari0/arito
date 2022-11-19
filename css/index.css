@@ -128,13 +128,15 @@ footer .contact_link {
   text-shadow: 1px 2px 5px black;
   transition: transform 0.2s;
 }
-
-footer .contact_link:hover {
-  transform: scale(1.1);
-  color: black;
+footer .contact_link strong{
+  color: cyan
 }
 
-@media (min-width: 700px) {
+footer .contact_link:hover, .contact_link strong{
+  transform: scale(1.1);
+}
+
+@media (min-width: 600px) {
   body {
     font-size: 26px;
   }
