@@ -2,13 +2,9 @@ body {
   font-family: "Indie Flower", cursive;
   display: flex;
   flex-direction: column;
-  /* background-color: var(--pink); */
-  background: rgb(255, 135, 135);
-  background: radial-gradient(
-    circle,
-    rgba(255, 225, 0, 0.709) 0%,
-    rgba(255, 135, 135, 1) 70%
-  );
+  background-image: url('../media/Arito_Colors_Cover.png');
+  background-repeat: no-repeat;
+
 }
 
 .front {

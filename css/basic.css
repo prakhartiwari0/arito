@@ -23,12 +23,13 @@ https://colorhunt.co/palette/ff8787f8c4b4e5ebb2bce29e */
     --light-green: #E5EBB2;
 }
 
+
+/* TO REMOVE THE UP AND DOWN ARROWS ON Input tags of type="number" */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
@@ -45,7 +46,7 @@ body::before {
   width: 13em;
   position: fixed;
   text-align: center;
-  top: 0;
+  bottom: 0;
   left: 40vw;
   right: 40vw;
   z-index: 3;
