@@ -15,7 +15,7 @@
 <a href="https://www.buymeacoffee.com/prakhartiwari0"><img src="https://img.shields.io/github/sponsors/prakhartiwari0?style=plastic"></a>
 </p>
 
-<h3 align="center">Note This Project is being actively developed and will be having a lot of improvements and features in the future 🔥</h3>
+<h3 align="center">This Project is being actively developed by kind people and will have Regular Updates 🔥</h3>
 
 <h3 align="center"> 👉 Go To <a href="https://github.com/prakhartiwari0/Arito/discussions">Arito Discussions</a> and share your thoughts!</h3>
 
