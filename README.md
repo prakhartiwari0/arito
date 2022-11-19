@@ -30,8 +30,6 @@ When you start the app, you are asked to fill a form. This **TEST FORM** contain
 **NEGATIVE MARKING:** This is an option, if you enable it, every wrong answer will result in 1 mark deduction.
 
 
-
-
 ## Screenshots
 
 
@@ -42,6 +40,6 @@ When you start the app, you are asked to fill a form. This **TEST FORM** contain
 
 ## How to Contribute?
 
-If you are a web developer, you are welcome to contribute to this open source project. We are actively looking for developers who can help us build this app. You are allowed to raise genuine issues, or get assigned and work on existing ones. 
+**Read the [Contributing Guidelines](https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines)**
 
 
