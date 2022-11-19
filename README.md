@@ -37,6 +37,8 @@ When you start the app, you are asked to fill a form. This **TEST FORM** contain
 
 
 ## How to Contribute?
+**This project is actively looking for contributors!**
+Because it is built purely in HTML, CSS & JavaScript! and No frameworks or libraries have been used, it's **Beginners-Friendly**  too.
 
 **Read the [Contributing Guidelines](https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines)**
 
