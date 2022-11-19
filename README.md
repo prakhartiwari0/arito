@@ -1,5 +1,8 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/65062036/202618151-422d8322-ada5-43d3-9600-90de1faa306b.png"></p>
 
+<p align="center">
+<a href="https://www.producthunt.com/posts/arito?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-arito" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=367945&theme=light" alt="Arito - Your&#0032;place&#0032;to&#0032;play&#0032;with&#0032;DAMS | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a></p>
+
 **Note: This Project is being actively developed and will be having a lot of improvements and features in the future.** 
 
 # About Arito
