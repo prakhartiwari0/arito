@@ -2,7 +2,7 @@
 
 <!-- Remove the parts which are unnecessary or blank -->
 
-<!-- You need fill up all the sections, if something is optional it will be mentioned there -->
+<!-- You need to fill up all the sections, if something is optional it will be mentioned there -->
 
 
 ### Related to #<issue_number>
@@ -29,10 +29,6 @@ What sort of change have you made:
 - [ ] I have performed a self-review of my own code.
 - [ ] I have commented my code, particularly wherever it was hard to understand.
 - [ ] I have made corresponding changes to the documentation.
-- [ ] My changes generate no new warnings.
-- [ ] I have added tests that prove my fix is effective or that my feature works.
-- [ ] Any dependent changes have been merged and published in downstream modules.
-
 
 <!-- Please upload clear Images/Videos which shows every aspect of the change (For E.g. How does the app behaves when screen size is changed) -->
 <!-- You can choose to upload between Screenshots and Recording, but you MUST UPLOAD AT LEAST ONE OF THEM -->
