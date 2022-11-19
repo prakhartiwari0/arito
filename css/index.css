@@ -4,6 +4,8 @@ body {
   flex-direction: column;
   background-image: url('../media/Arito_Colors_Cover.png');
   background-repeat: no-repeat;
+    background-size: cover;
+
 
 }
 
