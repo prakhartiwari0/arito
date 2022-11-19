@@ -1,13 +1,10 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/65062036/202618151-422d8322-ada5-43d3-9600-90de1faa306b.png"></p>
 
-**Note : This Project is being actively developed and will be having a lot of improvements and features in the future.** 
+**Note: This Project is being actively developed and will be having a lot of improvements and features in the future.** 
 
 # About Arito
 
 Arito is a WebApp built for practicing arithematic skills. It is designed with creativity and to have a joyful experience. It is built primarily for kids who need to practice their mathematical skills, but this can be used by anybody.
-
-
-
 
 ## How to use it?
 
@@ -21,21 +18,22 @@ When you start the app, you are asked to fill a form. This **TEST FORM** contain
 **QUESTIONS OF:** Which Arithmetical Skill you want to practice. (Currently, there are four available: **Addition, Subtraction, Multiplication, Division**)
 
 **DIFFICULTY LEVEL:** There are **5 Difficult Levels** ->
-1. **Very Easy:** You will get questions of numbers inside the range  **1-10**
-2. **Easy:** You will get questions of numbers inside the range **11-50**
-3. **Medium:** You will get questions of numbers inside the range **51-100**
-4. **Hard:** You will get questions of numbers inside the range **100-1000**
-5. **Very Hard:** You will get questions of numbers inside the range **1000-10000**
+1. **Very Easy:** Questions of numbers inside the range  **1-10**
+2. **Easy:** Questions of numbers inside the range **11-50**
+3. **Medium:** Questions of numbers inside the range **51-100**
+4. **Hard:** Questions of numbers inside the range **100-1000**
+5. **Very Hard:** Questions of numbers inside the range **1000-10000**
 
-**NEGATIVE MARKING:** This is an option, if you enable it, every wrong answer will result in 1 mark deduction.
-
+**NEGATIVE MARKING:** If you tick this, every wrong answer will result in 1 mark deduction.
 
 ## Screenshots
 
+<!-- <img src="" width="100px"> -->
 
-| TEST FORM ![image](https://user-images.githubusercontent.com/65062036/202619955-dd1558c0-a3f8-4774-b304-aa4e08c5daed.png) | STARTING TEST ![image](https://user-images.githubusercontent.com/65062036/202619970-0cda7d51-eb40-4222-aaa7-d969d764046f.png) |
+
+| <img src="https://user-images.githubusercontent.com/65062036/202834587-401f2501-a6d3-4920-b2d2-88167d9ccfea.png" width=""> | <img src="https://user-images.githubusercontent.com/65062036/202834592-3cb46f68-a64b-4c63-beb5-de674a1068bd.png" width="100%"> |
 | ------------- | ------------- |
-| TEST PAGE ![image](https://user-images.githubusercontent.com/65062036/202620042-a7377aea-26a7-4d25-b254-baeeb4998de6.png) | RESULTS PAGE ![image](https://user-images.githubusercontent.com/65062036/202620126-8069d61a-0b0c-4c2a-874b-5a664cdb9e5b.png) |
+| <p align="center"> <img src="https://user-images.githubusercontent.com/65062036/202834600-5f081477-d185-4ff4-857e-a5443ea7c0e7.png" width=""></p> | <p align="center"> <img src="https://user-images.githubusercontent.com/65062036/202834605-d5025853-e788-4423-a8c7-7600f2c55ab1.png" width="100%"></p> |
 
 
 ## How to Contribute?
