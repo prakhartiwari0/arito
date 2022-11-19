@@ -13,16 +13,24 @@
 <a href=""><img src="https://img.shields.io/github/v/release/prakhartiwari0/arito?style=plastic"></a>
 <img src="https://api.netlify.com/api/v1/badges/651333f0-6bd5-4b60-b0f3-6573c569a279/deploy-status">
 <a href="https://www.buymeacoffee.com/prakhartiwari0"><img src="https://img.shields.io/github/sponsors/prakhartiwari0?style=plastic"></a>
-
 </p>
 
-**Note: This Project is being actively developed and will be having a lot of improvements and features in the future.** 
+<h3 align="center">Note This Project is being actively developed and will be having a lot of improvements and features in the future 🔥</h3>
 
-# About Arito
+<h3 align="center"> 👉 Go To <a href="https://github.com/prakhartiwari0/Arito/discussions">Arito Discussions</a> and share your thoughts!</h3>
+
+### Navigator
+- [About Arito](#about_arito)
+- [How to Use it?](#how_to_use)
+- [Screenshots](#screenshots)
+- [How to Contribute? (We Love Contributors 😍)](https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines)
+
+
+<h1 align="center" id="about_arito">About Arito</h1>
 
 Arito is a WebApp built for practicing arithmetic skills. It is designed with creativity and to have a joyful experience. It is built primarily for kids who need to practice their mathematical skills, but this can be used by anybody.
 
-## How to use it?
+<h2 align="center" id="how_to_use"> How to use it?</h2>
 
 You need to go to this URL: https://arito.netlify.app
 
@@ -42,7 +50,7 @@ When you start the app, you are asked to fill a form. This **TEST FORM** contain
 
 **NEGATIVE MARKING:** If you tick this, every wrong answer will result in 1 mark deduction.
 
-## Screenshots
+<h2 align="center" id="screenshots"> Screenshots</h2>
 
 <!-- <img src="" width="100px"> -->
 
@@ -50,12 +58,3 @@ When you start the app, you are asked to fill a form. This **TEST FORM** contain
 | <img src="https://user-images.githubusercontent.com/65062036/202841033-8902eef7-d9e7-48b0-bc50-e1e1a8ef9ae4.png" width=""> | <img src="https://user-images.githubusercontent.com/65062036/202834592-3cb46f68-a64b-4c63-beb5-de674a1068bd.png" width="100%"> |
 | ------------- | ------------- |
 | <p align="center"> <img src="https://user-images.githubusercontent.com/65062036/202834600-5f081477-d185-4ff4-857e-a5443ea7c0e7.png" width=""></p> | <p align="center"> <img src="https://user-images.githubusercontent.com/65062036/202834605-d5025853-e788-4423-a8c7-7600f2c55ab1.png" width="100%"></p> |
-
-
-## How to Contribute?
-**This project is actively looking for contributors!**
-Because it is built purely in HTML, CSS & JavaScript! and No frameworks or libraries have been used, it's **Beginners-Friendly**  too.
-
-**Read the [Contributing Guidelines](https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines)**
-
-
