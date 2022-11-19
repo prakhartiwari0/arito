@@ -35,19 +35,20 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-
+/* 
 body::before {
+  font-size: 0.8em;
   content: "Under Development  | V 0.1";
-  font-family: sans-serif;
+  font-family: monospace;
   color: black ;
   background-color: var(--light-green);
   padding: 0.1em 0.5em;
   border-radius: 5px;
-  width: 13em;
+  width: 20em;
   position: fixed;
   text-align: center;
   bottom: 0;
   left: 40vw;
   right: 40vw;
   z-index: 3;
-}
+} */
