@@ -31,14 +31,16 @@ const marks_obtained = document.querySelector('.marks_obtained')
 const total_marks = document.querySelector('.total_marks')
 const percent_obtained = document.querySelector('.percent_obtained')
 
+//VOLUME CONTROL REFERENCES
+const volume_slidebar = document.getElementById('volume_slidebar')
+const all_audio = document.getElementsByTagName('audio')
+volume_slidebar.addEventListener('input', volume_updater)
 // const answer_from_user = document.querySelector('.answer_from_user').value
 // const quotient_from_user = document.querySelector('.quotient_from_user').value
 // const remainder_from_user =  document.querySelector('.remainder_from_user').value
+const question_done_btn = document.querySelector('.question_done_btn')
 
 sound_player("background_music", "start", "loop", 0.5)
-
-
-const question_done_btn = document.querySelector('.question_done_btn')
 question_done_btn.addEventListener('click', getAnswer)
 
 
@@ -317,6 +319,13 @@ function sound_player(audio_name, start_or_stop="start", loop_or_noloops="noloop
     
 }
 
+function volume_updater(){
+    console.log("volume_updater")
+    let volume = volume_slidebar.value * 0.1
+    for (let i = 0; i < all_audio.length; i++) {
+        all_audio[i].volume = volume
+    }
+}
 
 function createTestpage(){
     sound_player("background_music", "stop")
