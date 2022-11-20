@@ -4,7 +4,7 @@
 
 <!-- You need to fill up all the sections, if something is optional it will be mentioned there -->
 
-
+<!-- If your PR fixes a complete issue you please replace "Related to" with "Fixes" in the heading below -->
 ### Related to #<issue_number>
 
 ## Describe the changes you've made
