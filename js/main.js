@@ -40,7 +40,7 @@ volume_slidebar.addEventListener('input', volume_updater)
 // const remainder_from_user =  document.querySelector('.remainder_from_user').value
 const question_done_btn = document.querySelector('.question_done_btn')
 
-sound_player("background_music", "start", "loop", 0.5)
+sound_player("background_music", "start", "loop", volume_slidebar.value)
 question_done_btn.addEventListener('click', getAnswer)
 
 
@@ -288,7 +288,7 @@ function questionBoxGenerator(){
     questions_array.push([up_num, down_num])
 }
 
-function sound_player(audio_name, start_or_stop="start", loop_or_noloops="noloop", volume=0.5){
+function sound_player(audio_name, start_or_stop="start", loop_or_noloops="noloop", volume=volume_slidebar.value){
     let sound;
     
     sound = document.querySelector(`.${audio_name}`);
