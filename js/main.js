@@ -269,17 +269,6 @@ function resultGenerator(){
 
 
 function questionBoxGenerator(){
-    const input_answer_element = document.querySelector('.answer_from_user')
-    input_answer_element.focus()
-    input_answer_element.addEventListener("keypress", function (event) {
-        // If the user presses the "Enter" key on the keyboard
-        if (event.key === "Enter") {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Trigger the button element with a click
-            question_done_btn.click();
-        }
-    });
     if (q_type == 'division') {
         document.querySelector('.quotient_from_user').value = "";
         document.querySelector('.remainder_from_user').value = "";
