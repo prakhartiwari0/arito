@@ -43,6 +43,7 @@ You need to go to this URL: https://arito.netlify.app
 When you start the app, you are asked to fill a form. This **TEST FORM** contains various options and input fields which you need to fill up according to your desire.
 
 **NAME:** Test Taker's Name
+
 **QUESTIONS OF:** Which Arithmetical Skill you want to practice. (Currently, there are four available: **Addition, Subtraction, Multiplication, Division**)
 
 **DIFFICULTY LEVEL:** There are **5 Difficult Levels** ->
