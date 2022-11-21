@@ -1,3 +1,6 @@
+
+<p align="center"><img width="200px" src="https://media.giphy.com/media/Q87YAYsdptMDJR4r68/giphy.gif"></p>
+
 # Contributing Guidelines
 This documentation contains a set of guidelines to help you during the contribution process.
 
