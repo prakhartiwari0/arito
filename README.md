@@ -19,16 +19,20 @@
 
 <h3 align="center"> 👉 Go To <a href="https://github.com/prakhartiwari0/Arito/discussions">Arito Discussions</a> and share your thoughts!</h3>
 
-### Navigator
+
+<h3> Navigator </h3>
+
 - [About Arito](#about_arito)
 - [How to Use it?](#how_to_use)
 - [Screenshots](#screenshots)
 - [How to Contribute? (We Love Contributors 😍)](https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines)
 
-
 <h1 align="center" id="about_arito">About Arito</h1>
 
+<img align="right" width="100px" src="https://media.giphy.com/media/23o9IZyRjV6cM5r4Ge/giphy.gif">
+
 Arito is a WebApp built for practicing arithmetic skills. It is designed with creativity and to have a joyful experience. It is built primarily for kids who need to practice their mathematical skills, but this can be used by anybody.
+
 
 <p align="center"><strong>Arito Demo Video</strong></p>
 
