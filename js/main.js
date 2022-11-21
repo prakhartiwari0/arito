@@ -198,6 +198,8 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
 
     if (current_q_no == amount_of_questions + 1) {
         sound_player("final_question", "start")
+        end_time = Date.now()
+
         resultGenerator()
     }
     else if (current_q_no == amount_of_questions){
@@ -209,6 +211,22 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
 }
 
 function resultGenerator(){
+    total_time = end_time - start_time
+    time_taken_seconds = (total_time/1000).toFixed(2)
+    time_taken_minutes = 00;
+    time_taken_hours = 00;
+
+    if (time_taken_seconds>59){
+        time_taken_minutes = parseInt(time_taken_seconds/60)
+        time_taken_seconds = (time_taken_seconds - (time_taken_minutes*60)).toFixed(2)
+    }
+    if (time_taken_minutes > 59) {
+        time_taken_hours = parseInt(time_taken_minutes / 60)
+        time_taken_minutes = (time_taken_minutes - (time_taken_hours * 60)).toFixed(2)
+    }
+    // console.log(time_taken_hours, time_taken_minutes, time_taken_seconds)
+    
+
     sound_player("results_page_background_music", "stop")
     test_page.style.display = 'none';
     total_marks.textContent = `${amount_of_questions}`
@@ -343,6 +361,7 @@ function sound_player(audio_name, start_or_stop="start", loop_or_noloops="noloop
 
 
 function createTestpage(){
+    start_time = Date.now()
     sound_player("background_music", "stop")
     sound_player("results_page_background_music", "start", "loop")
     start_test_div.remove();
