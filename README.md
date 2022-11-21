@@ -71,6 +71,8 @@ Contributors
 People Who make Open-Source Successful! 👊🤝
 </p>
 
+<p align="center">
 <a href="https://github.com/prakhartiwari0/arito/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=prakhartiwari0/arito" />
 </a>
+</p>
