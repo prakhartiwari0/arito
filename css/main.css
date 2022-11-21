@@ -369,9 +369,6 @@ cursor: pointer;
 
 /* --------------- VOLUME CONTROLL --------------- */
 .volume_control_container{
-  position:fixed;
-  bottom:0;
-  right: 10%;
   cursor: pointer;
 }
 
