@@ -366,3 +366,27 @@ cursor: pointer;
   color: red;
 
 }
+
+/* --------------- VOLUME CONTROLL --------------- */
+.volume_control_container{
+  cursor: pointer;
+}
+
+.volume_control_container input{
+  height: 30px;
+}
+
+.volume_control_container ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.volume_control_container li{
+  display: inline;
+}
+
+.volume_control_container img{
+  width: 30px;
+  height: 30px;
+}
