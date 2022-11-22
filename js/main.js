@@ -1,4 +1,5 @@
-const body = document.body
+// const body = document.body
+const body = document.qu
 
 // TEST FORM NODES REFERENCES
 const main_form_div = document.querySelector('.test_form')
@@ -252,6 +253,11 @@ function resultGenerator(){
 
 
     sound_player("results_page_background_music", "stop")
+
+    // To change the background of volume bar, it was showing the background image of body, which was looking weird at the bottom.
+    document.body.style.backgroundImage = 'none';
+    document.body.style.backgroundColor = "var(--green)"
+
     test_page.style.display = 'none';
     total_marks.textContent = `${amount_of_questions}`
     marks_obtained.textContent = `${marks}`
