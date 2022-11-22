@@ -29,6 +29,7 @@ const result_page = document.querySelector('.result_page')
 const user_name = document.querySelector('.user_name')
 const marks_obtained = document.querySelector('.marks_obtained')
 const total_marks = document.querySelector('.total_marks')
+const time_taken = document.querySelector('.time_taken')
 const percent_obtained = document.querySelector('.percent_obtained')
 
 //VOLUME CONTROL REFERENCES
@@ -200,6 +201,8 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
 
     if (current_q_no == amount_of_questions + 1) {
         sound_player("final_question", "start")
+        end_time = Date.now()
+
         resultGenerator()
     }
     else if (current_q_no == amount_of_questions){
@@ -211,10 +214,48 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
 }
 
 function resultGenerator(){
+    total_time = end_time - start_time
+    time_taken_seconds = parseInt(total_time/1000)
+    time_taken_minutes = 00;
+    time_taken_hours = 00;
+
+    if (time_taken_seconds>59){
+        time_taken_minutes = parseInt(time_taken_seconds/60)
+        time_taken_seconds = parseInt(time_taken_seconds - (time_taken_minutes*60))
+    }
+    if (time_taken_minutes > 59) {
+        time_taken_hours = parseInt(time_taken_minutes / 60)
+        time_taken_minutes = parseInt(time_taken_minutes - (time_taken_hours * 60))
+    }
+
+
+    let total_time_taken_hrs_text_;
+    let total_time_taken_mins_text_;
+    let total_time_taken_secs_text_;
+    if (time_taken_hours==0) {
+        total_time_taken_hrs_text_ = ""
+    }
+    else{
+        total_time_taken_hrs_text_ = `${time_taken_hours} hrs `
+    }
+
+    if (time_taken_minutes ==0) {
+        total_time_taken_mins_text_ = ""
+    }
+    else {
+        total_time_taken_mins_text_ = `${time_taken_minutes} mins `
+    }
+
+    total_time_taken_secs_text_ = ` ${time_taken_seconds} secs`
+    total_time_taken_text = total_time_taken_hrs_text_ + total_time_taken_mins_text_ + total_time_taken_secs_text_
+    // console.log(time_taken_hours, time_taken_minutes, time_taken_seconds)
+
+
     sound_player("results_page_background_music", "stop")
     test_page.style.display = 'none';
     total_marks.textContent = `${amount_of_questions}`
     marks_obtained.textContent = `${marks}`
+    time_taken.textContent = `${total_time_taken_text}`
     user_name.textContent = `${student_name}`
     percent_obtained.textContent = `${((marks / amount_of_questions)*100).toFixed(2)}`
     
@@ -351,6 +392,7 @@ function volume_updater(){
 }
 
 function createTestpage(){
+    start_time = Date.now()
     sound_player("background_music", "stop")
     sound_player("results_page_background_music", "start", "loop")
     start_test_div.remove();
