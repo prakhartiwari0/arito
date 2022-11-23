@@ -1,6 +1,16 @@
 // const body = document.body
 const body = document.qu
+window.onbeforeunload = function (e) {
+    e = e || window.event;
 
+    // For IE and Firefox prior to version 4
+    if (e) {
+        e.returnValue = 'Sure?';
+    }
+
+    // For Safari
+    return 'Sure?';
+};
 // TEST FORM NODES REFERENCES
 const main_form_div = document.querySelector('.test_form')
 const form_submit_btn = document.querySelector('#submit_test_form')
