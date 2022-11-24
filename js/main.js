@@ -409,6 +409,7 @@ function volume_updater(){
 
 function createTestpage(){
     start_time = Date.now()
+    sound_player("click_sound", "start")
     sound_player("background_music", "stop")
     sound_player("test_page_bg_music", "start", "loop")
     start_test_div.remove();

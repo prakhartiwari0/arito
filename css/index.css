@@ -2,7 +2,7 @@ body {
   font-family: "Indie Flower", cursive;
   display: flex;
   flex-direction: column;
-  background-image: url('../media/Arito_Colors_Cover.png');
+  background-image: url('../assets/images/Arito_Colors_Cover.png');
   background-repeat: no-repeat;
     background-size: cover;
 
