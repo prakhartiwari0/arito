@@ -34,23 +34,12 @@ body {
 .logo_img {
   width: 100%;
   height: auto;
-  animation-name: kiddy;
+  animation-name: fidgeting;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
   z-index: -1;
 }
 
-@keyframes kiddy {
-  0% {
-    transform: rotate(-2deg);
-  }
-  50% {
-    transform: rotate(2deg);
-  }
-  100% {
-    transform: rotate(-2deg);
-  }
-}
 
 .about_div_text {
   display: flex;

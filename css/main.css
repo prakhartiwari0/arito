@@ -22,6 +22,12 @@ body {
 .test_form h1 {
   font-size: 5em;
   display: flex;
+  color: var(--pink);
+  letter-spacing: 0.1em;
+  animation-name: fidgeting;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  z-index: -1;
 }
 
 .main_form {
@@ -32,6 +38,7 @@ body {
   border: black 5px solid;
   border-radius: 4% 96% 8% 92% / 95% 4% 96% 5%;
   margin: 2em 0em;
+  background-color: rgba(255, 255, 255, 0.076);
 }
 
 .form_element {

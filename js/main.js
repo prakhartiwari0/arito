@@ -52,7 +52,7 @@ volume_slidebar.addEventListener('input', volume_updater)
 // const remainder_from_user =  document.querySelector('.remainder_from_user').value
 const question_done_btn = document.querySelector('.question_done_btn')
 
-sound_player("background_music", "start", "loop")
+sound_player("background_music", "start", "loop", 0.1)
 question_done_btn.addEventListener('click', getAnswer)
 
 
@@ -262,7 +262,7 @@ function resultGenerator(){
     // console.log(time_taken_hours, time_taken_minutes, time_taken_seconds)
 
 
-    sound_player("results_page_background_music", "stop")
+    sound_player("test_page_bg_music", "stop")
 
     // To change the background of volume bar, it was showing the background image of body, which was looking weird at the bottom.
     document.body.style.backgroundImage = 'none';
@@ -410,7 +410,7 @@ function volume_updater(){
 function createTestpage(){
     start_time = Date.now()
     sound_player("background_music", "stop")
-    sound_player("results_page_background_music", "start", "loop")
+    sound_player("test_page_bg_music", "start", "loop")
     start_test_div.remove();
     test_page.style.display = 'flex';
 
