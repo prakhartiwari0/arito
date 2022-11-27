@@ -64,9 +64,9 @@ When you start the app, you are asked to fill a form. This **TEST FORM** contain
 <!-- <img src="" width="100px"> -->
 
 
-| <img src="https://user-images.githubusercontent.com/65062036/202841033-8902eef7-d9e7-48b0-bc50-e1e1a8ef9ae4.png" width=""> | <img src="https://user-images.githubusercontent.com/65062036/202834592-3cb46f68-a64b-4c63-beb5-de674a1068bd.png" width="100%"> |
+| <img src="https://user-images.githubusercontent.com/65062036/204123223-61bd5cd5-02e7-4069-8bfe-964c7fa58eb9.png" width=""> | <img src="https://user-images.githubusercontent.com/65062036/204123240-a9491e25-e7c9-4fbb-8094-6779d2b7454d.png" width="100%"> |
 | ------------- | ------------- |
-| <p align="center"> <img src="https://user-images.githubusercontent.com/65062036/202834600-5f081477-d185-4ff4-857e-a5443ea7c0e7.png" width=""></p> | <p align="center"> <img src="https://user-images.githubusercontent.com/65062036/202834605-d5025853-e788-4423-a8c7-7600f2c55ab1.png" width="100%"></p> |
+| <p align="center"> <img src="https://user-images.githubusercontent.com/65062036/204123255-13aea47c-cab8-4a9c-8ab2-b5a27241acb5.png" width=""></p> | <p align="center"> <img src="https://user-images.githubusercontent.com/65062036/204123267-b6faba6e-cdc1-4d5c-aecb-6e7bf98a3d62.png" width="100%"></p> |
 
 
 <h1 align="center">
