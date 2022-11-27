@@ -30,6 +30,8 @@ const start_now_btn = document.querySelector('.start_now_btn')
 const test_title = document.querySelector('.test_title')
 const q_number = document.querySelector('.q_number')
 const total_qs = document.querySelector('.total_qs')
+const prev_btn = document.querySelector(".prev_question_btn");
+const next_btn = document.querySelector(".next_question_btn");
 const upNumber = document.querySelector('.upNumber')
 const sign = document.querySelector('.sign')
 const downNumber = document.querySelector('.downNumber')
@@ -54,6 +56,9 @@ const question_done_btn = document.querySelector('.question_done_btn')
 
 sound_player("background_music", "start", "loop", 0.1)
 question_done_btn.addEventListener('click', getAnswer)
+
+prev_btn.addEventListener('click', prevQuestion)
+next_btn.addEventListener('click', nextQuestion)
 
 
 
@@ -153,11 +158,21 @@ function getAnswer(){
             return;
         }
     }
-    let sign_of_question = sign.textContent;
-    user_answers_array.push(ans_of_user);
-    up_num = parseInt(upNumber.textContent)
-    down_num = parseInt(downNumber.textContent)
-    examiner(up_num, down_num, sign_of_question, ans_of_user)
+
+    if(user_answers_array[current_q_no - 1]) 
+        user_answers_array[current_q_no - 1] = ans_of_user;
+    else user_answers_array.push(ans_of_user);
+
+    current_q_no = current_q_no+1
+
+    if (current_q_no == amount_of_questions + 1) {
+        sound_player("final_question", "start")
+        end_time = Date.now()
+
+        resultGenerator()
+    }
+    
+    questionBoxGenerator()
 }
 
 function examiner(up_number, down_number, sign_of_question , answer_of_student){
@@ -184,7 +199,7 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
             right_or_wrong_array.push('right')
         }
         else {
-            if (negative_marking==true) {
+            if (negative_marking) {
                 marks = marks-1
             }
             right_or_wrong_array.push('wrong')
@@ -200,28 +215,15 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
             right_or_wrong_array.push('right')
         }
         else {
-            if (negative_marking == true) {
+            if (negative_marking) {
                 marks = marks - 1
             }
             right_or_wrong_array.push('wrong')
         }
     }
 
-    real_answers_array.push(real_answer)
-    current_q_no = current_q_no+1
+    real_answers_array.push(real_answer);
 
-    if (current_q_no == amount_of_questions + 1) {
-        sound_player("final_question", "start")
-        end_time = Date.now()
-
-        resultGenerator()
-    }
-    else if (current_q_no == amount_of_questions){
-        question_done_btn.style.backgroundColor = 'yellow'
-        question_done_btn.textContent = "Let's Finish It!!"
-    }
-    
-    questionBoxGenerator()
 }
 
 function resultGenerator(){
@@ -262,6 +264,12 @@ function resultGenerator(){
     // console.log(time_taken_hours, time_taken_minutes, time_taken_seconds)
 
 
+    //Generate result array with user_answers_array
+    questions_array.forEach( ([up_num, down_num], index) => {
+        examiner(up_num, down_num, sign.textContent, user_answers_array[index]);
+    })
+
+
     sound_player("test_page_bg_music", "stop")
 
     // To change the background of volume bar, it was showing the background image of body, which was looking weird at the bottom.
@@ -277,7 +285,7 @@ function resultGenerator(){
     
     const all_questions_div = document.querySelector('.all_questions_div')
 
-    n = 1
+    let n = 1
     while (n!=amount_of_questions+1) {
         let q_num = n
         let upnum = questions_array[n-1][0]
@@ -328,20 +336,37 @@ function resultGenerator(){
 
 
 function questionBoxGenerator(){
+
+    const quotientBox =  document.querySelector('.quotient_from_user');
+    const remainderBox = document.querySelector('.remainder_from_user');
+    const answerBox = document.querySelector('.answer_from_user');
+
+    const ans_of_user = user_answers_array[current_q_no-1];
+
     if (q_type == 'division') {
-        document.querySelector('.quotient_from_user').value = "";
-        document.querySelector('.remainder_from_user').value = "";
+        quotientBox.value = ans_of_user?.[0] ?? "";
+        remainderBox.value = ans_of_user?.[1] ?? "";
     }
     else{
-        document.querySelector('.answer_from_user').value = "";
+        answerBox.value = ans_of_user ?? "";
     }
-    let q_stuff = generateNumbers_and_sign(diff_lvl ,q_type)
-    let up_num = q_stuff[0] 
-    let down_num = q_stuff[1] 
-    let num_sign = q_stuff[2] 
+
+    let up_num, down_num;
+
+    if(questions_array[current_q_no-1]) {
+        let q_stuff = questions_array[current_q_no-1];
+        up_num = q_stuff[0];
+        down_num = q_stuff[1];
+    } else {
+        let q_stuff = generateNumbers_and_sign(diff_lvl ,q_type)
+        up_num = q_stuff[0];
+        down_num = q_stuff[1];
+        sign.textContent = `${q_stuff[2]}`;
+        questions_array.push([up_num, down_num])
+    }
+
     upNumber.textContent = `${up_num}`
     downNumber.textContent = `${down_num}`
-    sign.textContent = `${num_sign}`
     q_number.textContent = `${current_q_no}`
 
     // This part will focus the first input element in the page. It works both in (Add, Sub, Mul)[which has only one input element]
@@ -366,7 +391,14 @@ function questionBoxGenerator(){
             }
         });
     });
-    questions_array.push([up_num, down_num])
+
+    if (current_q_no == amount_of_questions){
+        question_done_btn.style.backgroundColor = 'yellow';
+        question_done_btn.textContent = "Let's Finish It!!";
+    } else {
+        question_done_btn.style.backgroundColor = 'white';
+        question_done_btn.textContent = "Done!";
+    }
 }
 
 function sound_player(audio_name, start_or_stop="start", loop_or_noloops="noloop", volume=volume_slidebar.value*0.1){
@@ -449,4 +481,23 @@ function getValues() {
 
     sound_player("click_sound", "start")
     createStartornotpage()
+}
+
+function prevQuestion() {
+    if(current_q_no <= 1)
+        return;
+
+    current_q_no--;
+   
+    questionBoxGenerator()
+
+}
+
+function nextQuestion() {
+    if(current_q_no === amount_of_questions || !questions_array[current_q_no])
+        return;
+
+    current_q_no++;
+
+    questionBoxGenerator()
 }
