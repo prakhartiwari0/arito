@@ -42,6 +42,8 @@ const marks_obtained = document.querySelector('.marks_obtained')
 const total_marks = document.querySelector('.total_marks')
 const time_taken = document.querySelector('.time_taken')
 const percent_obtained = document.querySelector('.percent_obtained')
+const retest_button = document.querySelector('.retest_button')
+
 
 //VOLUME CONTROL REFERENCES
 const volume_slidebar = document.getElementById('volume_slidebar')
@@ -277,6 +279,11 @@ function resultGenerator(){
     
     const all_questions_div = document.querySelector('.all_questions_div')
 
+    const question_serial = document.querySelectorAll('.question-serialno')
+    for(let i=0; i<question_serial.length; i++){
+        question_serial[0].remove()
+    }
+
     n = 1
     while (n!=amount_of_questions+1) {
         let q_num = n
@@ -321,6 +328,20 @@ function resultGenerator(){
     }
 
     result_page.style.display = 'flex'
+    
+    retest_button.addEventListener('click', function (){
+            
+            result_page.style.display = 'none'
+            questions_array = []
+            user_answers_array = []
+            real_answers_array = []
+            right_or_wrong_array = []
+            marks = 0;
+            current_q_no = 1;
+
+            createTestpage()
+
+    })
 
 
 }
