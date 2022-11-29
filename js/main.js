@@ -278,7 +278,8 @@ function resultGenerator(){
     percent_obtained.textContent = `${((marks / amount_of_questions)*100).toFixed(2)}`
     
     const all_questions_div = document.querySelector('.all_questions_div')
-
+    
+    // Removing child if there are any question of previous round.
     while(all_questions_div.children.length !=0 ){
         all_questions_div.removeChild(all_questions_div.lastElementChild)
     }
@@ -328,6 +329,7 @@ function resultGenerator(){
 
     result_page.style.display = 'flex'
     
+    //Event Listener for Retest Button
     retest_button.addEventListener('click', function (){
             
             result_page.style.display = 'none'
@@ -337,6 +339,8 @@ function resultGenerator(){
             right_or_wrong_array = []
             marks = 0;
             current_q_no = 1;
+
+            //styles removed for default test page view
             question_done_btn.style.removeProperty('background-color')
             document.body.style.removeProperty('background-image')
             document.body.style.removeProperty('background-color')
