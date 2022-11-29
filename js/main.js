@@ -279,9 +279,8 @@ function resultGenerator(){
     
     const all_questions_div = document.querySelector('.all_questions_div')
 
-    const question_serial = document.querySelectorAll('.question-serialno')
-    for(let i=0; i<question_serial.length; i++){
-        question_serial[0].remove()
+    while(all_questions_div.children.length !=0 ){
+        all_questions_div.removeChild(all_questions_div.lastElementChild)
     }
 
     n = 1
@@ -338,6 +337,10 @@ function resultGenerator(){
             right_or_wrong_array = []
             marks = 0;
             current_q_no = 1;
+            question_done_btn.style.removeProperty('background-color')
+            document.body.style.removeProperty('background-image')
+            document.body.style.removeProperty('background-color')
+            question_done_btn.textContent = "Done!"
 
             createTestpage()
 
