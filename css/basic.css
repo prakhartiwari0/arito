@@ -1,28 +1,26 @@
 /* Color Theme ->
 https://colorhunt.co/palette/ff8787f8c4b4e5ebb2bce29e */
 
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-::selection{
+::selection {
   color: black;
   background-color: var(--pink);
 }
 
-
-:root{
-    --pink: #FF8787;
-    --light-pink: #F8C4B4;
-    --green: #BCE29E;
-    --light-green: #E5EBB2;
+:root {
+  --pink: #ff8787;
+  --light-pink: #f8c4b4;
+  --green: #bce29e;
+  --light-green: #e5ebb2;
+  --gradient: linear-gradient(90deg, var(--green), var(--pink));
 }
-
 
 /* TO REMOVE THE UP AND DOWN ARROWS ON Input tags of type="number" */
 input::-webkit-outer-spin-button,
@@ -31,7 +29,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -52,8 +50,6 @@ body::before {
   right: 40vw;
   z-index: 3;
 } */
-
-
 
 @keyframes fidgeting {
   0% {

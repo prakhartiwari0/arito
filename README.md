@@ -82,10 +82,6 @@ The number of questions will be given according to the specifications you filled
 
 **Results**
 
-The number of questions you got correct,the percentage and the time you took to complete the test will be provided immediatelyyou complete the test .If you would like to try another round press the "Retest(reload to restart another round )" button please.
-  
-<p align="center"> <img src="https://user-images.githubusercontent.com/91837493/203899109-3db6d79c-99eb-4891-8443-f9e212230e85.png" width="100%"></p> 
-
 
 <h1 align="center">
 Contributors
