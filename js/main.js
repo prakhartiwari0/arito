@@ -117,15 +117,15 @@ function generateNumbers_and_sign(diff_lvl, sign) {
         arithmetic_sign = "/"
     }
 
-    // AVOIDING REPEATING PREVIOUS QUESTION's NUMBERS
-    for (const num in questions_array) {
-        if (upper_Number == num[0] && down_Number == num[1]) {
-            generateNumbers_and_sign(diff_lvl, sign)        
-        }
-    }
+    // Prevents the same question from being repeated
+    let prev_q = JSON.stringify(questions_array);
+    let current_q = JSON.stringify([upper_Number, down_Number]);
 
-    return [upper_Number, down_Number, arithmetic_sign]
-    
+    if (prev_q.includes(current_q) !== false) {
+        return false
+    } else {
+        return [upper_Number, down_Number, arithmetic_sign]
+    }
 }
 
 function getAnswer(){
@@ -321,8 +321,6 @@ function resultGenerator(){
     }
 
     result_page.style.display = 'flex'
-
-
 }
 
 
@@ -335,7 +333,14 @@ function questionBoxGenerator(){
     else{
         document.querySelector('.answer_from_user').value = "";
     }
-    let q_stuff = generateNumbers_and_sign(diff_lvl ,q_type)
+
+    let q_stuff = '';
+
+    // Preparing the question - allows funciton to rerun if duplicate quesiton asked
+    while (q_stuff == '') {
+        q_stuff = generateNumbers_and_sign(diff_lvl, q_type)
+    }
+    
     let up_num = q_stuff[0] 
     let down_num = q_stuff[1] 
     let num_sign = q_stuff[2] 
@@ -343,18 +348,18 @@ function questionBoxGenerator(){
     downNumber.textContent = `${down_num}`
     sign.textContent = `${num_sign}`
     q_number.textContent = `${current_q_no}`
-
+    
     // This part will focus the first input element in the page. It works both in (Add, Sub, Mul)[which has only one input element]
     // and with Division which has two input elements.
     const answer_input = document.querySelector('input')
     answer_input.focus()
-
+    
     // This code will select all the input elements, and add the event listener to each of them,
     // All the input elements are called because if we add event listener to only one input element, 
     // then in the division questions's input elements, only the quotient input will be having this
     // Event, and Remainder Input wouldn't have that, which is not a good thing.  
     var answer_all_inputs = [].slice.call(document.querySelectorAll('input'));
-
+    
     answer_all_inputs.forEach(function (element, index) {
         element.addEventListener("keypress", function (event) {
             // If the user presses the "Enter" key on the keyboard
