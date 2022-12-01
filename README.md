@@ -35,7 +35,7 @@ Arito is a WebApp built for practicing arithmetic skills. It is designed with cr
 
 <p align="center"><strong>Arito Demo Video</strong></p>
 
-<p align="center"><a href="https://www.you0tube.com/watch?v=4nkchB3KVyo"><img src="https://user-images.githubusercontent.com/65062036/202854222-0a1b15bb-ecec-44c8-9ffe-6f5429938d03.png" width="50%"></p>
+<p align="center"><a href="https://www.youtube.com/watch?v=4nkchB3KVyo"><img src="https://user-images.githubusercontent.com/65062036/202854222-0a1b15bb-ecec-44c8-9ffe-6f5429938d03.png" width="50%"></p>
 
 <h2 align="center" id="how_to_use"> How to use it?</h2>
 
