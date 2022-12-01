@@ -30,7 +30,7 @@
 
 <img align="right" width="100px" src="https://media.giphy.com/media/23o9IZyRjV6cM5r4Ge/giphy.gif">
 
-Arito is a web application built for practicing arithmetic skills. It is designed for creativity and a joyful experience. It is built primarily for kids who need to practice their mathematical skills, but it can be used by anybody.
+Arito is a WebApp built for practicing arithmetic skills. It is designed with creativity to have a joyful experience and is built primarily for kids who need to practice their mathematical skills, but can be used by everbody.
 
 
 <p align="center"><strong>Arito Demo Video</strong></p>
