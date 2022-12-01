@@ -87,9 +87,12 @@ The number of questions will be given according to the specifications you filled
 Contributors
 </h1>
 <p align="center"> 
-People Who make Open-Source Successful! 👊🤝
+People Who make Open-Source Successful! 🤝
+</p>
+
+<p align="center">
 Contributions will be highly appreciated. 
-Guidelines to contibuting are on the CONTRIBUTING.md document. 
+Guidelines for contibuting can be found in [CONTRIBUTING.md](https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines). 
 </p>
 
 <p align="center">
