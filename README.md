@@ -43,11 +43,7 @@ You need to go to this URL: https://arito.netlify.app
 
 **It's UI is simplistic and clean so that you don't have any trouble using it.**
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/91837493/203905522-529cd877-425d-44a6-ae4d-277f7d6092f9.png" width="50%"> </p>
-
-
-
-On starting the app, you are asked to fill a form. This**TEST FORM** contains various options and input fields, which you need to fill up according to your desires.
+On starting the app, you are asked to fill a form. This **TEST FORM** contains various options and input fields, which you need to fill up according to your desires.
 
 **NAME:** Test Taker's Name
 
@@ -65,10 +61,7 @@ On starting the app, you are asked to fill a form. This**TEST FORM** contains va
 **NEGATIVE MARKING:** If you check this, every incorrect answer will result in a one-point deduction. 
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/91837493/203893132-9b52a09d-7e5b-4705-8cbc-9f1673d6543d.png"
- width="100%"> </p>
-
-
-
+ width="500px"> </p>
 
 
 <!-- <img src="" width="100px"> -->
@@ -77,10 +70,13 @@ On starting the app, you are asked to fill a form. This**TEST FORM** contains va
 
 The number of questions will be given according to the specifications you filled out in the test form.
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/91837493/203899206-f35c6bd8-01b6-4805-9f70-b057fa7a8fe1.png" width=""></p> 
+<p align="center"><img src="https://user-images.githubusercontent.com/91837493/203899206-f35c6bd8-01b6-4805-9f70-b057fa7a8fe1.png" width="500px"></p> 
 
 
 **Results**
+You will be shown the total marks & percentage you have got and the total time taken to complete the whole test. Below that you can find the real answers to all the questions and know where you did wrong.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/65062036/204969580-077068e7-6e9d-4216-ae03-60d60bc509dd.png"  width="500px"> </p>
 
 
 <h1 align="center">
@@ -92,7 +88,7 @@ People Who make Open-Source Successful! 🤝
 
 <p align="center">
 Contributions will be highly appreciated. 
-Guidelines for contibuting can be found in [CONTRIBUTING.md](https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines). 
+Guidelines for contibuting can be found in <a href="https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines">CONTRIBUTING.md</a>. 
 </p>
 
 <p align="center">
