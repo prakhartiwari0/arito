@@ -22,6 +22,13 @@ https://colorhunt.co/palette/ff8787f8c4b4e5ebb2bce29e */
   --gradient: linear-gradient(90deg, var(--green), var(--pink));
 }
 
+/* focus visible styling to interactive element to make the site accessible to  keyboard users */
+.btn:focus-visible {
+  outline: 0.3rem dotted red;
+  transform: scale(1.1);
+}
+
+
 /* TO REMOVE THE UP AND DOWN ARROWS ON Input tags of type="number" */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
