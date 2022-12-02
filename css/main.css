@@ -166,14 +166,24 @@ body {
 }
 
 .question_container > button {
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  border-radius: 50%;
-  color: white;
-  background-color: black;
+  width: 64px;
+  height: 64px;
+  border: none;
+  background-size: cover;
   border: none;
   cursor: pointer;
+}
+
+.question_container > button:is(:hover, :active) {
+  transform: scale(0.8);
+}
+
+.prev_question_btn {
+  background: url("../assets/images/arito_left_arrow.png");
+}
+
+.next_question_btn {
+  background: url("../assets/images/arito_right_arrow.png");
 }
 
 .test_page .question_div {
