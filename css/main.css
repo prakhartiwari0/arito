@@ -160,7 +160,8 @@ body {
 
 .question_container {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -272,6 +273,18 @@ body {
 
 .test_page .question_div .submit_btn_div .finish:is(:hover, :active) {
   background-color: yellow;
+}
+
+@media screen and (max-width: 480px) {
+
+  .question_container {
+    margin-bottom: 2em;
+  }
+
+  .question_div {
+    order: -1;
+    flex: 1 0 85%;
+  }
 }
 
 
