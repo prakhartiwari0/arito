@@ -488,6 +488,7 @@ function prevQuestion() {
         return;
 
     current_q_no--;
+    sound_player("click_sound");
    
     questionBoxGenerator()
 
@@ -498,6 +499,7 @@ function nextQuestion() {
         return;
 
     current_q_no++;
+    sound_player("click_sound");
 
     questionBoxGenerator()
 }
