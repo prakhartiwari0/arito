@@ -393,10 +393,10 @@ function questionBoxGenerator(){
     });
 
     if (current_q_no == amount_of_questions){
-        question_done_btn.style.backgroundColor = 'yellow';
+        question_done_btn.classList.add("finish")
         question_done_btn.textContent = "Let's Finish It!!";
     } else {
-        question_done_btn.style.backgroundColor = 'white';
+        question_done_btn.classList.remove("finish");
         question_done_btn.textContent = "Done!";
     }
 }

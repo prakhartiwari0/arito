@@ -266,6 +266,15 @@ body {
   transform: scale(0.8);
 }
 
+.test_page .question_div .submit_btn_div .finish {
+  background-color: yellow;
+}
+
+.test_page .question_div .submit_btn_div .finish:is(:hover, :active) {
+  background-color: yellow;
+}
+
+
 /* --------------- START TEST --------------- */
 
 .start_test_div {
