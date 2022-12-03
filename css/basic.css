@@ -14,6 +14,7 @@ https://colorhunt.co/palette/ff8787f8c4b4e5ebb2bce29e */
   background-color: var(--pink);
 }
 
+
 :root {
   --pink: #ff8787;
   --light-pink: #f8c4b4;
@@ -22,6 +23,9 @@ https://colorhunt.co/palette/ff8787f8c4b4e5ebb2bce29e */
   --gradient: linear-gradient(90deg, var(--green), var(--pink));
 }
 
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 /* focus visible styling to interactive element to make the site accessible to  keyboard users */
 .btn:focus-visible {
   outline: 0.3rem dotted red;
