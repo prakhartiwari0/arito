@@ -1,5 +1,4 @@
-// const body = document.body
-const body = document.qu
+
 window.onbeforeunload = function (e) {
     e = e || window.event;
 
