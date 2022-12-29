@@ -4,6 +4,10 @@
 <a href="https://www.producthunt.com/posts/arito?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-arito" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=367945&theme=light" alt="Arito - Your&#0032;place&#0032;to&#0032;play&#0032;with&#0032;DAMS | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a></p>
 
 
+
+
+
+
 <p align="center">
 </a>
 <a href="https://github.com/prakhartiwari0/Arito/issues"><img src="https://img.shields.io/github/issues/prakhartiwari0/arito?style=plastic"></a>
@@ -35,7 +39,8 @@ Arito is a WebApp built for practicing arithmetic skills. It is designed with cr
 
 <p align="center"><strong>Arito Demo Video</strong></p>
 
-<p align="center"><a href="https://www.youtube.com/watch?v=4nkchB3KVyo"><img src="https://user-images.githubusercontent.com/65062036/202854222-0a1b15bb-ecec-44c8-9ffe-6f5429938d03.png" width="50%"></p>
+https://user-images.githubusercontent.com/65062036/209936534-9ea116bb-fe55-4f25-9eef-72fe1af64936.mp4
+
 
 <h2 align="center" id="how_to_use"> How to use it?</h2>
 
@@ -70,7 +75,7 @@ On starting the app, you are asked to fill a form. This **TEST FORM** contains v
 
 The number of questions will be given according to the specifications you filled out in the test form.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/91837493/203899206-f35c6bd8-01b6-4805-9f70-b057fa7a8fe1.png" width="500px"></p> 
+<p align="center"><img src="https://user-images.githubusercontent.com/65062036/209937119-65a1c5cc-d9c1-4811-8b30-721882870f7e.png" width="500px"></p> 
 
 
 **Results**
