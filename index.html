@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/basic.css">
     <link rel="shortcut icon" href="assets/images/Arito_favicon.png">
 
+    <link rel="manifest" href="./manifest.json">
+  </head>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -37,4 +39,11 @@
 </body>
 <script src="js/index.js"></script>
 <script src="js/basic.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator){
+    navigator.serviceWorker.register('./service-worker.js')
+  }
+</script>
+
 </html>
