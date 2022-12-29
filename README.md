@@ -36,55 +36,30 @@
 
 <img align="right" width="100px" src="https://media.giphy.com/media/23o9IZyRjV6cM5r4Ge/giphy.gif">
 
-Arito is a WebApp built for practicing arithmetic skills. It is designed with creativity to have a joyful experience and is built primarily for kids who need to practice their mathematical skills, but can be used by everbody.
-
+Arito is a WebApp built for practicing arithmetic skills. It is designed with creativity to have a joyful experience and is built primarily for kids who need to practice their mathematical skills, but can be used by everbody. It's UI is simplistic and clean so that you don't have any trouble using it.
 
 <p align="center"><strong>Arito Demo Video</strong></p>
 
 https://user-images.githubusercontent.com/65062036/209936534-9ea116bb-fe55-4f25-9eef-72fe1af64936.mp4
 
+---
 
 <h2 align="center" id="how_to_use"> How to use it?</h2>
 
-You need to go to this URL: https://arito.netlify.app
+**Goto the Website: https://arito.netlify.app**
 
-**It's UI is simplistic and clean so that you don't have any trouble using it.**
 
 On starting the app, you are asked to fill a form. This **TEST FORM** contains various options and input fields, which you need to fill up according to your desires.
 
-**NAME:** Test Taker's Name
+| Field | Info |
+| --- | --- |
+| **NAME:** | Test Taker's Name | 
+| **QUESTIONS OF:** |  Which arithmetic skill do you want to practice? (Currently, there are four available: **Addition, Subtraction, Multiplication, Division**) | 
+ | **DIFFICULTY LEVEL:**  | There are *5 Difficulty Levels* -> <br> 1. **Very Easy:** Questions about numbers ranging from  **1-10** <br> 2. **Easy:** Questions about numbers ranging from **11-50** <br> 3. **Medium:** Questions about numbers ranging from **51-100** <br> 4. **Hard:** Questions about numbers ranging from **100-1000** <br> 5. **Very Hard:** Questions about numbers ranging from **1000-10000**  | 
+ | **Number of questions:** |  Number of questions you would like to attempt | 
+ | **NEGATIVE MARKING:**  | If you check this, every incorrect answer will result in a **1 mark deduction**, else, you will be given 0 mark  | 
 
-**QUESTIONS OF:** Which arithmetic skill do you want to practice? (Currently, there are four available: **Addition, Subtraction, Multiplication, Division**)
-
-**DIFFICULTY LEVEL:** There are **5 Difficult Levels** ->
-1. **Very Easy:** Questions about numbers ranging from  **1-10**
-2. **Easy:** Questions about numbers ranging from **11-50**
-3. **Medium:** Questions about numbers ranging from **51-100**
-4. **Hard:** Questions about numbers ranging from **100-1000**
-5. **Very Hard:** Questions about numbers ranging from **1000-10000**
-
-**Number of questions:** Number of questions you would like to attempt
-
-**NEGATIVE MARKING:** If you check this, every incorrect answer will result in a one-point deduction. 
-
-<p align="center"> <img src="https://user-images.githubusercontent.com/91837493/203893132-9b52a09d-7e5b-4705-8cbc-9f1673d6543d.png"
- width="500px"> </p>
-
-
-<!-- <img src="" width="100px"> -->
-
-**Take the test**
-
-The number of questions will be given according to the specifications you filled out in the test form.
-
-<p align="center"><img src="https://user-images.githubusercontent.com/65062036/209937119-65a1c5cc-d9c1-4811-8b30-721882870f7e.png" width="500px"></p> 
-
-
-**Results**
-You will be shown the total marks & percentage you have got and the total time taken to complete the whole test. Below that you can find the real answers to all the questions and know where you did wrong.
-
-<p align="center"> <img src="https://user-images.githubusercontent.com/65062036/204969580-077068e7-6e9d-4216-ae03-60d60bc509dd.png"  width="500px"> </p>
-
+<!-- <p align="center"> <img src="" width="500px"> </p> -->
 
 <h1 align="center">
 Contributors
