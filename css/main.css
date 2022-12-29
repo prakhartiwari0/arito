@@ -158,6 +158,34 @@ body {
   letter-spacing: 0.1em;
 }
 
+.question_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.question_container > button {
+  width: 64px;
+  height: 64px;
+  border: none;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+}
+
+.question_container > button:is(:hover, :active) {
+  transform: scale(0.8);
+}
+
+.prev_question_btn {
+  background: url("../assets/images/arito_left_arrow.png");
+}
+
+.next_question_btn {
+  background: url("../assets/images/arito_right_arrow.png");
+}
+
 .test_page .question_div {
   border: 2px solid black;
   border-radius: 97% 3% 96% 4% / 4% 99% 1% 96%;
@@ -248,6 +276,27 @@ body {
   background-color: var(--green);
   transform: scale(0.8);
 }
+
+.test_page .question_div .submit_btn_div .finish {
+  background-color: yellow;
+}
+
+.test_page .question_div .submit_btn_div .finish:is(:hover, :active) {
+  background-color: yellow;
+}
+
+@media screen and (max-width: 480px) {
+
+  .question_container {
+    margin-bottom: 2em;
+  }
+
+  .question_div {
+    order: -1;
+    flex: 1 0 85%;
+  }
+}
+
 
 /* --------------- START TEST --------------- */
 
@@ -499,6 +548,3 @@ input[type="range"]:focus::-ms-fill-lower {
 input[type="range"]:focus::-ms-fill-upper {
   background: var(--pink);
 }
-
-
-
