@@ -38,6 +38,17 @@
 
 Arito is a WebApp built for practicing arithmetic skills. It is designed with creativity to have a joyful experience and is built primarily for kids who need to practice their mathematical skills, but can be used by everbody. It's UI is simplistic and clean so that you don't have any trouble using it.
 
+### A little history behind the App
+
+3 years ago, my little sister wanted to practice her maths (arithmetic) skills to **get faster at solving problems**. But there were not enough questions available in the school textbook, and it was not a good option to buy practice worksheets. I newly learnt **Python programming language** at that time, and thought to **solve this problem by using my programming skills**. 
+
+I created a **GUI app** (because obviously a terminal app is not good for a kid) using **Tkinter** module in Python, and wrote the logic to automatically generate basic questions, based on the options the user selects in the form.
+**You can find that old project [here](https://github.com/prakhartiwari0/Maths-App).**
+
+This WebApp can be looked as the _"Web version of the previous Python App"_, but I don't think it is _entirely_ true. The **web app is far more better than the Python App**, and the latter is very limited, it can only be used when you have a Windows PC, and Python installed in it. It was also cumbersome to start the app. 
+The WebApp, because of our lovely **open source community**, is now becoming much more better. And I dream that this app will be used by kids all around the world to get better at maths by practicing their skils. (**read more about our future goals [here](#future-goals))**
+
+
 <p align="center"><strong>Arito Demo Video</strong></p>
 
 https://user-images.githubusercontent.com/65062036/209936534-9ea116bb-fe55-4f25-9eef-72fe1af64936.mp4
@@ -60,6 +71,10 @@ On starting the app, you are asked to fill a form. This **TEST FORM** contains v
  | **NEGATIVE MARKING:**  | If you check this, every incorrect answer will result in a **1 mark deduction**, else, you will be given 0 mark  | 
 
 <!-- <p align="center"> <img src="" width="500px"> </p> -->
+
+## Future Goals
+To write...
+
 
 <h1 align="center">
 Contributors
