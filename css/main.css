@@ -339,6 +339,45 @@ body {
   align-items: center;
   background-color: var(--green);
 }
+.result_page .front_results_page header h1{
+  text-decoration: underline;
+  color: var(--pink);
+  text-shadow:
+  -1px -1px 10px #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+
+  animation-name: fidgeting;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+.result_page .front_results_page .salutation_text{
+color: var(--green);
+  text-shadow:
+  -1px -1px 0px #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+.result_page .front_results_page .user_name{
+  color: var(--light-green);
+  text-decoration: none;
+  
+}
+.highlighted_text{
+  text-shadow:
+  -1px -1px 0px #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  /* text-decoration: underline; */
+  color: var(--pink);
+  letter-spacing: 2px;
+}
+
+
+
 .result_page .results_page_navigation_div {
   display: flex;
 }
@@ -383,6 +422,32 @@ body {
   align-items: center;
 }
 
+.result_page .all_questions_div .question-serialno .question_number_span {
+  text-decoration: underline;
+}
+.result_page .all_questions_div .question-serialno.wrongly_answered {
+  border: 5px red solid;
+}
+.result_page .all_questions_div .question-serialno.wrongly_answered::before {
+  content: "\2717";
+  color: red;
+  transform: scale(3);
+  align-self: flex-start;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.result_page .all_questions_div .question-serialno.rightly_answered {
+  border: 5px green solid;
+}
+.result_page .all_questions_div .question-serialno.rightly_answered::before {
+  content: "\2713";
+  color: green;
+  transform: scale(3);
+  align-self: flex-start;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
 .result_page .all_questions_div .question-serialno .q_numbers_div {
   display: flex;
   flex-direction: column;
@@ -405,6 +470,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-weight: 600;
 }
 .result_page
   .all_questions_div

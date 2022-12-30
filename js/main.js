@@ -295,35 +295,26 @@ function resultGenerator(){
         let right_or_wrong_; 
         if (right_or_wrong_array[n-1]=="right") {
             right_or_wrong_ = "is_correct"
+            right_or_wrong_question_box = "rightly_answered"
         }
         else if (right_or_wrong_array[n - 1] == "wrong") {
             right_or_wrong_ = "is_wrong"  
+            right_or_wrong_question_box = "wrongly_answered"
         }
 
-        let question_code = `\n
-        <div class="question-serialno">
-            <span class="question_number_span">Question <span class="q_num">${q_num}</span></span>
+        let question_template_element = document.querySelector(".question_template")
+        let each_question_template = question_template_element.content.cloneNode(true)
 
-            <div class="q_numbers_div">
-                <div class="upNum_div">
-                    <span class="upNumber">${upnum}</span>
-                </div>
-                <div class="downNum_and_sign_div">
-                    <span class="sign">${s_of_q}</span>
-                    <span class="downNum">${downum}</span>
-                </div>
-            </div>
-            <div class="answers_div">
-                <div class="user_answer_div">
-                    <span class="user_answer ${right_or_wrong_}">${user_answer_}</span>
-                </div>
-                <div class="real_answer_div">
-                    <span class="real_answer">${real_answer_}</span>
-                </div>
-            </div>
-        </div>
-        `
-        all_questions_div.innerHTML = all_questions_div.innerHTML + question_code
+        each_question_template.querySelector(".question-serialno").classList.add(right_or_wrong_question_box)
+        each_question_template.querySelector(".q_num").innerText = q_num
+        each_question_template.querySelector(".upNumber").innerText = upnum
+        each_question_template.querySelector(".sign").innerText = s_of_q
+        each_question_template.querySelector(".downNum").innerText = downum
+        each_question_template.querySelector(".user_answer").classList.add(right_or_wrong_)
+        each_question_template.querySelector(".user_answer").innerText = user_answer_
+        each_question_template.querySelector(".real_answer").innerText = real_answer_
+        
+        all_questions_div.appendChild(each_question_template)
         n = n+1
     }
 
