@@ -174,7 +174,7 @@ body {
   cursor: pointer;
 }
 
-.question_container > button:is(:hover, :active) {
+.question_container > button:is(:focus) {
   transform: scale(0.8);
 }
 
@@ -271,7 +271,7 @@ body {
   border-radius: 12% 88% 11% 89% / 91% 13% 87% 9%;
 }
 
-.test_page .question_div .submit_btn_div button:is(:active, :hover, :focus) {
+.test_page .question_div .submit_btn_div button:is(:active, :focus) {
   background-color: var(--green);
   transform: scale(0.8);
 }
@@ -280,16 +280,13 @@ body {
   background-color: yellow;
 }
 
-.test_page .question_div .submit_btn_div .finish:is(:hover, :active) {
-  background-color: yellow;
-}
 
 @media screen and (max-width: 480px) {
-
+  
   .question_container {
     margin-bottom: 2em;
   }
-
+  
   .question_div {
     order: -1;
     flex: 1 0 85%;
@@ -325,9 +322,25 @@ body {
   cursor: pointer;
 }
 
-.start_test_div .start_now_btn:is(:active, :hover, :focus) {
+.start_test_div .start_now_btn:is(:active, :focus) {
   background-color: var(--pink);
   transform: scale(0.8);
+}
+
+
+@media (hover: hover) {
+  button:is(:hover){
+    transform: scale(0.8);
+  }
+
+  .start_test_div .start_now_btn:is(:hover) {
+    background-color: var(--pink);
+  }
+
+  .test_page .question_div .submit_btn_div button:is(:hover) {
+    background-color: var(--green);
+  }
+  
 }
 
 /* --------------- RESULT PAGE --------------- */
