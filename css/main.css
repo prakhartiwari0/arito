@@ -271,8 +271,7 @@ body {
   border-radius: 12% 88% 11% 89% / 91% 13% 87% 9%;
 }
 
-.test_page .question_div .submit_btn_div button:active,
-.submit_btn_div button:hover {
+.test_page .question_div .submit_btn_div button:is(:active, :hover, :focus) {
   background-color: var(--green);
   transform: scale(0.8);
 }
@@ -326,8 +325,7 @@ body {
   cursor: pointer;
 }
 
-.start_test_div .start_now_btn:active,
-.start_now_btn:hover {
+.start_test_div .start_now_btn:is(:active, :hover, :focus) {
   background-color: var(--pink);
   transform: scale(0.8);
 }
