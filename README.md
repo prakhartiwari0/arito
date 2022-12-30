@@ -57,8 +57,7 @@ https://user-images.githubusercontent.com/65062036/209936534-9ea116bb-fe55-4f25-
 
 <h2 align="center" id="how_to_use"> How to use it?</h2>
 
-**Goto the Website: https://arito.netlify.app**
-
+**Goto the Website: https://arito.netlify.app** Or follow the **[installation instructions](#installation-instructions)** to install it on your computer or mobile phone.
 
 On starting the app, you are asked to fill a form. This **TEST FORM** contains various options and input fields, which you need to fill up according to your desires.
 
@@ -70,7 +69,22 @@ On starting the app, you are asked to fill a form. This **TEST FORM** contains v
  | **Number of questions:** |  Number of questions you would like to attempt | 
  | **NEGATIVE MARKING:**  | If you check this, every incorrect answer will result in a **1 mark deduction**, else, you will be given 0 mark  | 
 
-<!-- <p align="center"> <img src="" width="500px"> </p> -->
+<!-- <p align="center"> <img src="" width="200px"> </p> -->
+
+### Installation Instructions
+
+| Sr No. | On Desktop/Laptop | On Mobile Phone/Tablet |
+| --- | --- | --- |
+| 1. | <p align="center"> Open the website of Arito, and you will find a install button in the browser, click on that and install the app <img src="https://user-images.githubusercontent.com/65062036/210035371-fe0d0f52-21d6-4aa7-9687-bc6ea1a7e724.png" width="400px"> </p> | <p align="center"> Open the website or Arito, open the options menu of the browser, and click on the install app button <img src="https://user-images.githubusercontent.com/65062036/210035580-40c03867-61e7-4897-b5bf-3806053b707f.jpg" width="200px"> </p> |
+| 2. | <p align="center"> After doing so, you can find the app in your applications menu <img src="https://user-images.githubusercontent.com/65062036/210035448-659ca418-3990-4353-bcf9-d80a55beab17.png" width="400px"> </p> | <p align="center"> A box will appear, click on install button, and after that, you will be able to find arito in your apps menu <img src="https://user-images.githubusercontent.com/65062036/210035588-1a4ae218-33bb-4dec-9839-8294fd1e09c2.jpg" width="200px"> </p> |
+| **Note** | The browser used in the images is Brave v1.46.144 and OS is Ubuntu 22.04.1 LTS, but it should work on other devices and browsers too | The browser used in the images is Chrome 107.0.5304.91 and OS is Android 9, but it should work on other devices and browsers too | 
+
+
+
+
+
+
+
 
 ## Future Goals
 To write...
