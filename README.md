@@ -57,7 +57,7 @@ https://user-images.githubusercontent.com/65062036/209936534-9ea116bb-fe55-4f25-
 
 <h2 align="center" id="how_to_use"> How to use it?</h2>
 
-**Goto the Website: https://arito.netlify.app** Or follow the **[installation instructions](#installation-instructions)** to install it on your computer or mobile phone.
+**Goto the Website: [arito.netlify.app](https://arito.netlify.app)** Or follow the **[installation instructions](#installation-instructions)** to install it on your computer or mobile phone.
 
 On starting the app, you are asked to fill a form. This **TEST FORM** contains various options and input fields, which you need to fill up according to your desires.
 
