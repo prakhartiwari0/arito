@@ -16,10 +16,12 @@
         <header>
             <h1>Results 😃</h1>
         </header>
-        <h3><em>Dear <span class="user_name">NAME_OF_THE_PERSON</span>,</em></h3>
+        <h3>
+          Dear <span class="user_name highlighted_text">NAME_OF_THE_PERSON</span>,
+        </h3>
         <span>You have scored <strong class="marks_obtained">9</strong> out of <strong class="total_marks">MARKS_HERE</strong> marks.</span>
-        <span>Which in terms of percentage means, <strong><span class="percent_obtained">PERCENTAGE_HERE</span>%</strong></span>
-        <span>You took <strong><span class="time_taken">TIME_TAKEN_HERE</span></strong> to complete the test</span>
+        <span>Which in terms of percentage means, <strong><span class="highlighted_text percent_obtained">PERCENTAGE_HERE</span>%</strong></span>
+        <span>You took <strong><span class="highlighted_text time_taken">TIME_TAKEN_HERE</span></strong> to complete the test</span>
     </div>
 
     <div class="results_page_navigation_div">
@@ -27,7 +29,8 @@
     </div>
 
     <div class="all_questions_div">
-      <!-- <div class="question-serialno">
+      <!-- 
+  <div class="question-serialno">
         <span class="question_number_span">Question <span class="q_num"></span></span>
 
         <div class="q_numbers_div">
@@ -47,7 +50,34 @@
             <span class="real_answer is_correct"></span>
           </div>
         </div>
-    </div> -->
+    </div>
+  
+  -->
+  <template class="question_template">
+
+    <div class="question-serialno ">
+      <span class="question_number_span">Question <span class="q_num">${q_num}</span></span>
+
+    <div class="q_numbers_div">
+        <div class="upNum_div">
+          <span class="upNumber">${upnum}</span>
+        </div>
+        <div class="downNum_and_sign_div">
+          <span class="sign">${s_of_q}</span>
+            <span class="downNum">${downum}</span>
+          </div>
+    </div>
+    <div class="answers_div">
+      <div class="user_answer_div">
+        <span class="user_answer">${user_answer_}</span>
+      </div>
+      <div class="real_answer_div">
+        <span class="real_answer">${real_answer_}</span>
+      </div>
+    </div>
+  </div>
+</template>
+
 </div>
 </div>
 
