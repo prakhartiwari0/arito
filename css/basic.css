@@ -14,6 +14,15 @@ https://colorhunt.co/palette/ff8787f8c4b4e5ebb2bce29e */
   background-color: var(--pink);
 }
 
+button {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */ 
+}
 
 :root {
   --pink: #ff8787;
@@ -31,7 +40,6 @@ https://colorhunt.co/palette/ff8787f8c4b4e5ebb2bce29e */
   outline: 0.3rem dotted red;
   transform: scale(1.1);
 }
-
 
 /* TO REMOVE THE UP AND DOWN ARROWS ON Input tags of type="number" */
 input::-webkit-outer-spin-button,
