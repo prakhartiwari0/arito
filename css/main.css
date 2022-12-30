@@ -352,6 +352,14 @@ body {
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
 }
+.result_page .front_results_page .salutation_text{
+color: var(--green);
+  text-shadow:
+  -1px -1px 0px #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
 .result_page .front_results_page .user_name{
   color: var(--light-green);
   text-decoration: none;
@@ -363,15 +371,9 @@ body {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  text-decoration: underline;
-
-}
-
-.result_page .front_results_page .percent_obtained{
+  /* text-decoration: underline; */
   color: var(--pink);
-}
-.result_page .front_results_page .time_taken{
-  color: var(--pink);
+  letter-spacing: 2px;
 }
 
 
