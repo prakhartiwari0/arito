@@ -52,7 +52,8 @@ The WebApp, because of our lovely **open source community**, is now becoming muc
 
 <p align="center"><strong>Arito Demo Video</strong></p>
 
-https://user-images.githubusercontent.com/65062036/209936534-9ea116bb-fe55-4f25-9eef-72fe1af64936.mp4
+https://user-images.githubusercontent.com/65062036/210134652-efe2768b-6923-4c96-8b47-cd3e5acac27f.mp4
+
 
 ---
 
