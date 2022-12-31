@@ -39,7 +39,7 @@
 
 Arito is a WebApp built for practicing arithmetic skills. It is designed with creativity to have a joyful experience and is built primarily for kids who need to practice their mathematical skills, but can be used by everbody. It's UI is simplistic and clean so that you don't have any trouble using it.
 
-### A little history behind the App
+<h3>Small History of the App</h3>
 
 3 years ago, my little sister wanted to practice her maths (arithmetic) skills to **get faster at solving problems**. But there were not enough questions available in the school textbook, and it was not a good option to buy practice worksheets. I newly learnt **Python programming language** at that time, and thought to **solve this problem by using my programming skills**. 
 
