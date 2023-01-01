@@ -282,7 +282,6 @@ body {
 
 
 @media screen and (max-width: 480px) {
-  
   .question_container {
     margin-bottom: 2em;
   }
@@ -515,6 +514,29 @@ color: var(--green);
   text-decoration: line-through;
   color: red;
 }
+
+@media screen and (max-width: 500px) {
+
+.result_page {
+  font-size: 2.5em;
+}
+}
+
+@media screen and (max-width: 420px) {
+
+.result_page {
+  font-size: 2em;
+}
+}
+
+@media screen and (max-width: 340px) {
+
+.result_page {
+  font-size: 1.5em;
+}
+}
+
+
 
 /* --------------- VOLUME CONTROLL --------------- */
 .volume_control_container {
