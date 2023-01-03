@@ -16,69 +16,54 @@
         <header>
             <h1>Result 🧐</h1>
         </header>
-        <span class="salutation_text">
-          Dear <span class="user_name highlighted_text">NAME_OF_THE_PERSON</span>
-        </span>
-        <span>You have scored <span class="highlighted_text"> <strong class="marks_obtained">9</strong> out of <strong class="total_marks">MARKS_HERE</strong> marks.</span></span>
-        <span>Which in terms of percentage means, <strong class="highlighted_text percentage_text"><span class="percent_obtained">PERCENTAGE_HERE</span>%</strong></span>
-        <span>You took <strong><span class="highlighted_text time_taken">TIME_TAKEN_HERE</span></strong> to complete the test</span>
+        <div class="results_text_div">
+
+          <span class="salutation_text">
+            Dear <span class="user_name highlighted_text">NAME_OF_THE_PERSON</span>,
+          </span>
+          <span>You have scored <span class="highlighted_text"> <strong class="marks_obtained">9</strong> out of <strong class="total_marks">MARKS_HERE</strong> marks.</span></span>
+          <span>Which in terms of percentage means, <strong class="highlighted_text percentage_text"><span class="percent_obtained">PERCENTAGE_HERE</span>%</strong></span>
+          <span>You took <strong><span class="highlighted_text time_taken">TIME_TAKEN_HERE</span></strong> to complete the test</span>
+        </div>
     </div>
 
     <div class="results_page_navigation_div">
       <button class="retest_button">RETEST (Reload to Restart)</button>
     </div>
 
-    <div class="all_questions_div">
-      <!-- 
-  <div class="question-serialno">
-        <span class="question_number_span">Question <span class="q_num"></span></span>
+  <div class="all_questions_div">
 
-        <div class="q_numbers_div">
-            <div class="upNum_div">
-                <span class="upNumber"></span>
-            </div>
-            <div class="downNum_and_sign_div">
-                <span class="sign"></span>
-                <span class="downNum"></span>
-            </div>
+    <template class="question_template">
+
+      <div class="q_no_div">
+
+        <span class="question_number_span">Question <span class="q_num">${q_num}</span></span>
+        
+      <div class="question-serialno ">
+      <div class="q_numbers_div">
+          <div class="upNum_div">
+            <span class="upNumber">${upnum}</span>
+          </div>
+          <div class="downNum_and_sign_div">
+            <span class="sign">${s_of_q}</span>
+            <span class="downNum">${downum}</span>
+          </div>
         </div>
         <div class="answers_div">
           <div class="user_answer_div">
-            <span class="user_answer is_wrong"></span>
+            <span class="user_answer">${user_answer_}</span>
           </div>
           <div class="real_answer_div">
-            <span class="real_answer is_correct"></span>
+            <span class="real_answer">${real_answer_}</span>
           </div>
         </div>
-    </div>
-  
-  -->
-  <template class="question_template">
-
-    <div class="question-serialno ">
-      <span class="question_number_span">Question <span class="q_num">${q_num}</span></span>
-
-    <div class="q_numbers_div">
-        <div class="upNum_div">
-          <span class="upNumber">${upnum}</span>
-        </div>
-        <div class="downNum_and_sign_div">
-          <span class="sign">${s_of_q}</span>
-            <span class="downNum">${downum}</span>
-          </div>
-    </div>
-    <div class="answers_div">
-      <div class="user_answer_div">
-        <span class="user_answer">${user_answer_}</span>
-      </div>
-      <div class="real_answer_div">
-        <span class="real_answer">${real_answer_}</span>
+        
       </div>
     </div>
-  </div>
-</template>
 
-</div>
+  </template>
+
+  </div>    
 </div>
 
     <div class="start_test_div">
