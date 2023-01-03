@@ -80,7 +80,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.links:hover {
+.links:is(:hover,:active) {
   transform: scale(1.2);
 }
 
