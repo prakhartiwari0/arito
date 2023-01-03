@@ -59,24 +59,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* 
-body::before {
-  font-size: 0.8em;
-  content: "Under Development  | V 0.1";
-  font-family: monospace;
-  color: black ;
-  background-color: var(--light-green);
-  padding: 0.1em 0.5em;
-  border-radius: 5px;
-  width: 20em;
-  position: fixed;
-  text-align: center;
-  bottom: 0;
-  left: 40vw;
-  right: 40vw;
-  z-index: 3;
-} */
-
 @keyframes fidgeting {
   0% {
     transform: rotate(-2deg);
@@ -87,4 +69,23 @@ body::before {
   100% {
     transform: rotate(-2deg);
   }
+}
+
+::-webkit-scrollbar {
+  width: 1.5rem;
+}
+::-webkit-scrollbar-track {
+  margin-block: 1rem;
+  border-radius: 100vw;
+  background-color: var(--pink);
+  padding: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--green);
+  border-radius: 100vw;
+  border: 2px solid black;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--light-green);
 }
