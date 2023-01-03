@@ -48,6 +48,18 @@ button, a {
   transform: scale(1.1);
 }
 
+/* Keyboard Shortcut or Keys CSS for kbd element  */
+kbd{
+  border-radius: 2px;
+  padding: 2px;
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 7%, rgba(214,214,214,1) 45%);
+  border: 1px solid black;
+}
+
+
+
+
 /* TO REMOVE THE UP AND DOWN ARROWS ON Input tags of type="number" */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
