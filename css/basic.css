@@ -25,11 +25,18 @@ button, a {
 }
 
 :root {
+  /* COLORS  */
   --pink: #ff8787;
   --light-pink: #f8c4b4;
   --green: #bce29e;
   --light-green: #e5ebb2;
   --gradient: linear-gradient(90deg, var(--green), var(--pink));
+
+  --text-shadow-outline-effect: 
+  -1px -1px 0px #000,
+   1px -1px 0px #000,
+  -1px 1px 0px #000,
+   1px 1px 0px #000;
 }
 
 * {
