@@ -1,4 +1,3 @@
-
 window.onbeforeunload = function (e) {
     e = e || window.event;
 
@@ -10,6 +9,41 @@ window.onbeforeunload = function (e) {
     // For Safari
     return 'Sure?';
 };
+
+let questions_array = []
+let user_answers_array = []
+let real_answers_array = []
+let right_or_wrong_array = []
+let marks = 0;
+let current_q_no = 1;
+
+const saveState = (key, value) => {
+    localStorage.setItem(key, value)
+}
+
+window.onload = function () {
+    questions_array = JSON.parse(localStorage.getItem('questions_array')) || []
+    user_answers_array = JSON.parse(localStorage.getItem('user_answers_array')) || []
+    real_answers_array = JSON.parse(localStorage.getItem('real_answers_array')) || []
+    right_or_wrong_array = JSON.parse(localStorage.getItem('right_or_wrong_array')) || []
+    marks = parseInt(localStorage.getItem('marks')) || 0
+    current_q_no = parseInt(localStorage.getItem('current_q_no')) || 1
+    student_name = localStorage.getItem('student_name') || ""
+    q_type = localStorage.getItem('q_type') || ""
+    diff_lvl = localStorage.getItem('diff_lvl') || ""
+    amount_of_questions = parseInt(localStorage.getItem('amount_of_questions')) || null
+    negative_marking = JSON.parse(localStorage.getItem('negative_marking')) || null
+
+    if(student_name !== "") {
+        main_form_div.remove()
+        start_test_div.style.display = 'flex'
+        createTestpage()
+        return
+    }
+}
+
+
+
 // TEST FORM NODES REFERENCES
 const main_form_div = document.querySelector('.test_form')
 const form_submit_btn = document.querySelector('#submit_test_form')
@@ -69,14 +103,6 @@ next_btn.addEventListener('click', nextQuestion)
 // 5. Keep the number of question in check
 // 6. Keep changing the time countdown above
 
-
-
-let questions_array = []
-let user_answers_array = []
-let real_answers_array = []
-let right_or_wrong_array = []
-let marks = 0;
-let current_q_no = 1;
 
 function generateNumbers_and_sign(diff_lvl, sign) {
     let max;
@@ -163,14 +189,21 @@ function getAnswer(){
     else user_answers_array.push(ans_of_user);
 
     current_q_no = current_q_no+1
+    saveState("current_q_no", current_q_no)
+    saveState("questions_array", JSON.stringify(questions_array))
+    saveState("user_answers_array", JSON.stringify(user_answers_array))
+    saveState("real_answers_array", JSON.stringify(real_answers_array))
+    saveState("right_or_wrong_array", JSON.stringify(right_or_wrong_array))
+    saveState("marks", marks)
+    saveState("current_q_no", current_q_no)
 
     if (current_q_no == amount_of_questions + 1) {
         sound_player("final_question", "start")
         end_time = Date.now()
-
+        localStorage.clear()
         resultGenerator()
     }
-    
+
     questionBoxGenerator()
 }
 
@@ -319,14 +352,12 @@ function resultGenerator(){
     }
 
     result_page.style.display = 'flex'
-
-
+    localStorage.clear()
 }
 
 
 
 function questionBoxGenerator(){
-
     const quotientBox =  document.querySelector('.quotient_from_user');
     const remainderBox = document.querySelector('.remainder_from_user');
     const answerBox = document.querySelector('.answer_from_user');
@@ -431,6 +462,8 @@ function volume_updater(){
 
 function createTestpage(){
     start_time = Date.now()
+    saveState("start_time", start_time)
+
     sound_player("click_sound", "start")
     sound_player("background_music", "stop")
     sound_player("test_page_bg_music", "start", "loop")
@@ -464,6 +497,12 @@ function getValues() {
     diff_lvl = document.querySelector('#difficulty').value;
     amount_of_questions = parseInt(document.querySelector('#no_of_ques').value);
     negative_marking = document.querySelector('#negmarking').checked;
+
+    saveState('student_name', student_name)
+    saveState('q_type', q_type)
+    saveState('diff_lvl', diff_lvl)
+    saveState('amount_of_questions', amount_of_questions)
+    saveState('negative_marking', negative_marking)
 
     if (student_name.length < 1 || isNaN(amount_of_questions)){
         return;
