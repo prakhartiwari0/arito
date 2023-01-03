@@ -1,5 +1,5 @@
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-image: url(../assets/images/grid.jpg);
   background-size: cover;
   font-family: "Indie Flower", cursive;
@@ -126,8 +126,7 @@ body {
 .test_page {
   /* display: flex; */
   display: none;
-  font-size: 1.2em;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -151,10 +150,10 @@ body {
 }
 .test_page header .test_title {
   width: 100%;
-  font-size: 3em;
+  font-size: 3rem;
 }
 .test_page header .question_details {
-  font-size: 1.3em;
+  font-size: 1.3rem;
   letter-spacing: 0.1em;
 }
 
@@ -300,16 +299,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em 1em;
+  padding: 1rem 2rem;
   background-color: var(--light-green);
   font-size: 3em;
   font-weight: 900;
   border: 2px solid black;
-  border-radius: 12% 88% 11% 89% / 91% 13% 87% 9%;
+  border-radius: 2rem;
+  margin: 1rem;
 }
 
 .start_test_div ul {
   font-size: 0.5em;
+}
+.start_test_div ul li{
+  letter-spacing: 0.1rem;
+  margin: 1rem 0rem;
 }
 
 .start_test_div .start_now_btn {
