@@ -16,7 +16,10 @@ let real_answers_array = []
 let right_or_wrong_array = []
 let marks = 0;
 let current_q_no = 1;
+let start_time_array = []
+let end_time_array = []
 let start_time
+let end_time
 
 const saveState = (key, value) => {
     localStorage.setItem(key, value)
@@ -34,7 +37,8 @@ window.onload = function () {
     diff_lvl = localStorage.getItem('diff_lvl') || ""
     amount_of_questions = parseInt(localStorage.getItem('amount_of_questions')) || null
     negative_marking = JSON.parse(localStorage.getItem('negative_marking')) || null
-    start_time = parseInt(localStorage.getItem('start_time')) || 0
+    start_time_array = JSON.parse(localStorage.getItem('start_time_array')) || []
+    end_time_array = JSON.parse(localStorage.getItem('end_time_array')) || []
 
     if(student_name !== "") {
         main_form_div.remove()
@@ -45,21 +49,15 @@ window.onload = function () {
 }
 
 
-
 // TEST FORM NODES REFERENCES
 const main_form_div = document.querySelector('.test_form')
 const form_submit_btn = document.querySelector('#submit_test_form')
 form_submit_btn.addEventListener('click', getValues)
 
-
 // STARTING TEST NODES REFERENCES
 const test_page = document.querySelector('.test_page')
 const start_test_div = document.querySelector('.start_test_div')
 const start_now_btn = document.querySelector('.start_now_btn')
-
-
-
-
 
 // TEST PAGE NODES REFERENCES
 const test_title = document.querySelector('.test_title')
@@ -70,7 +68,6 @@ const next_btn = document.querySelector(".next_question_btn");
 const upNumber = document.querySelector('.upNumber')
 const sign = document.querySelector('.sign')
 const downNumber = document.querySelector('.downNumber')
-
 
 // RESULTS PAGE NODES REFERENCES
 const result_page = document.querySelector('.result_page')
@@ -95,8 +92,6 @@ question_done_btn.addEventListener('click', getAnswer)
 prev_btn.addEventListener('click', prevQuestion)
 next_btn.addEventListener('click', nextQuestion)
 
-
-
 // ENGINE OF THE TEST
 // 1. Decide up and down numbers
 // 2. Decide the sign
@@ -104,7 +99,6 @@ next_btn.addEventListener('click', nextQuestion)
 // 4. Do check for negative marking to deduct on every wrong answer
 // 5. Keep the number of question in check
 // 6. Keep changing the time countdown above
-
 
 function generateNumbers_and_sign(diff_lvl, sign) {
     let max;
@@ -190,7 +184,10 @@ function getAnswer(){
         user_answers_array[current_q_no - 1] = ans_of_user;
     else user_answers_array.push(ans_of_user);
 
-    current_q_no = current_q_no+1
+    end_time_array[current_q_no - 1] = Date.now()
+    current_q_no = current_q_no + 1
+
+    saveState("end_time_array", JSON.stringify(end_time_array))
     saveState("current_q_no", current_q_no)
     saveState("questions_array", JSON.stringify(questions_array))
     saveState("user_answers_array", JSON.stringify(user_answers_array))
@@ -201,7 +198,6 @@ function getAnswer(){
 
     if (current_q_no == amount_of_questions + 1) {
         sound_player("final_question", "start")
-        end_time = Date.now()
         localStorage.clear()
         resultGenerator()
     }
@@ -260,7 +256,10 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
 
 }
 
-function resultGenerator(){
+function resultGenerator() {
+    start_time = start_time_array.reduce((total, currentValue) => total + currentValue, 0);
+    end_time = end_time_array.reduce((total, currentValue) => total + currentValue, 0);
+
     total_time = end_time - start_time
     time_taken_seconds = parseInt(total_time/1000)
     time_taken_minutes = 00;
@@ -354,12 +353,15 @@ function resultGenerator(){
     }
 
     result_page.style.display = 'flex'
-    localStorage.clear()
 }
 
 
-
-function questionBoxGenerator(){
+function questionBoxGenerator() {
+    if(current_q_no - 1 !== amount_of_questions && (typeof start_time_array[current_q_no - 1] === "undefined")) {
+        start_time_array[current_q_no - 1] = Date.now()
+        saveState("start_time_array", JSON.stringify(start_time_array))
+    }
+    
     const quotientBox =  document.querySelector('.quotient_from_user');
     const remainderBox = document.querySelector('.remainder_from_user');
     const answerBox = document.querySelector('.answer_from_user');
@@ -462,12 +464,7 @@ function volume_updater(){
     }
 }
 
-function createTestpage(){
-    if(start_time === 0) {
-        start_time = Date.now()
-        saveState("start_time", start_time)
-    }
-
+function createTestpage() {
     sound_player("click_sound", "start")
     sound_player("background_music", "stop")
     sound_player("test_page_bg_music", "start", "loop")
