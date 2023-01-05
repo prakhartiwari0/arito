@@ -257,10 +257,8 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
 }
 
 function resultGenerator() {
-    start_time = start_time_array.reduce((total, currentValue) => total + currentValue, 0);
-    end_time = end_time_array.reduce((total, currentValue) => total + currentValue, 0);
+    total_time = end_time_array.map((item, index) => item - start_time_array[index]).reduce((acc, val) => acc + val, 0);
 
-    total_time = end_time - start_time
     time_taken_seconds = parseInt(total_time/1000)
     time_taken_minutes = 00;
     time_taken_hours = 00;
