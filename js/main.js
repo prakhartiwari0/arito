@@ -492,6 +492,12 @@ function retakeTest() {
 	marks = 0
 	current_q_no = 1
 
+	const answer_divs = document.querySelectorAll('.q_no_div')
+
+	for (const elem of answer_divs) {
+		elem.remove()
+	}
+
 	document.body.style.backgroundImage = 'url(../assets/images/grid.jpg)'
 	document.body.style.backgroundColor = ''
 	createStartornotpage()
