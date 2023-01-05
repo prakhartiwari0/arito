@@ -1,5 +1,6 @@
 window.onbeforeunload = function (e) {
     e = e || window.event;
+    localStorage.setItem('close_time', Date.now() - start_time)
 
     // For IE and Firefox prior to version 4
     if (e) {
@@ -16,9 +17,8 @@ let real_answers_array = []
 let right_or_wrong_array = []
 let marks = 0;
 let current_q_no = 1;
-let start_time_array = []
-let end_time_array = []
 let start_time
+let close_time
 let end_time
 
 const saveState = (key, value) => {
@@ -37,13 +37,11 @@ window.onload = function () {
     diff_lvl = localStorage.getItem('diff_lvl') || ""
     amount_of_questions = parseInt(localStorage.getItem('amount_of_questions')) || null
     negative_marking = JSON.parse(localStorage.getItem('negative_marking')) || null
-    start_time_array = JSON.parse(localStorage.getItem('start_time_array')) || []
-    end_time_array = JSON.parse(localStorage.getItem('end_time_array')) || []
+    close_time = parseInt(localStorage.getItem('close_time')) || 0
 
     if(student_name !== "") {
         main_form_div.remove()
         start_test_div.style.display = 'flex'
-        start_time_array[current_q_no - 1] = Date.now()
         createTestpage()
         return
     }
@@ -185,10 +183,8 @@ function getAnswer(){
         user_answers_array[current_q_no - 1] = ans_of_user;
     else user_answers_array.push(ans_of_user);
 
-    end_time_array[current_q_no - 1] = Date.now()
     current_q_no = current_q_no + 1
 
-    saveState("end_time_array", JSON.stringify(end_time_array))
     saveState("current_q_no", current_q_no)
     saveState("questions_array", JSON.stringify(questions_array))
     saveState("user_answers_array", JSON.stringify(user_answers_array))
@@ -199,6 +195,7 @@ function getAnswer(){
 
     if (current_q_no == amount_of_questions + 1) {
         sound_player("final_question", "start")
+        end_time = Date.now()
         localStorage.clear()
         resultGenerator()
     }
@@ -258,7 +255,7 @@ function examiner(up_number, down_number, sign_of_question , answer_of_student){
 }
 
 function resultGenerator() {
-    total_time = end_time_array.map((item, index) => item - start_time_array[index]).reduce((acc, val) => acc + val, 0);
+    total_time = (end_time - start_time) + close_time
 
     time_taken_seconds = parseInt(total_time/1000)
     time_taken_minutes = 00;
@@ -355,12 +352,7 @@ function resultGenerator() {
 }
 
 
-function questionBoxGenerator(prev = false) {
-    if(current_q_no - 1 !== amount_of_questions && !prev && typeof start_time_array[current_q_no - 1] === "undefined") {
-        start_time_array[current_q_no - 1] = Date.now()
-        saveState("start_time_array", JSON.stringify(start_time_array))
-    }
-    
+function questionBoxGenerator() {
     const quotientBox =  document.querySelector('.quotient_from_user');
     const remainderBox = document.querySelector('.remainder_from_user');
     const answerBox = document.querySelector('.answer_from_user');
@@ -464,6 +456,8 @@ function volume_updater(){
 }
 
 function createTestpage() {
+    start_time = Date.now()
+
     sound_player("click_sound", "start")
     sound_player("background_music", "stop")
     sound_player("test_page_bg_music", "start", "loop")
@@ -519,7 +513,7 @@ function prevQuestion() {
     current_q_no--;
     sound_player("click_sound");
    
-    questionBoxGenerator(prev = true)
+    questionBoxGenerator()
 
 }
 
