@@ -16,6 +16,7 @@ let real_answers_array = []
 let right_or_wrong_array = []
 let marks = 0;
 let current_q_no = 1;
+let start_time
 
 const saveState = (key, value) => {
     localStorage.setItem(key, value)
@@ -33,6 +34,7 @@ window.onload = function () {
     diff_lvl = localStorage.getItem('diff_lvl') || ""
     amount_of_questions = parseInt(localStorage.getItem('amount_of_questions')) || null
     negative_marking = JSON.parse(localStorage.getItem('negative_marking')) || null
+    start_time = parseInt(localStorage.getItem('start_time')) || 0
 
     if(student_name !== "") {
         main_form_div.remove()
@@ -461,8 +463,10 @@ function volume_updater(){
 }
 
 function createTestpage(){
-    start_time = Date.now()
-    saveState("start_time", start_time)
+    if(start_time === 0) {
+        start_time = Date.now()
+        saveState("start_time", start_time)
+    }
 
     sound_player("click_sound", "start")
     sound_player("background_music", "stop")
