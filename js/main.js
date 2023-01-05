@@ -43,6 +43,7 @@ window.onload = function () {
     if(student_name !== "") {
         main_form_div.remove()
         start_test_div.style.display = 'flex'
+        start_time_array[current_q_no - 1] = Date.now()
         createTestpage()
         return
     }
@@ -354,8 +355,8 @@ function resultGenerator() {
 }
 
 
-function questionBoxGenerator() {
-    if(current_q_no - 1 !== amount_of_questions) {
+function questionBoxGenerator(prev = false) {
+    if(current_q_no - 1 !== amount_of_questions && !prev && typeof start_time_array[current_q_no - 1] === "undefined") {
         start_time_array[current_q_no - 1] = Date.now()
         saveState("start_time_array", JSON.stringify(start_time_array))
     }
@@ -518,7 +519,7 @@ function prevQuestion() {
     current_q_no--;
     sound_player("click_sound");
    
-    questionBoxGenerator()
+    questionBoxGenerator(prev = true)
 
 }
 
