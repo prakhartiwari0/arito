@@ -357,7 +357,7 @@ function resultGenerator() {
 
 
 function questionBoxGenerator() {
-    if(current_q_no - 1 !== amount_of_questions && (typeof start_time_array[current_q_no - 1] === "undefined")) {
+    if(current_q_no - 1 !== amount_of_questions) {
         start_time_array[current_q_no - 1] = Date.now()
         saveState("start_time_array", JSON.stringify(start_time_array))
     }
