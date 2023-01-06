@@ -87,15 +87,12 @@ input[type="number"] {
   width: 1.5rem;
 }
 ::-webkit-scrollbar-track {
-  margin-block: 1rem;
-  border-radius: 100vw;
   background-color: var(--pink);
   padding: 1em;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--green);
-  border-radius: 100vw;
   border: 2px solid black;
 }
 ::-webkit-scrollbar-thumb:hover {
