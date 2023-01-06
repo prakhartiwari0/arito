@@ -132,6 +132,17 @@ footer .contact_link:hover, .contact_link strong{
   transform: scale(1.1);
 }
 
+.comments_div {
+  margin-top: 2rem;
+  border-top: 3px solid black;
+  background-color: #bbe29e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+
 @media (min-width: 600px) {
   body {
     font-size: 26px;
@@ -157,5 +168,8 @@ footer .contact_link:hover, .contact_link strong{
   }
   .front .logo_img {
     width: 100%;
+  }
+  .giscus {
+    width: 50%;
   }
 }
