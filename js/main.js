@@ -12,9 +12,9 @@ window.onbeforeunload = function (e) {
 // TEST FORM NODES REFERENCES
 const main_form_div = document.querySelector('.test_form')
 const form_submit_btn = document.querySelector('#submit_test_form')
-form_submit_btn.addEventListener('click', (e) => {
-    e.preventDefault()
-    getValues()
+form_submit_btn.addEventListener('click', e => {
+	e.preventDefault()
+	getValues()
 })
 
 // STARTING TEST NODES REFERENCES
@@ -73,108 +73,106 @@ let marks = 0
 let current_q_no = 1
 
 function get_min_max_numbers(diff_lvl) {
-    let maximum_num;
-    let mininum_num;
-    if (diff_lvl === "very_easy") {
-        mininum_num = 1
-        maximum_num = 10
-    }
-    else if (diff_lvl === "easy") {
-        mininum_num = 11
-        maximum_num = 50
-    }
-    else if (diff_lvl === "medium") {
-        mininum_num = 51
-        maximum_num = 100
-    }
-    else if (diff_lvl === "hard") {
-        mininum_num = 101
-        maximum_num = 1000
-    }
-    else if (diff_lvl === "very_hard") {
-        mininum_num = 1001
-        maximum_num = 10000
-    }
-    return [mininum_num, maximum_num]
+	let maximum_num
+	let mininum_num
+	if (diff_lvl === 'very_easy') {
+		mininum_num = 1
+		maximum_num = 10
+	} else if (diff_lvl === 'easy') {
+		mininum_num = 11
+		maximum_num = 50
+	} else if (diff_lvl === 'medium') {
+		mininum_num = 51
+		maximum_num = 100
+	} else if (diff_lvl === 'hard') {
+		mininum_num = 101
+		maximum_num = 1000
+	} else if (diff_lvl === 'very_hard') {
+		mininum_num = 1001
+		maximum_num = 10000
+	}
+	return [mininum_num, maximum_num]
 }
-
 
 function generateNumbers_and_sign(diff_lvl, sign) {
-    let arithmetic_sign;
+	let arithmetic_sign
 
-    min_max = get_min_max_numbers(diff_lvl)
-    min = min_max[0]
-    max = min_max[1]
-    upper_Number = Math.floor(Math.random() * (max - min + 1) + min)
-    down_Number = Math.floor(Math.random() * (upper_Number - min + 1) + min)
+	min_max = get_min_max_numbers(diff_lvl)
+	min = min_max[0]
+	max = min_max[1]
+	upper_Number = Math.floor(Math.random() * (max - min + 1) + min)
+	down_Number = Math.floor(Math.random() * (upper_Number - min + 1) + min)
 
-    if (sign ==="addition") {
-        arithmetic_sign = "+"
-    }
+	if (sign === 'addition') {
+		arithmetic_sign = '+'
+	} else if (sign === 'subtraction') {
+		arithmetic_sign = '-'
+	} else if (sign === 'multiplication') {
+		arithmetic_sign = 'x'
+	} else if (sign === 'division') {
+		arithmetic_sign = '/'
+	}
 
-    else if (sign ==="subtraction") {
-        arithmetic_sign = "-"
-    }
+	// AVOIDING REPEATING PREVIOUS QUESTION's NUMBERS
+	for (const num in questions_array) {
+		if (
+			upper_Number == questions_array[num][0] &&
+			down_Number == questions_array[num][1]
+		) {
+			generateNumbers_and_sign(diff_lvl, sign)
+		}
+	}
 
-    else if (sign ==="multiplication") {
-        arithmetic_sign = "x"
-    }
-
-    else if (sign ==="division") {
-        arithmetic_sign = "/"
-    }
-
-    // AVOIDING REPEATING PREVIOUS QUESTION's NUMBERS
-    for (const num in questions_array) {
-        if (upper_Number == questions_array[num][0] && down_Number == questions_array[num][1]) {
-            generateNumbers_and_sign(diff_lvl, sign)        
-        }
-    }
-
-    return [upper_Number, down_Number, arithmetic_sign]
-    
+	return [upper_Number, down_Number, arithmetic_sign]
 }
 
-function getAnswer(){
-    sound_player("click_sound")
+function getAnswer() {
+	sound_player('click_sound')
 
-    let ans_of_user;
-    if (q_type == 'division') {
-        const quotient_from_user = document.querySelector('.quotient_from_user').value
-        const remainder_from_user = document.querySelector('.remainder_from_user').value
-        ans_of_user = [parseInt(quotient_from_user), parseInt(remainder_from_user)]
-        if (isNaN(ans_of_user[0]) || isNaN(ans_of_user[1])) {
-            return;            
-        }
-        if (ans_of_user[0] > 9999800001 || ans_of_user[1] > 9999800001) {
-            return;
+	let ans_of_user
+	if (q_type == 'division') {
+		const quotient_from_user = document.querySelector(
+			'.quotient_from_user'
+		).value
+		const remainder_from_user = document.querySelector(
+			'.remainder_from_user'
+		).value
+		ans_of_user = [
+			parseInt(quotient_from_user),
+			parseInt(remainder_from_user),
+		]
+		if (isNaN(ans_of_user[0]) || isNaN(ans_of_user[1])) {
+			return
+		}
+		if (ans_of_user[0] > 9999800001 || ans_of_user[1] > 9999800001) {
+			return
+		}
+	} else {
+		ans_of_user = parseInt(
+			document.querySelector('.answer_from_user').value
+		)
+		if (isNaN(ans_of_user)) {
+			return
+		}
+		if (ans_of_user > 9999800001) {
+			return
+		}
+	}
 
-        }
-    }
-    else{
-        ans_of_user = parseInt(document.querySelector('.answer_from_user').value)
-        if (isNaN(ans_of_user)) {
-            return;
-        }
-        if (ans_of_user > 9999800001) {
-            return;
-        }
-    }
+	if (user_answers_array[current_q_no - 1])
+		user_answers_array[current_q_no - 1] = ans_of_user
+	else user_answers_array.push(ans_of_user)
 
-    if(user_answers_array[current_q_no - 1]) 
-        user_answers_array[current_q_no - 1] = ans_of_user;
-    else user_answers_array.push(ans_of_user);
+	current_q_no = current_q_no + 1
 
-    current_q_no = current_q_no+1
+	if (current_q_no == amount_of_questions + 1) {
+		sound_player('final_question', 'start')
+		end_time = Date.now()
 
-    if (current_q_no == amount_of_questions + 1) {
-        sound_player("final_question", "start")
-        end_time = Date.now()
+		return resultGenerator()
+	}
 
-        return resultGenerator()
-    }
-    
-    questionBoxGenerator()
+	questionBoxGenerator()
 }
 
 function examiner(up_number, down_number, sign_of_question, answer_of_student) {
@@ -331,54 +329,50 @@ function resultGenerator() {
 	result_page.style.display = 'flex'
 }
 
-function questionBoxGenerator(){
+function questionBoxGenerator() {
+	const quotientBox = document.querySelector('.quotient_from_user')
+	const remainderBox = document.querySelector('.remainder_from_user')
+	const answerBox = document.querySelector('.answer_from_user')
 
-    const quotientBox =  document.querySelector('.quotient_from_user');
-    const remainderBox = document.querySelector('.remainder_from_user');
-    const answerBox = document.querySelector('.answer_from_user');
+	const ans_of_user = user_answers_array[current_q_no - 1]
 
-    const ans_of_user = user_answers_array[current_q_no-1];
+	if (q_type == 'division') {
+		quotientBox.value = ans_of_user?.[0] ?? ''
+		remainderBox.value = ans_of_user?.[1] ?? ''
+	} else {
+		answerBox.value = ans_of_user ?? ''
+	}
 
-    if (q_type == 'division') {
-        quotientBox.value = ans_of_user?.[0] ?? "";
-        remainderBox.value = ans_of_user?.[1] ?? "";
-    }
-    else{
-        answerBox.value = ans_of_user ?? "";
-    }
+	let up_num, down_num
 
-    let up_num, down_num;
+	if (questions_array[current_q_no - 1]) {
+		let q_stuff = questions_array[current_q_no - 1]
+		up_num = q_stuff[0]
+		down_num = q_stuff[1]
+	} else {
+		let q_stuff = generateNumbers_and_sign(diff_lvl, q_type)
+		up_num = q_stuff[0]
+		down_num = q_stuff[1]
+		sign.textContent = `${q_stuff[2]}`
+		questions_array.push([up_num, down_num])
+	}
 
-    if(questions_array[current_q_no-1]) {
-        let q_stuff = questions_array[current_q_no-1];
-        up_num = q_stuff[0];
-        down_num = q_stuff[1];
-    } else {
-        let q_stuff = generateNumbers_and_sign(diff_lvl ,q_type)
-        up_num = q_stuff[0];
-        down_num = q_stuff[1];
-        sign.textContent = `${q_stuff[2]}`;
-        questions_array.push([up_num, down_num])
-    }
+	upNumber.textContent = `${up_num}`
+	downNumber.textContent = `${down_num}`
+	q_number.textContent = `${current_q_no}`
 
-    upNumber.textContent = `${up_num}`
-    downNumber.textContent = `${down_num}`
-    q_number.textContent = `${current_q_no}`
+	// This part will focus the first input element in the page. It works both in (Add, Sub, Mul)[which has only one input element]
+	// and with Division which has two input elements.
+	const answer_input = document.querySelector('input')
+	answer_input.focus()
 
-    // This part will focus the first input element in the page. It works both in (Add, Sub, Mul)[which has only one input element]
-    // and with Division which has two input elements.
-    const answer_input = document.querySelector('input')
-    answer_input.focus()
-
-
-    if (current_q_no == amount_of_questions){
-        question_done_btn.classList.add("finish")
-        question_done_btn.textContent = "Let's Finish It!!";
-    } else {
-        question_done_btn.classList.remove("finish");
-        question_done_btn.textContent = "Done!";
-    }
-
+	if (current_q_no == amount_of_questions) {
+		question_done_btn.classList.add('finish')
+		question_done_btn.textContent = "Let's Finish It!!"
+	} else {
+		question_done_btn.classList.remove('finish')
+		question_done_btn.textContent = 'Done!'
+	}
 }
 
 function sound_player(
@@ -424,43 +418,43 @@ function volume_updater() {
 	}
 }
 
-function createTestpage(){
-    start_time = Date.now()
-    sound_player("click_sound", "start")
-    sound_player("background_music", "stop")
-    sound_player("test_page_bg_music", "start", "loop")
-    start_test_div.style.display = "none";
-    test_page.style.display = 'flex';
+function createTestpage() {
+	start_time = Date.now()
+	sound_player('click_sound', 'start')
+	sound_player('background_music', 'stop')
+	sound_player('test_page_bg_music', 'start', 'loop')
+	start_test_div.style.display = 'none'
+	test_page.style.display = 'flex'
 
-    if (q_type == "division") {
-        document.querySelector('.input_answer_div').remove()
-        document.querySelector('.division_answer_div').style.display = 'flex'
-    }
+	if (q_type == 'division') {
+		document.querySelector('.input_answer_div').remove()
+		document.querySelector('.division_answer_div').style.display = 'flex'
+	}
 
-    test_title.textContent = `${q_type.toUpperCase()}`
-    // if (isNaN(amount_of_questions)) {
-    //     amount_of_questions = 10;
-    // }
-    total_qs.textContent = `${amount_of_questions}`
+	test_title.textContent = `${q_type.toUpperCase()}`
+	// if (isNaN(amount_of_questions)) {
+	//     amount_of_questions = 10;
+	// }
+	total_qs.textContent = `${amount_of_questions}`
 
-    // This code will select all the input elements, and add the event listener to each of them,
-    // All the input elements are called because if we add event listener to only one input element, 
-    // then in the division questions's input elements, only the quotient input will be having this
-    // Event, and Remainder Input wouldn't have that, which is not a good thing.  
-    var answer_all_inputs = [].slice.call(document.querySelectorAll('input'));
+	// This code will select all the input elements, and add the event listener to each of them,
+	// All the input elements are called because if we add event listener to only one input element,
+	// then in the division questions's input elements, only the quotient input will be having this
+	// Event, and Remainder Input wouldn't have that, which is not a good thing.
+	var answer_all_inputs = [].slice.call(document.querySelectorAll('input'))
 
-    answer_all_inputs.forEach(function (element, index) {
-        element.addEventListener("keypress", function (event) {
-            // If the user presses the "Enter" key on the keyboard
-            if (event.key === "Enter") {
-                // Cancel the default action, if needed
-                event.preventDefault();
-                // Trigger the button element with a click
-                question_done_btn.click();
-            }
-        });
-    });
-    questionBoxGenerator()
+	answer_all_inputs.forEach(function (element, index) {
+		element.addEventListener('keypress', function (event) {
+			// If the user presses the "Enter" key on the keyboard
+			if (event.key === 'Enter') {
+				// Cancel the default action, if needed
+				event.preventDefault()
+				// Trigger the button element with a click
+				question_done_btn.click()
+			}
+		})
+	})
+	questionBoxGenerator()
 }
 
 function createStartornotpage() {
@@ -471,46 +465,51 @@ function createStartornotpage() {
 
 // document.querySelector('#difficulty').addEventListener('change', change_max_attr_val())
 
-function change_max_attr_val(){
-    diff_level = document.querySelector('#difficulty').value;
-    maximum_questions = range_calculator(get_min_max_numbers(diff_level)[1])
-    if (maximum_questions>55) {
-        no_of_ques_label = document.querySelector('#no_of_ques_label').textContent = `No. of Questions`
-
-    }
-    else{
-        no_of_ques_label = document.querySelector('#no_of_ques_label').textContent = `No. of Questions (below ${maximum_questions+1})`
-    }
-    document.querySelector('#no_of_ques').setAttribute('max', maximum_questions)
+function change_max_attr_val() {
+	diff_level = document.querySelector('#difficulty').value
+	maximum_questions = range_calculator(get_min_max_numbers(diff_level)[1])
+	if (maximum_questions > 55) {
+		no_of_ques_label = document.querySelector(
+			'#no_of_ques_label'
+		).textContent = `No. of Questions`
+	} else {
+		no_of_ques_label = document.querySelector(
+			'#no_of_ques_label'
+		).textContent = `No. of Questions (below ${maximum_questions + 1})`
+	}
+	document.querySelector('#no_of_ques').setAttribute('max', maximum_questions)
 }
-
 
 function getValues() {
-    student_name = document.querySelector('#student_name').value;
-    q_type = document.querySelector('#questions_type').value;
-    diff_lvl = document.querySelector('#difficulty').value;
-    amount_of_questions = parseInt(document.querySelector('#no_of_ques').value);
-    negative_marking = document.querySelector('#negmarking').checked;
-    
-    max_questions = parseInt(document.querySelector('#no_of_ques').getAttribute('max'))
-    if (student_name.length < 1 || isNaN(amount_of_questions) || amount_of_questions > max_questions){
-        return;
-    }
+	student_name = document.querySelector('#student_name').value
+	q_type = document.querySelector('#questions_type').value
+	diff_lvl = document.querySelector('#difficulty').value
+	amount_of_questions = parseInt(document.querySelector('#no_of_ques').value)
+	negative_marking = document.querySelector('#negmarking').checked
 
-    sound_player("click_sound", "start")
-    createStartornotpage()
+	max_questions = parseInt(
+		document.querySelector('#no_of_ques').getAttribute('max')
+	)
+	if (amount_of_questions < 1 && amount_of_questions > 56) return
+	if (
+		student_name.length < 1 ||
+		isNaN(amount_of_questions) ||
+		amount_of_questions > max_questions
+	) {
+		return
+	}
+
+	sound_player('click_sound', 'start')
+	createStartornotpage()
 }
 
-
-function range_calculator(num){
-    let number = num
-    if (number %2==0) {
-        return number * (number / 2) + (number /2)
-        
-    }
-    else{
-        return number + ((number - 1)*((number - 1) / 2) + ((number -1)/2))
-    }
+function range_calculator(num) {
+	let number = num
+	if (number % 2 == 0) {
+		return number * (number / 2) + number / 2
+	} else {
+		return number + ((number - 1) * ((number - 1) / 2) + (number - 1) / 2)
+	}
 }
 
 function prevQuestion() {
