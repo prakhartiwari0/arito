@@ -1,15 +1,14 @@
-
 window.onbeforeunload = function (e) {
-    e = e || window.event;
+	e = e || window.event
 
-    // For IE and Firefox prior to version 4
-    if (e) {
-        e.returnValue = 'Sure?';
-    }
+	// For IE and Firefox prior to version 4
+	if (e) {
+		e.returnValue = 'Sure?'
+	}
 
-    // For Safari
-    return 'Sure?';
-};
+	// For Safari
+	return 'Sure?'
+}
 // TEST FORM NODES REFERENCES
 const main_form_div = document.querySelector('.test_form')
 const form_submit_btn = document.querySelector('#submit_test_form')
@@ -18,26 +17,22 @@ form_submit_btn.addEventListener('click', (e) => {
     getValues()
 })
 
-
 // STARTING TEST NODES REFERENCES
 const test_page = document.querySelector('.test_page')
 const start_test_div = document.querySelector('.start_test_div')
 const start_now_btn = document.querySelector('.start_now_btn')
 
-
-
-
-
 // TEST PAGE NODES REFERENCES
 const test_title = document.querySelector('.test_title')
 const q_number = document.querySelector('.q_number')
 const total_qs = document.querySelector('.total_qs')
-const prev_btn = document.querySelector(".prev_question_btn");
-const next_btn = document.querySelector(".next_question_btn");
+const prev_btn = document.querySelector('.prev_question_btn')
+const next_btn = document.querySelector('.next_question_btn')
 const upNumber = document.querySelector('.upNumber')
 const sign = document.querySelector('.sign')
 const downNumber = document.querySelector('.downNumber')
-
+const retestButton = document.querySelector('.retest_button')
+const newTestButton = document.querySelector('.new_test_button')
 
 // RESULTS PAGE NODES REFERENCES
 const result_page = document.querySelector('.result_page')
@@ -56,13 +51,11 @@ volume_slidebar.addEventListener('input', volume_updater)
 // const remainder_from_user =  document.querySelector('.remainder_from_user').value
 const question_done_btn = document.querySelector('.question_done_btn')
 
-sound_player("background_music", "start", "loop", 0.1)
+sound_player('background_music', 'start', 'loop', 0.1)
 question_done_btn.addEventListener('click', getAnswer)
 
 prev_btn.addEventListener('click', prevQuestion)
 next_btn.addEventListener('click', nextQuestion)
-
-
 
 // ENGINE OF THE TEST
 // 1. Decide up and down numbers
@@ -72,15 +65,12 @@ next_btn.addEventListener('click', nextQuestion)
 // 5. Keep the number of question in check
 // 6. Keep changing the time countdown above
 
-
-
 let questions_array = []
 let user_answers_array = []
 let real_answers_array = []
 let right_or_wrong_array = []
-let marks = 0;
-let current_q_no = 1;
-
+let marks = 0
+let current_q_no = 1
 
 function get_min_max_numbers(diff_lvl) {
     let maximum_num;
@@ -187,156 +177,159 @@ function getAnswer(){
     questionBoxGenerator()
 }
 
-function examiner(up_number, down_number, sign_of_question , answer_of_student){
-    let real_answer;
-    let real_quotient;
-    let real_remainder;
-    up_number = parseInt(up_number)
-    down_number = parseInt(down_number)
+function examiner(up_number, down_number, sign_of_question, answer_of_student) {
+	let real_answer
+	let real_quotient
+	let real_remainder
+	up_number = parseInt(up_number)
+	down_number = parseInt(down_number)
 
-    if (sign_of_question!="/") {
+	if (sign_of_question != '/') {
+		if (sign_of_question === '+') {
+			real_answer = up_number + down_number
+		} else if (sign_of_question === '-') {
+			real_answer = up_number - down_number
+		} else if (sign_of_question === 'x') {
+			real_answer = up_number * down_number
+		}
 
-        if (sign_of_question === "+") {
-            real_answer = up_number + down_number
-        }
-        else if (sign_of_question === "-") {
-            real_answer = up_number - down_number
-        }
-        else if (sign_of_question === "x") {
-            real_answer = up_number * down_number
-        }
+		if (real_answer === answer_of_student) {
+			marks = marks + 1
+			right_or_wrong_array.push('right')
+		} else {
+			if (negative_marking) {
+				marks = marks - 1
+			}
+			right_or_wrong_array.push('wrong')
+		}
+	} else if (sign_of_question == '/') {
+		real_quotient = parseInt(up_number / down_number)
+		real_remainder = parseInt(up_number % down_number)
+		real_answer = [real_quotient, real_remainder]
+		if (
+			real_answer[0] == answer_of_student[0] &&
+			real_answer[1] == answer_of_student[1]
+		) {
+			marks = marks + 1
+			right_or_wrong_array.push('right')
+		} else {
+			if (negative_marking) {
+				marks = marks - 1
+			}
+			right_or_wrong_array.push('wrong')
+		}
+	}
 
-        if (real_answer === answer_of_student) {
-            marks = marks + 1
-            right_or_wrong_array.push('right')
-        }
-        else {
-            if (negative_marking) {
-                marks = marks-1
-            }
-            right_or_wrong_array.push('wrong')
-        }
-        
-    }
-    else if (sign_of_question =="/") {
-        real_quotient = parseInt(up_number / down_number)
-        real_remainder = parseInt(up_number % down_number)
-        real_answer = [real_quotient, real_remainder]
-        if (real_answer[0] == answer_of_student[0] && real_answer[1] == answer_of_student[1]) {
-            marks = marks + 1
-            right_or_wrong_array.push('right')
-        }
-        else {
-            if (negative_marking) {
-                marks = marks - 1
-            }
-            right_or_wrong_array.push('wrong')
-        }
-    }
-
-    real_answers_array.push(real_answer);
-
+	real_answers_array.push(real_answer)
 }
 
-function resultGenerator(){
-    total_time = end_time - start_time
-    time_taken_seconds = parseInt(total_time/1000)
-    time_taken_minutes = 00;
-    time_taken_hours = 00;
+function resultGenerator() {
+	total_time = end_time - start_time
+	time_taken_seconds = parseInt(total_time / 1000)
+	time_taken_minutes = 00
+	time_taken_hours = 00
 
-    if (time_taken_seconds>59){
-        time_taken_minutes = parseInt(time_taken_seconds/60)
-        time_taken_seconds = parseInt(time_taken_seconds - (time_taken_minutes*60))
-    }
-    if (time_taken_minutes > 59) {
-        time_taken_hours = parseInt(time_taken_minutes / 60)
-        time_taken_minutes = parseInt(time_taken_minutes - (time_taken_hours * 60))
-    }
+	if (time_taken_seconds > 59) {
+		time_taken_minutes = parseInt(time_taken_seconds / 60)
+		time_taken_seconds = parseInt(
+			time_taken_seconds - time_taken_minutes * 60
+		)
+	}
+	if (time_taken_minutes > 59) {
+		time_taken_hours = parseInt(time_taken_minutes / 60)
+		time_taken_minutes = parseInt(
+			time_taken_minutes - time_taken_hours * 60
+		)
+	}
 
+	let total_time_taken_hrs_text_
+	let total_time_taken_mins_text_
+	let total_time_taken_secs_text_
+	if (time_taken_hours == 0) {
+		total_time_taken_hrs_text_ = ''
+	} else {
+		total_time_taken_hrs_text_ = `${time_taken_hours} hrs `
+	}
 
-    let total_time_taken_hrs_text_;
-    let total_time_taken_mins_text_;
-    let total_time_taken_secs_text_;
-    if (time_taken_hours==0) {
-        total_time_taken_hrs_text_ = ""
-    }
-    else{
-        total_time_taken_hrs_text_ = `${time_taken_hours} hrs `
-    }
+	if (time_taken_minutes == 0) {
+		total_time_taken_mins_text_ = ''
+	} else {
+		total_time_taken_mins_text_ = `${time_taken_minutes} mins `
+	}
 
-    if (time_taken_minutes ==0) {
-        total_time_taken_mins_text_ = ""
-    }
-    else {
-        total_time_taken_mins_text_ = `${time_taken_minutes} mins `
-    }
+	total_time_taken_secs_text_ = ` ${time_taken_seconds} secs`
+	total_time_taken_text =
+		total_time_taken_hrs_text_ +
+		total_time_taken_mins_text_ +
+		total_time_taken_secs_text_
+	// console.log(time_taken_hours, time_taken_minutes, time_taken_seconds)
 
-    total_time_taken_secs_text_ = ` ${time_taken_seconds} secs`
-    total_time_taken_text = total_time_taken_hrs_text_ + total_time_taken_mins_text_ + total_time_taken_secs_text_
-    // console.log(time_taken_hours, time_taken_minutes, time_taken_seconds)
+	//Generate result array with user_answers_array
+	questions_array.forEach(([up_num, down_num], index) => {
+		examiner(up_num, down_num, sign.textContent, user_answers_array[index])
+	})
 
+	sound_player('test_page_bg_music', 'stop')
 
-    //Generate result array with user_answers_array
-    questions_array.forEach( ([up_num, down_num], index) => {
-        examiner(up_num, down_num, sign.textContent, user_answers_array[index]);
-    })
+	// To change the background of volume bar, it was showing the background image of body, which was looking weird at the bottom.
+	document.body.style.backgroundImage = 'none'
+	document.body.style.backgroundColor = 'var(--green)'
 
+	test_page.style.display = 'none'
+	total_marks.textContent = `${amount_of_questions}`
+	marks_obtained.textContent = `${marks}`
+	time_taken.textContent = `${total_time_taken_text}`
+	user_name.textContent = `${student_name}`
+	percent_obtained.textContent = `${(
+		(marks / amount_of_questions) *
+		100
+	).toFixed(2)}`
 
-    sound_player("test_page_bg_music", "stop")
+	const all_questions_div = document.querySelector('.all_questions_div')
 
-    // To change the background of volume bar, it was showing the background image of body, which was looking weird at the bottom.
-    document.body.style.backgroundImage = 'none';
-    document.body.style.backgroundColor = "var(--green)"
+	let n = 1
+	while (n != amount_of_questions + 1) {
+		let q_num = n
+		let upnum = questions_array[n - 1][0]
+		let downum = questions_array[n - 1][1]
+		let s_of_q = sign.textContent
+		let user_answer_ = user_answers_array[n - 1]
+		let real_answer_ = real_answers_array[n - 1]
+		let right_or_wrong_
+		if (right_or_wrong_array[n - 1] == 'right') {
+			right_or_wrong_ = 'is_correct'
+			right_or_wrong_question_box = 'rightly_answered'
+		} else if (right_or_wrong_array[n - 1] == 'wrong') {
+			right_or_wrong_ = 'is_wrong'
+			right_or_wrong_question_box = 'wrongly_answered'
+		}
 
-    test_page.style.display = 'none';
-    total_marks.textContent = `${amount_of_questions}`
-    marks_obtained.textContent = `${marks}`
-    time_taken.textContent = `${total_time_taken_text}`
-    user_name.textContent = `${student_name}`
-    percent_obtained.textContent = `${((marks / amount_of_questions)*100).toFixed(2)}`
-    
-    const all_questions_div = document.querySelector('.all_questions_div')
+		let question_template_element =
+			document.querySelector('.question_template')
+		let each_question_template =
+			question_template_element.content.cloneNode(true)
 
-    let n = 1
-    while (n!=amount_of_questions+1) {
-        let q_num = n
-        let upnum = questions_array[n-1][0]
-        let downum = questions_array[n-1][1]
-        let s_of_q = sign.textContent
-        let user_answer_ = user_answers_array[n-1]
-        let real_answer_ = real_answers_array[n-1]
-        let right_or_wrong_; 
-        if (right_or_wrong_array[n-1]=="right") {
-            right_or_wrong_ = "is_correct"
-            right_or_wrong_question_box = "rightly_answered"
-        }
-        else if (right_or_wrong_array[n - 1] == "wrong") {
-            right_or_wrong_ = "is_wrong"  
-            right_or_wrong_question_box = "wrongly_answered"
-        }
+		each_question_template
+			.querySelector('.question-serialno')
+			.classList.add(right_or_wrong_question_box)
+		each_question_template.querySelector('.q_num').innerText = q_num
+		each_question_template.querySelector('.upNumber').innerText = upnum
+		each_question_template.querySelector('.sign').innerText = s_of_q
+		each_question_template.querySelector('.downNum').innerText = downum
+		each_question_template
+			.querySelector('.user_answer')
+			.classList.add(right_or_wrong_)
+		each_question_template.querySelector('.user_answer').innerText =
+			user_answer_
+		each_question_template.querySelector('.real_answer').innerText =
+			real_answer_
 
-        let question_template_element = document.querySelector(".question_template")
-        let each_question_template = question_template_element.content.cloneNode(true)
+		all_questions_div.appendChild(each_question_template)
+		n = n + 1
+	}
 
-        each_question_template.querySelector(".question-serialno").classList.add(right_or_wrong_question_box)
-        each_question_template.querySelector(".q_num").innerText = q_num
-        each_question_template.querySelector(".upNumber").innerText = upnum
-        each_question_template.querySelector(".sign").innerText = s_of_q
-        each_question_template.querySelector(".downNum").innerText = downum
-        each_question_template.querySelector(".user_answer").classList.add(right_or_wrong_)
-        each_question_template.querySelector(".user_answer").innerText = user_answer_
-        each_question_template.querySelector(".real_answer").innerText = real_answer_
-        
-        all_questions_div.appendChild(each_question_template)
-        n = n+1
-    }
-
-    result_page.style.display = 'flex'
-
-
+	result_page.style.display = 'flex'
 }
-
-
 
 function questionBoxGenerator(){
 
@@ -385,44 +378,50 @@ function questionBoxGenerator(){
         question_done_btn.classList.remove("finish");
         question_done_btn.textContent = "Done!";
     }
+
 }
 
-function sound_player(audio_name, start_or_stop="start", loop_or_noloops="noloop", volume=volume_slidebar.value*0.1){
-    let sound;
-    
-    sound = document.querySelector(`.${audio_name}`);
-    if (sound.duration<5){
-        if (sound.currentTime != 0) {
-            sound.currentTime = 0;
-        }
-    }
-    // else{
-    // }
-    
-    if (start_or_stop == "start") {
-        sound.play()
-        sound.play().catch(function (error) {console.log("Browser cannot play sound without user interaction first")});
-    }
-    else if (start_or_stop == "stop") {
-        sound.pause()
+function sound_player(
+	audio_name,
+	start_or_stop = 'start',
+	loop_or_noloops = 'noloop',
+	volume = volume_slidebar.value * 0.1
+) {
+	let sound
 
-    }
-    if (loop_or_noloops == "loop") {
-        sound.loop = true
-    }
-    else if (loop_or_noloops == "noloop") {
-        sound.loop = false
-    }
+	sound = document.querySelector(`.${audio_name}`)
+	if (sound.duration < 5) {
+		if (sound.currentTime != 0) {
+			sound.currentTime = 0
+		}
+	}
+	// else{
+	// }
 
-    sound.volume = volume;
-    
+	if (start_or_stop == 'start') {
+		sound.play()
+		sound.play().catch(function (error) {
+			console.log(
+				'Browser cannot play sound without user interaction first'
+			)
+		})
+	} else if (start_or_stop == 'stop') {
+		sound.pause()
+	}
+	if (loop_or_noloops == 'loop') {
+		sound.loop = true
+	} else if (loop_or_noloops == 'noloop') {
+		sound.loop = false
+	}
+
+	sound.volume = volume
 }
 
-function volume_updater(){
-    let volume = volume_slidebar.value * 0.1
-    for (let i = 0; i < all_audio.length; i++) {
-        all_audio[i].volume = volume
-    }
+function volume_updater() {
+	let volume = volume_slidebar.value * 0.1
+	for (let i = 0; i < all_audio.length; i++) {
+		all_audio[i].volume = volume
+	}
 }
 
 function createTestpage(){
@@ -464,13 +463,11 @@ function createTestpage(){
     questionBoxGenerator()
 }
 
-
-function createStartornotpage(){
-    main_form_div.remove()
-    start_test_div.style.display = 'flex'
-    start_now_btn.addEventListener('click', createTestpage)
+function createStartornotpage() {
+	main_form_div.remove()
+	start_test_div.style.display = 'flex'
+	start_now_btn.addEventListener('click', createTestpage)
 }
-
 
 // document.querySelector('#difficulty').addEventListener('change', change_max_attr_val())
 
@@ -517,22 +514,47 @@ function range_calculator(num){
 }
 
 function prevQuestion() {
-    if(current_q_no <= 1)
-        return;
+	if (current_q_no <= 1) return
 
-    current_q_no--;
-    sound_player("click_sound");
-   
-    questionBoxGenerator()
+	current_q_no--
+	sound_player('click_sound')
 
+	questionBoxGenerator()
 }
 
 function nextQuestion() {
-    if(current_q_no === amount_of_questions || !questions_array[current_q_no])
-        return;
+	if (current_q_no === amount_of_questions || !questions_array[current_q_no])
+		return
 
-    current_q_no++;
-    sound_player("click_sound");
+	current_q_no++
+	sound_player('click_sound')
 
-    questionBoxGenerator()
+	questionBoxGenerator()
 }
+
+function retakeTest() {
+	result_page.style.display = 'none'
+	questions_array = []
+	user_answers_array = []
+	real_answers_array = []
+	right_or_wrong_array = []
+	marks = 0
+	current_q_no = 1
+
+	const answer_divs = document.querySelectorAll('.q_no_div')
+
+	for (const elem of answer_divs) {
+		elem.remove()
+	}
+
+	document.body.style.backgroundImage = 'url(../assets/images/grid.jpg)'
+	document.body.style.backgroundColor = ''
+	createStartornotpage()
+}
+
+function newTest() {
+	window.location.reload()
+}
+
+retestButton.addEventListener('click', retakeTest)
+newTestButton.addEventListener('click', newTest)
