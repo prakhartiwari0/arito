@@ -429,7 +429,7 @@ function createTestpage(){
     sound_player("click_sound", "start")
     sound_player("background_music", "stop")
     sound_player("test_page_bg_music", "start", "loop")
-    start_test_div.remove();
+    start_test_div.style.display = "none";
     test_page.style.display = 'flex';
 
     if (q_type == "division") {
