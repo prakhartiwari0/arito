@@ -13,7 +13,10 @@ window.onbeforeunload = function (e) {
 // TEST FORM NODES REFERENCES
 const main_form_div = document.querySelector('.test_form')
 const form_submit_btn = document.querySelector('#submit_test_form')
-form_submit_btn.addEventListener('click', getValues)
+form_submit_btn.addEventListener('click', (e) => {
+    e.preventDefault()
+    getValues()
+})
 
 
 // STARTING TEST NODES REFERENCES
@@ -78,32 +81,42 @@ let right_or_wrong_array = []
 let marks = 0;
 let current_q_no = 1;
 
+
+function get_min_max_numbers(diff_lvl) {
+    let maximum_num;
+    let mininum_num;
+    if (diff_lvl === "very_easy") {
+        mininum_num = 1
+        maximum_num = 10
+    }
+    else if (diff_lvl === "easy") {
+        mininum_num = 11
+        maximum_num = 50
+    }
+    else if (diff_lvl === "medium") {
+        mininum_num = 51
+        maximum_num = 100
+    }
+    else if (diff_lvl === "hard") {
+        mininum_num = 101
+        maximum_num = 1000
+    }
+    else if (diff_lvl === "very_hard") {
+        mininum_num = 1001
+        maximum_num = 10000
+    }
+    return [mininum_num, maximum_num]
+}
+
+
 function generateNumbers_and_sign(diff_lvl, sign) {
-    let max;
-    let min;
     let arithmetic_sign;
-    if (diff_lvl ==="very_easy") {
-        min = 1
-        max = 10
-    }
-    else if (diff_lvl ==="easy") {
-        min = 11
-        max = 50
-    }
-    else if (diff_lvl ==="medium") {
-        min = 50
-        max = 100
-    }
-    else if (diff_lvl ==="hard") {
-        min = 100
-        max = 1000
-    }
-    else if (diff_lvl ==="very_hard") {
-        min = 1000
-        max = 10000
-    }
-    upper_Number = Math.floor(Math.random() * (max - min) + min)
-    down_Number = Math.floor(Math.random() * (upper_Number - min) + min)
+
+    min_max = get_min_max_numbers(diff_lvl)
+    min = min_max[0]
+    max = min_max[1]
+    upper_Number = Math.floor(Math.random() * (max - min + 1) + min)
+    down_Number = Math.floor(Math.random() * (upper_Number - min + 1) + min)
 
     if (sign ==="addition") {
         arithmetic_sign = "+"
@@ -123,7 +136,7 @@ function generateNumbers_and_sign(diff_lvl, sign) {
 
     // AVOIDING REPEATING PREVIOUS QUESTION's NUMBERS
     for (const num in questions_array) {
-        if (upper_Number == num[0] && down_Number == num[1]) {
+        if (upper_Number == questions_array[num][0] && down_Number == questions_array[num][1]) {
             generateNumbers_and_sign(diff_lvl, sign)        
         }
     }
@@ -168,7 +181,7 @@ function getAnswer(){
         sound_player("final_question", "start")
         end_time = Date.now()
 
-        resultGenerator()
+        return resultGenerator()
     }
     
     questionBoxGenerator()
@@ -364,23 +377,6 @@ function questionBoxGenerator(){
     const answer_input = document.querySelector('input')
     answer_input.focus()
 
-    // This code will select all the input elements, and add the event listener to each of them,
-    // All the input elements are called because if we add event listener to only one input element, 
-    // then in the division questions's input elements, only the quotient input will be having this
-    // Event, and Remainder Input wouldn't have that, which is not a good thing.  
-    var answer_all_inputs = [].slice.call(document.querySelectorAll('input'));
-
-    answer_all_inputs.forEach(function (element, index) {
-        element.addEventListener("keypress", function (event) {
-            // If the user presses the "Enter" key on the keyboard
-            if (event.key === "Enter") {
-                // Cancel the default action, if needed
-                event.preventDefault();
-                // Trigger the button element with a click
-                question_done_btn.click();
-            }
-        });
-    });
 
     if (current_q_no == amount_of_questions){
         question_done_btn.classList.add("finish")
@@ -447,6 +443,24 @@ function createTestpage(){
     //     amount_of_questions = 10;
     // }
     total_qs.textContent = `${amount_of_questions}`
+
+    // This code will select all the input elements, and add the event listener to each of them,
+    // All the input elements are called because if we add event listener to only one input element, 
+    // then in the division questions's input elements, only the quotient input will be having this
+    // Event, and Remainder Input wouldn't have that, which is not a good thing.  
+    var answer_all_inputs = [].slice.call(document.querySelectorAll('input'));
+
+    answer_all_inputs.forEach(function (element, index) {
+        element.addEventListener("keypress", function (event) {
+            // If the user presses the "Enter" key on the keyboard
+            if (event.key === "Enter") {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                question_done_btn.click();
+            }
+        });
+    });
     questionBoxGenerator()
 }
 
@@ -458,19 +472,48 @@ function createStartornotpage(){
 }
 
 
+// document.querySelector('#difficulty').addEventListener('change', change_max_attr_val())
+
+function change_max_attr_val(){
+    diff_level = document.querySelector('#difficulty').value;
+    maximum_questions = range_calculator(get_min_max_numbers(diff_level)[1])
+    if (maximum_questions>55) {
+        no_of_ques_label = document.querySelector('#no_of_ques_label').textContent = `No. of Questions`
+
+    }
+    else{
+        no_of_ques_label = document.querySelector('#no_of_ques_label').textContent = `No. of Questions (below ${maximum_questions+1})`
+    }
+    document.querySelector('#no_of_ques').setAttribute('max', maximum_questions)
+}
+
+
 function getValues() {
     student_name = document.querySelector('#student_name').value;
     q_type = document.querySelector('#questions_type').value;
     diff_lvl = document.querySelector('#difficulty').value;
     amount_of_questions = parseInt(document.querySelector('#no_of_ques').value);
     negative_marking = document.querySelector('#negmarking').checked;
-
-    if (student_name.length < 1 || isNaN(amount_of_questions)){
+    
+    max_questions = parseInt(document.querySelector('#no_of_ques').getAttribute('max'))
+    if (student_name.length < 1 || isNaN(amount_of_questions) || amount_of_questions > max_questions){
         return;
     }
 
     sound_player("click_sound", "start")
     createStartornotpage()
+}
+
+
+function range_calculator(num){
+    let number = num
+    if (number %2==0) {
+        return number * (number / 2) + (number /2)
+        
+    }
+    else{
+        return number + ((number - 1)*((number - 1) / 2) + ((number -1)/2))
+    }
 }
 
 function prevQuestion() {

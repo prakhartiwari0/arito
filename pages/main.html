@@ -142,7 +142,7 @@
           </div>
           <div class="form_element">
             <label for="difficulty">Difficulty Level</label>
-            <select name="difficulty" id="difficulty" required>
+            <select name="difficulty" id="difficulty" required onchange="change_max_attr_val()">
               <option value="very_easy">Very Easy (1-10)</option>
               <option value="easy">Easy (11-50)</option>
               <option value="medium">Medium (50-100)</option>
@@ -151,8 +151,8 @@
             </select>
           </div>
           <div class="form_element">
-            <label for="no_of_ques">Number of Questions</label>
-            <input type="number" name="no_of_ques" id="no_of_ques" min="1" max="10000" required/>
+            <label for="no_of_ques" id="no_of_ques_label">No. of Questions (below 56)</label>
+            <input type="number" name="no_of_ques" id="no_of_ques" min="1" max="55" required/>
           </div>
 
           <div class="form_element negmark_div">
