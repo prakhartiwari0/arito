@@ -1,6 +1,8 @@
+let new_test = false
+
 window.onbeforeunload = function (e) {
     e = e || window.event;
-    localStorage.setItem('close_time', Date.now() - start_time)
+    if(!new_test) localStorage.setItem('close_time', Date.now() - start_time)
 
 	// For IE and Firefox prior to version 4
 	if (e) {
@@ -10,11 +12,60 @@ window.onbeforeunload = function (e) {
     // For Safari
     return 'Sure?';
 };
+
+const saveState = (key, value) => {
+    localStorage.setItem(key, value)
+}
+
+let questions_array = []
+let user_answers_array = []
+let real_answers_array = []
+let right_or_wrong_array = []
+let marks = 0;
+let current_q_no = 1;
+let start_time
+let close_time
+let end_time
+
+window.onload = function () {
+    user_answers_array = JSON.parse(localStorage.getItem('user_answers_array')) || []
+    student_name = localStorage.getItem('student_name') || ""
+    amount_of_questions = parseInt(localStorage.getItem('amount_of_questions')) || null
+    
+    if(student_name !== "" && amount_of_questions > user_answers_array.length) {
+        questions_array = JSON.parse(localStorage.getItem('questions_array')) || []
+        real_answers_array = JSON.parse(localStorage.getItem('real_answers_array')) || []
+        right_or_wrong_array = JSON.parse(localStorage.getItem('right_or_wrong_array')) || []
+        marks = parseInt(localStorage.getItem('marks')) || 0
+        current_q_no = parseInt(localStorage.getItem('current_q_no')) || 1
+        q_type = localStorage.getItem('q_type') || ""
+        diff_lvl = localStorage.getItem('diff_lvl') || ""
+        negative_marking = JSON.parse(localStorage.getItem('negative_marking')) || null
+        close_time = parseInt(localStorage.getItem('close_time')) || 0
+        main_form_div.remove()
+        start_test_div.style.display = 'flex'
+        createTestpage()
+        return
+    }
+
+    localStorage.clear()
+}
+
 // TEST FORM NODES REFERENCES
 const main_form_div = document.querySelector('.test_form')
 const form_submit_btn = document.querySelector('#submit_test_form')
 form_submit_btn.addEventListener('click', (e) => {
     e.preventDefault()
+    localStorage.clear()
+    questions_array = []
+    user_answers_array = []
+    real_answers_array = []
+    right_or_wrong_array = []
+    marks = 0;
+    current_q_no = 1;
+    start_time
+    close_time
+    end_time
     getValues()
 })
 
@@ -65,13 +116,6 @@ next_btn.addEventListener('click', nextQuestion)
 // 4. Do check for negative marking to deduct on every wrong answer
 // 5. Keep the number of question in check
 // 6. Keep changing the time countdown above
-
-let questions_array = []
-let user_answers_array = []
-let real_answers_array = []
-let right_or_wrong_array = []
-let marks = 0
-let current_q_no = 1
 
 function get_min_max_numbers(diff_lvl) {
     let maximum_num;
@@ -179,7 +223,6 @@ function getAnswer(){
     if (current_q_no == amount_of_questions + 1) {
         sound_player("final_question", "start")
         end_time = Date.now()
-        localStorage.clear()
         return resultGenerator()
     }
 
@@ -233,7 +276,8 @@ function examiner(up_number, down_number, sign_of_question, answer_of_student) {
 }
 
 function resultGenerator()  {
-	total_time = (end_time - start_time) + close_time
+    isNaN(close_time) ? total_time = end_time - start_time : total_time = (end_time - start_time) + close_time
+	
 
 	time_taken_seconds = parseInt(total_time / 1000)
 	time_taken_minutes = 00
@@ -538,8 +582,7 @@ function prevQuestion() {
 }
 
 function nextQuestion() {
-	if (current_q_no === amount_of_questions || !questions_array[current_q_no])
-		return
+	if (current_q_no === amount_of_questions || !questions_array[current_q_no]) return
 
 	current_q_no++
 	sound_player('click_sound')
@@ -555,6 +598,9 @@ function retakeTest() {
 	right_or_wrong_array = []
 	marks = 0
 	current_q_no = 1
+    start_time = 0
+    end_time = 0
+    close_time = 0
 
 	const answer_divs = document.querySelectorAll('.q_no_div')
 
@@ -568,6 +614,8 @@ function retakeTest() {
 }
 
 function newTest() {
+    localStorage.clear()
+    new_test = true
 	window.location.reload()
 }
 
