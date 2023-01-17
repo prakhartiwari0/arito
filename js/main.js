@@ -490,7 +490,7 @@ function getValues() {
 	max_questions = parseInt(
 		document.querySelector('#no_of_ques').getAttribute('max')
 	)
-	if (amount_of_questions < 1 && amount_of_questions > 56) return
+	if (amount_of_questions < 1 || amount_of_questions > 56) return
 	if (
 		student_name.length < 1 ||
 		isNaN(amount_of_questions) ||
