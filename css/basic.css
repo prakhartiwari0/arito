@@ -14,7 +14,8 @@ https://colorhunt.co/palette/ff8787f8c4b4e5ebb2bce29e */
   background-color: var(--pink);
 }
 
-button, a {
+button,
+a {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -32,15 +33,12 @@ button, a {
   --light-green: #e5ebb2;
   --gradient: linear-gradient(90deg, var(--green), var(--pink));
 
-  --text-shadow-outline-effect: 
-  -1px -1px 0px #000,
-   1px -1px 0px #000,
-  -1px 1px 0px #000,
-   1px 1px 0px #000;
+  --text-shadow-outline-effect: -1px -1px 0px #000, 1px -1px 0px #000,
+    -1px 1px 0px #000, 1px 1px 0px #000;
 }
 
 * {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 /* focus visible styling to interactive element to make the site accessible to  keyboard users */
 .btn:focus-visible {
@@ -49,16 +47,17 @@ button, a {
 }
 
 /* Keyboard Shortcut or Keys CSS for kbd element  */
-kbd{
+kbd {
   border-radius: 2px;
   padding: 2px;
-  background: rgb(255,255,255);
-background: radial-gradient(circle, rgba(255,255,255,1) 7%, rgba(214,214,214,1) 45%);
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 7%,
+    rgba(214, 214, 214, 1) 45%
+  );
   border: 1px solid black;
 }
-
-
-
 
 /* TO REMOVE THE UP AND DOWN ARROWS ON Input tags of type="number" */
 input::-webkit-outer-spin-button,
@@ -87,15 +86,12 @@ input[type="number"] {
   width: 1.5rem;
 }
 ::-webkit-scrollbar-track {
-  margin-block: 1rem;
-  border-radius: 100vw;
   background-color: var(--pink);
   padding: 1em;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--green);
-  border-radius: 100vw;
   border: 2px solid black;
 }
 ::-webkit-scrollbar-thumb:hover {
