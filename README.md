@@ -6,10 +6,6 @@
 </p>
 
 
-
-
-
-
 <p align="center">
 </a>
 <a href="https://github.com/prakhartiwari0/Arito/issues"><img src="https://img.shields.io/github/issues/prakhartiwari0/arito?style=plastic"></a>
@@ -50,9 +46,11 @@ This WebApp can be looked as the _"Web version of the previous Python App"_, but
 The WebApp, because of our lovely **open source community**, is now becoming much better. And I dream that this app will be used by kids all around the world to get better at maths by practicing their skills. (**read more about our future goals [here](#future-goals))**
 
 
-<p align="center"><strong>Arito Demo Video</strong></p>
+<p align="center"><strong>Arito App v2.7.2 Video</strong></p>
 
-https://user-images.githubusercontent.com/65062036/210134652-efe2768b-6923-4c96-8b47-cd3e5acac27f.mp4
+https://user-images.githubusercontent.com/65062036/213378174-722322c9-d8c5-4a0d-9759-bc6061189a49.mp4
+
+
 
 
 ---
