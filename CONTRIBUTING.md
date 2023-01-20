@@ -1,6 +1,8 @@
 
 <p align="center"><img width="350px" src="https://media.giphy.com/media/Q87YAYsdptMDJR4r68/giphy.gif"></p>
 
+# Contribution Guide 
+
 If you're reading this, you're probably creating a Pull Request or planning to do so and that's great!🥳
 
 ## **Table Of Contents**
@@ -111,10 +113,17 @@ git push origin <name_of_your_new_branch>
 You successfully made a pull request 🥳.
 
 ## Getting Your Changes Reviewed
-<p>
-Once you've submitted your pull request, you want other members of the development community to review whether integrating your change will cause problems for any users or the maintainability of the software. If you know someone who might notice mistakes then mention them in the comments.</p>
-<p>
-Reviewers may request you to rephrase or adjust things before they allow the changes to be integrated.  If they do, commit the amendments as new, separate changes, to allow the reviewers to see what changed since they last read your code.</p>
+
+Once you've submitted your pull request, you want other members of the development community to review whether integrating your change will cause problems for any users or the maintainability of the software. If you know someone who might notice mistakes then mention them in the comments.
+### Review Process :
++ During the review process, reviewers may request that you make changes or adjustments to your code. 
++ It is important to be responsive to these requests and to make any necessary changes before they are integrated.
++ When making changes, it is important to commit them as new, separate changes.
++ his allows reviewers to easily see what has changed since they last reviewed your code.
++ It is also important to keep in mind that the review process can take time and that reviewers may have other priorities. 
++ Be patient and persistent, but respectful of the reviewers' time and workload.
+
+*Following these steps will help ensure that your changes are thoroughly reviewed and that any potential issues are identified and addressed before they are integrated into the main branch.*
 
 ## Pull Request Reviewers Guide
 If someone requests your review on a pull request, read the title and description and assign any other collaborators who would want to know about the proposed change. If the reporter is interested then assign it to them.
