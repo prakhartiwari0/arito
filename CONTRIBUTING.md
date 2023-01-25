@@ -138,5 +138,5 @@ Once you've submitted your pull request, you want other members of the developme
 <div id="text" align="center">
 <h2>Happy Hacking...!</h2>
 </div>
-![2023-01-24 (1)](https://user-images.githubusercontent.com/115489262/214350275-0cbc4994-d775-438f-af44-c4c0bb611f7b.png)
+
 
