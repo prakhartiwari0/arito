@@ -30,7 +30,7 @@ In order to keep that process as pleasant as possible for all parties and to mai
 
 **This project is actively looking for contributors!**
 
-Arito is a begginer-friendly project, purely made using HTML, CSS & JavaScript.
+Arito is a beginner-friendly project, purely made using HTML, CSS & JavaScript.
 
 I'm happy to welcome all meaningful contributions from anyone. Any contributions are accepted, from fixing grammatical mistakes to implementing complex scripts.
 Thank you for helping out and remember, no contribution is too small.
@@ -138,3 +138,5 @@ Once you've submitted your pull request, you want other members of the developme
 <div id="text" align="center">
 <h2>Happy Hacking...!</h2>
 </div>
+
+
