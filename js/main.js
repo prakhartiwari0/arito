@@ -28,11 +28,14 @@ const q_number = document.querySelector('.q_number')
 const total_qs = document.querySelector('.total_qs')
 const prev_btn = document.querySelector('.prev_question_btn')
 const next_btn = document.querySelector('.next_question_btn')
+const pause_Button = document.querySelector('.pause_button')
 const upNumber = document.querySelector('.upNumber')
 const sign = document.querySelector('.sign')
 const downNumber = document.querySelector('.downNumber')
 const retestButton = document.querySelector('.retest_button')
 const newTestButton = document.querySelector('.new_test_button')
+const pauseButton = document.querySelector('.pause_button')
+const resumeButton = document.querySelector('.resume_test')
 
 // RESULTS PAGE NODES REFERENCES
 const result_page = document.querySelector('.result_page')
@@ -57,6 +60,7 @@ question_done_btn.addEventListener('click', getAnswer)
 prev_btn.addEventListener('click', prevQuestion)
 next_btn.addEventListener('click', nextQuestion)
 
+// pause_Button.addEventListener('click', pauseTest)
 // ENGINE OF THE TEST
 // 1. Decide up and down numbers
 // 2. Decide the sign
@@ -71,6 +75,8 @@ let real_answers_array = []
 let right_or_wrong_array = []
 let marks = 0
 let current_q_no = 1
+let paused = false;
+let totalPausedTime = 0;
 
 function get_min_max_numbers(diff_lvl) {
     let maximum_num;
@@ -224,6 +230,11 @@ function examiner(up_number, down_number, sign_of_question, answer_of_student) {
 }
 
 function resultGenerator() {
+	// if (paused == true) {
+	// 	total_time = totalPausedTime;
+	// } else {
+	// 	total_time = end_time - start_time
+	// }	
 	total_time = end_time - start_time
 	time_taken_seconds = parseInt(total_time / 1000)
 	time_taken_minutes = 00
@@ -532,6 +543,26 @@ function nextQuestion() {
 	questionBoxGenerator()
 }
 
+function pauseTest() {
+ 	paused = true;
+	let currentTime = Date.now();
+	let current_paused_time = currentTime - start_time;
+	totalPausedTime += current_paused_time
+	
+	document.getElementById("pause_modal").style.display = "block"
+	document.body.classList.add("modal-open")
+	document.getElementById("question-container").classList.add('background-blur')	
+}
+
+function resumeTest() {
+
+	start_time = Date.now();
+	
+	document.getElementById("pause_modal").style.display = "none";
+	document.body.classList.remove("modal-open");
+	document.getElementById("question-container").classList.remove('background-blur')
+}
+
 function retakeTest() {
 	result_page.style.display = 'none'
 	questions_array = []
@@ -558,3 +589,5 @@ function newTest() {
 
 retestButton.addEventListener('click', retakeTest)
 newTestButton.addEventListener('click', newTest)
+pauseButton.addEventListener('click', pauseTest)
+resumeButton.addEventListener('click', resumeTest)
