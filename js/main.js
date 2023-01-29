@@ -28,7 +28,6 @@ const q_number = document.querySelector('.q_number')
 const total_qs = document.querySelector('.total_qs')
 const prev_btn = document.querySelector('.prev_question_btn')
 const next_btn = document.querySelector('.next_question_btn')
-const pause_Button = document.querySelector('.pause_button')
 const upNumber = document.querySelector('.upNumber')
 const sign = document.querySelector('.sign')
 const downNumber = document.querySelector('.downNumber')
@@ -75,8 +74,8 @@ let real_answers_array = []
 let right_or_wrong_array = []
 let marks = 0
 let current_q_no = 1
-let paused = false;
-let totalPausedTime = 0;
+let paused = false
+let totalPausedTime = 0
 
 function get_min_max_numbers(diff_lvl) {
     let maximum_num;
@@ -230,12 +229,25 @@ function examiner(up_number, down_number, sign_of_question, answer_of_student) {
 }
 
 function resultGenerator() {
-	// if (paused == true) {
-	// 	total_time = totalPausedTime;
-	// } else {
-	// 	total_time = end_time - start_time
-	// }	
-	total_time = end_time - start_time
+	if (paused === true) {
+		let current_time = Date.now();
+		console.log(current_time)
+
+		final_paused_time = current_time - start_time
+		console.log(final_paused_time)
+
+		totalPausedTime += final_paused_time
+		console.log(totalPausedTime)
+
+		total_time = totalPausedTime;
+		console.log("paused")
+	} else {
+		total_time = end_time - start_time
+		console.log("non paused")
+	}	
+	console.log(start_time)
+	console.log(end_time)
+	console.log(total_time)
 	time_taken_seconds = parseInt(total_time / 1000)
 	time_taken_minutes = 00
 	time_taken_hours = 00
@@ -437,6 +449,7 @@ function volume_updater() {
 
 function createTestpage(){
     start_time = Date.now()
+	console.log(start_time)
     sound_player("click_sound", "start")
     sound_player("background_music", "stop")
     sound_player("test_page_bg_music", "start", "loop")
@@ -545,9 +558,16 @@ function nextQuestion() {
 
 function pauseTest() {
  	paused = true;
+	console.log(start_time)
+	
 	let currentTime = Date.now();
+	// console.log(currentTime)
+	
 	let current_paused_time = currentTime - start_time;
+	console.log(current_paused_time)
+	
 	totalPausedTime += current_paused_time
+	console.log(totalPausedTime)
 	
 	document.getElementById("pause_modal").style.display = "block"
 	document.body.classList.add("modal-open")
@@ -557,13 +577,15 @@ function pauseTest() {
 function resumeTest() {
 
 	start_time = Date.now();
-	
+	console.log(start_time);
 	document.getElementById("pause_modal").style.display = "none";
 	document.body.classList.remove("modal-open");
 	document.getElementById("question-container").classList.remove('background-blur')
 }
 
 function retakeTest() {
+	paused = false
+	totalPausedTime = 0
 	result_page.style.display = 'none'
 	questions_array = []
 	user_answers_array = []
