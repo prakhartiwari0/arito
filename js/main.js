@@ -34,7 +34,7 @@ const downNumber = document.querySelector('.downNumber')
 const retestButton = document.querySelector('.retest_button')
 const newTestButton = document.querySelector('.new_test_button')
 const pauseButton = document.querySelector('.pause_button')
-const resumeButton = document.querySelector('.resume_test')
+const resumeButton = document.querySelector('.resume_button')
 
 // RESULTS PAGE NODES REFERENCES
 const result_page = document.querySelector('.result_page')
@@ -229,8 +229,12 @@ function examiner(up_number, down_number, sign_of_question, answer_of_student) {
 }
 
 function resultGenerator() {
+	/* If the user has ever paused during the test then a final calculation
+	   for totalPausedTime is done before we give that value to total_time. 
+	   If the user has never paused then we do the else condition where we find 
+	   the total time using end_time - start_time */
 	if (paused === true) {
-		let current_time = Date.now();
+		let current_time = Date.now()
 		console.log(current_time)
 
 		final_paused_time = current_time - start_time
@@ -239,7 +243,7 @@ function resultGenerator() {
 		totalPausedTime += final_paused_time
 		console.log(totalPausedTime)
 
-		total_time = totalPausedTime;
+		total_time = totalPausedTime
 		console.log("paused")
 	} else {
 		total_time = end_time - start_time
@@ -556,18 +560,22 @@ function nextQuestion() {
 	questionBoxGenerator()
 }
 
+/* When the user has paused at least once we change the paused boolean value to 
+   true, and we take the currentTime when the user paused the test and subtract it 
+   with the start time to get the amount of time the user has written the test until 
+   now and add it to the totalPauseTime. When the user clicks resume button we set
+   start_time to a new Date.now and thus we get the time when the user started from
+   the resume and when he clicks pause again we pause and do the subtraction again
+   and add it to the totalPauseTime again. This goes on a loop until the user decides
+   to finish the test and during that time a final addition is done to the totalPausedTime
+   and is take as the totalTime. */
+
 function pauseTest() {
- 	paused = true;
-	console.log(start_time)
+ 	paused = true
 	
-	let currentTime = Date.now();
-	// console.log(currentTime)
-	
-	let current_paused_time = currentTime - start_time;
-	console.log(current_paused_time)
-	
+	let currentTime = Date.now()
+	let current_paused_time = currentTime - start_time
 	totalPausedTime += current_paused_time
-	console.log(totalPausedTime)
 	
 	document.getElementById("pause_modal").style.display = "block"
 	document.body.classList.add("modal-open")
@@ -575,16 +583,15 @@ function pauseTest() {
 }
 
 function resumeTest() {
-
-	start_time = Date.now();
-	console.log(start_time);
-	document.getElementById("pause_modal").style.display = "none";
-	document.body.classList.remove("modal-open");
+	start_time = Date.now()
+	console.log(start_time)
+	document.getElementById("pause_modal").style.display = "none"
+	document.body.classList.remove("modal-open")
 	document.getElementById("question-container").classList.remove('background-blur')
 }
 
 function retakeTest() {
-	paused = false
+	paused = false // when the user retakes the test we set paused back to false
 	totalPausedTime = 0
 	result_page.style.display = 'none'
 	questions_array = []
