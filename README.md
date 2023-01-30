@@ -27,6 +27,7 @@
 - [About Arito](#about_arito)
 - [How to Use it?](#how_to_use)
 - [Future Goals](#future-goals)
+- [Know the Mathematics Behind Arito (Notion Page)](https://prakhar0.notion.site/Arito-4deccc7f0ec94074a25fd9492773666b)
 - [How to Contribute? (We Love Contributors 😍)](https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines)
 
 <h1 align="center" id="about_arito">About Arito</h1>
@@ -98,6 +99,7 @@ People Who make Open-Source Successful! 🤝
 Contributions will be highly appreciated. 
 Guidelines for contibuting can be found in <a href="https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines">CONTRIBUTING.md</a>. 
 </p>
+
 
 <p align="center">
 <a href="https://github.com/prakhartiwari0/arito/graphs/contributors">
