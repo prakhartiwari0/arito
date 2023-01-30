@@ -261,6 +261,14 @@ body {
 	justify-content: center;
 	width: 100%;
 }
+
+.test_page .question_div .pause_btn_div {
+	margin-top: 0.5em;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
 .test_page .question_div .submit_btn_div button {
 	cursor: pointer;
 	font-size: 0.3em;
@@ -270,7 +278,21 @@ body {
 	border-radius: 12% 88% 11% 89% / 91% 13% 87% 9%;
 }
 
+.test_page .question_div .pause_btn_div button {
+	cursor: pointer;
+	font-size: 0.3em;
+	font-family: 'Indie Flower', cursive;
+	padding: 0.5em 0.5em;
+	border: 2px solid black;
+	border-radius: 12% 88% 11% 89% / 91% 13% 87% 9%;
+}
+
 .test_page .question_div .submit_btn_div button:is(:active, :focus) {
+	background-color: var(--green);
+	transform: scale(0.8);
+}
+
+.test_page .question_div .pause_btn_div button:is(:active, :focus) {
 	background-color: var(--green);
 	transform: scale(0.8);
 }
@@ -367,6 +389,10 @@ body {
 
 	.test_page .question_div .submit_btn_div button:is(:hover) {
 		background-color: var(--green);
+	}
+
+	.test_page .question_div .pause_btn_div button:is(:hover) {
+		background-color: var(--pink);
 	}
 }
 
