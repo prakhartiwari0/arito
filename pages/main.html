@@ -87,7 +87,7 @@
         <h2 class="question_details">Question: <span class="q_number"></span>/<span class="total_qs"></span> </h2>
     </header>
 
-    <div class="question_container">
+    <div id ="question-container" class="question_container">
       <button class="prev_question_btn">&#8249;</button>
       <div class="question_div">
         <div class="question_numbers_div">
@@ -116,12 +116,23 @@
         <div class="submit_btn_div">
             <button type="submit" class="question_done_btn">Done!</button>
         </div>
+        <div class="pause_btn_div">
+          <button class="pause_button">Pause!</button>
+        </div>
       </div>
       <button class="next_question_btn">&#8250;</button>
     </div>
     </div>
 
-
+    <div id="pause_modal" class="modal">
+      <div class="modal_content">
+        <p>Paused!</p>
+        <p>Feel free to click below to continue the test</p>
+        <div class="resume_btn_div">
+          <button class="resume_button">Resume</button>
+        </div>
+      </div>
+    </div>
 
 
     <div class="test_form">
