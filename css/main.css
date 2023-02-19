@@ -559,15 +559,6 @@ body {
   text-align: center;
 }
 
-#start_music {
-  font-size: 1.5em;
-  font-weight: 600;
-  cursor: default;
-  letter-spacing: 0.01em;
-  color: black;
-  padding-bottom: 1rem;
-}
-
 .volume_control_container input {
   height: 30px;
 }
