@@ -51,7 +51,8 @@ volume_slidebar.addEventListener('input', volume_updater)
 // const remainder_from_user =  document.querySelector('.remainder_from_user').value
 const question_done_btn = document.querySelector('.question_done_btn')
 
-sound_player('background_music', 'start', 'loop', 0.1)
+// the default volume is set to 0
+sound_player('background_music', 'start', 'loop', 0)
 question_done_btn.addEventListener('click', getAnswer)
 
 prev_btn.addEventListener('click', prevQuestion)
