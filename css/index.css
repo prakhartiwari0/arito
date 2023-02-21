@@ -132,6 +132,9 @@ footer .socials_div a {
   font-size: 1.2rem;
   padding: 1rem;
   border: 5px black solid;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip
 }
 footer .socials_div img {
   width: 2rem;

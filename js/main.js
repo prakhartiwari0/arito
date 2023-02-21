@@ -53,9 +53,12 @@ full_volume_img.addEventListener('click', full_volume);
 // const answer_from_user = document.querySelector('.answer_from_user').value
 // const quotient_from_user = document.querySelector('.quotient_from_user').value
 // const remainder_from_user =  document.querySelector('.remainder_from_user').value
-const question_done_btn = document.querySelector('.question_done_btn');
-sound_player('background_music', 'start', 'loop', 0.1);
-question_done_btn.addEventListener('click', getAnswer);
+
+const question_done_btn = document.querySelector('.question_done_btn')
+
+// the default volume is set to 0
+sound_player('background_music', 'start', 'loop', 0)
+question_done_btn.addEventListener('click', getAnswer)
 
 prev_btn.addEventListener('click', prevQuestion);
 next_btn.addEventListener('click', nextQuestion);
