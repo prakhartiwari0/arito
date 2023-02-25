@@ -343,6 +343,14 @@ body {
 }
 
 /* --------------- RESULT PAGE --------------- */
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
 .result_page {
   width: 100%;
   font-size: 3rem;
