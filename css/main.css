@@ -427,7 +427,7 @@ a.button {
   background-color: var(--green);
 }
 .result_page .results_page_navigation_div .back_to_home_page{
-  color = 'black';
+  color: 'black';
   text-decoration: none;
   background-color: var(--light-pink);
 }
