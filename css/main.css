@@ -418,7 +418,12 @@ body {
 .result_page .results_page_navigation_div .new_test_button:active {
   background-color: var(--green);
 }
-
+.result_page .results_page_navigation_div .back_to_home_page{
+  background-color: var(--light-pink);
+}
+.result_page .results_page_navigation_div .back_to_home_page:active {
+  background-color: var(--pink);
+}
 .result_page .front_results_page {
   width: 100%;
   padding: 1em 1em;
