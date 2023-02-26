@@ -400,17 +400,19 @@ a.button {
 .result_page .results_page_navigation_div {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  text-align: center;
+  gap: 1rem;
 }
 
 .result_page .results_page_navigation_div .retest_button {
   font-family: "Indie Flower", cursive;
-  font-size: 1.5rem;
+  font-size:medium;
   background-color: var(--pink);
   border: 2px solid black;
   padding: 0.2rem 1rem;
   transition: transform 0.1s;
   cursor: pointer;
+  display: flex;
 }
 
 .result_page .results_page_navigation_div .retest_button:active {
@@ -426,8 +428,6 @@ a.button {
   background-color: var(--green);
 }
 .result_page .results_page_navigation_div .back_to_home_page{
-  color: 'black';
-  text-decoration: none;
   background-color: var(--light-pink);
 }
 .result_page .results_page_navigation_div .back_to_home_page:active {
