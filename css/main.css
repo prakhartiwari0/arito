@@ -432,7 +432,6 @@ a.button {
 }
 .result_page .results_page_navigation_div .back_to_home_page:active {
   background-color: var(--pink);
-  transform: scale(0.8);
 }
 .result_page .results_page_navigation_div .back_to_home_page:hover {
   background-color: var(--pink);
