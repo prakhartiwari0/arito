@@ -343,6 +343,13 @@ body {
 }
 
 /* --------------- RESULT PAGE --------------- */
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: black;
+}
 .result_page {
   width: 100%;
   font-size: 3rem;
@@ -393,17 +400,19 @@ body {
 .result_page .results_page_navigation_div {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  text-align: center;
+  gap: 1rem;
 }
 
 .result_page .results_page_navigation_div .retest_button {
   font-family: "Indie Flower", cursive;
-  font-size: 1.5rem;
+  font-size:medium;
   background-color: var(--pink);
   border: 2px solid black;
   padding: 0.2rem 1rem;
   transition: transform 0.1s;
   cursor: pointer;
+  display: flex;
 }
 
 .result_page .results_page_navigation_div .retest_button:active {
@@ -418,7 +427,16 @@ body {
 .result_page .results_page_navigation_div .new_test_button:active {
   background-color: var(--green);
 }
-
+.result_page .results_page_navigation_div .back_to_home_page{
+  background-color: var(--light-pink);
+}
+.result_page .results_page_navigation_div .back_to_home_page:active {
+  background-color: var(--pink);
+}
+.result_page .results_page_navigation_div .back_to_home_page:hover {
+  background-color: var(--pink);
+  transform: scale(0.8);
+}
 .result_page .front_results_page {
   width: 100%;
   padding: 1em 1em;
