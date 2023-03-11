@@ -127,7 +127,7 @@ Once you've submitted your pull request, you want other members of the developme
 
 ## Pull Request Reviewers Guide
 + When someone requests your review on a pull request, it is important to carefully read the title and description to understand the proposed changes. 
-+ If there are other collaborators who would be interested in the proposed change, make sure to assign them to the pull request. Additionally, if the reporter has expressed interest, assign the pull request to them as well.
++ Assign any other collaborators who would want to know about the proposed change and if the reporter is interested then assign it to them as well.
 + This will help ensure that everyone is informed and aware of the proposed changes.
 + Decide whether you think your input is needed for the pull request to be merged.
 + If you believe that the pull request should wait for your further review before being merged, let the reporter and other reviewers know that you will review the code.
