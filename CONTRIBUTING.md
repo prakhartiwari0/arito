@@ -47,7 +47,7 @@ If you have any doubt on the contributing guide, feel free to [contact the owner
 ## Reporting Bugs
 This section guides you through submitting a bug report for Arito. Following these guidelines will help the maintainers, developers and the community understand your report 📝, reproduce the behavior, and find related reports 🔎.
 
-Please include as much details as possible.  If you find a Closed issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
+Please include as much details as possible. If you find a Closed issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 
 ## Suggesting Enhancements
 
@@ -66,12 +66,12 @@ From the [GitHub Help Page of Using Pull Requests:](https://help.github.com/arti
 # Getting Started
 * Make sure you have a [GitHub account](https://github.com/signup/free).
 * [Create an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) in our issues tracker (if you are creating an issue, provide complete details of it), assuming one does not already exist.
-* Fork the Arito project on GitHub.  For general instructions on forking a GitHub project, see [Forking a Repo](https://help.github.com/articles/fork-a-repo/) and [Syncing a fork](https://help.github.com/articles/syncing-a-fork/).
+* Fork the Arito project on GitHub. For general instructions on forking a GitHub project, see [Forking a Repo](https://help.github.com/articles/fork-a-repo/) and [Syncing a fork](https://help.github.com/articles/syncing-a-fork/).
 * Familiarize yourself with the project.
 
 # Contributing Via A PR
 Once you have forked the repo, you need to create your code contributions within a new branch of your forked repo.  For general background on creating and managing branches within GitHub, see:  [Git Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
-Following are the steps to guide you:
+Here are the steps to guide you:
 
 **Step 0:** Clone the forked repo and cd into it
 ```
@@ -79,7 +79,7 @@ https://github.com/<Your username>/Arito.git
 cd Arito/
 ```
 
-**Step 1:** To begin, create a new branch, give a good [branch name](https://codingsight.com/git-branching-naming-convention-best-practices/).You usually create a branch like so:
+**Step 1:** To begin, create a new branch and give it a good [branch name](https://codingsight.com/git-branching-naming-convention-best-practices/). You usually create a branch like so:
 ```
 git checkout master
 git checkout -b [name_of_your_new_branch]
@@ -98,16 +98,17 @@ git add .              --> To stage all the modified files
 git commit -m "Write a meaningfull, small commit message"
 ```
 
-**Step 4:** Now push the changes for review
+**Step 4:** Now push the changes for the review
 ```
 git push origin <name_of_your_new_branch>
 ```
 
-**Step 5:** After you push your code, github would detect the new branch and an option would be there to create a pull request. 
+**Step 5:** Once you have pushed your code, GitHub will detect the new branch and provide you with an option to create a pull request. 
 
-**Step 6:** The last step is to give a detailed description and short title in your pull request.
-* Don't forget to [link your PR with the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) using specific keywords.
-* Provide a screen shot if necessary.
+
+**Step 6:** The final step is to provide a detailed description and a short title for your pull request.
+* Dont forget to [link your PR with the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) using specific keywords.
+* Provide a screenshot if necessary.
 * Give a detailed description on what you changed.
 
 You successfully made a pull request 🥳.
@@ -119,7 +120,7 @@ Once you've submitted your pull request, you want other members of the developme
 + During the review process, reviewers may request that you make changes or adjustments to your code. 
 + It is important to be responsive to these requests and to make any necessary changes before they are integrated.
 + When making changes, it is important to commit them as new, separate changes.
-+ his allows reviewers to easily see what has changed since they last reviewed your code.
++ This allows reviewers to easily see what has changed since they last reviewed your code.
 + It is also important to keep in mind that the review process can take time and that reviewers may have other priorities. 
 + Be patient and persistent, but respectful of the reviewers' time and workload.
 
@@ -128,10 +129,10 @@ Once you've submitted your pull request, you want other members of the developme
 ## Pull Request Reviewers Guide
 + When someone requests your review on a pull request, it is important to carefully read the title and description to understand the proposed changes. 
 + Assign any other collaborators who would want to know about the proposed change and if the reporter is interested then assign it to them as well.
-+ This will help ensure that everyone who needs to be aware of the proposed changes is informed.
++ This will help ensure that everyone is informed and aware of the proposed changes.
 + Decide whether you think your input is needed for the pull request to be merged.
-+  If you believe that the pull request should wait for your further review before being merged, let the reporter and other reviewers know that you will review the code.
-+  However, if you do not think that your input is needed, un-assign yourself as a reviewer and leave a comment explaining why you do not think your review is necessary.
++ If you believe that the pull request should wait for your further review before being merged, let the reporter and other reviewers know that you will review the code.
++ However, if you do not think that your input is needed, un-assign yourself as a reviewer and leave a comment explaining why you do not think your review is necessary.
 
 *To ensure the success of the project, it is crucial to approach pull request reviews with efficiency, clear communication, and a willingness to assist. This approach will aid in maintaining a steady development process and improve the overall quality of the project.*
 
