@@ -97,7 +97,7 @@ People Who make Open-Source Successful! 🤝
 
 <p align="center">
 Contributions will be highly appreciated. 
-Guidelines for contibuting can be found in <a href="https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines">CONTRIBUTING.md</a>. 
+Guidelines for contributing can be found in <a href="https://github.com/prakhartiwari0/Arito/blob/main/CONTRIBUTING.md#contributing-guidelines">CONTRIBUTING.md</a>. 
 </p>
 
 

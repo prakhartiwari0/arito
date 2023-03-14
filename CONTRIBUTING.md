@@ -53,7 +53,7 @@ Please include as much details as possible.  If you find a Closed issue that see
 
 This section guides you through submitting an enhancement suggestion for Arito, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion 📝 and find related suggestions 🔎.
 
-When you are filling in details for enhancements fill in as much detils as possible.
+When you are filling in details for enhancements fill in as much details as possible.
 
 ## Pull Requests
 
@@ -106,7 +106,7 @@ git push origin <name_of_your_new_branch>
 **Step 5:** After you push your code, github would detect the new branch and an option would be there to create a pull request. 
 
 **Step 6:** The last step is to give a detailed description and short title in your pull request.
-* Dont forget to [link your PR with the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) using specific keywords.
+* Don't forget to [link your PR with the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) using specific keywords.
 * Provide a screen shot if necessary.
 * Give a detailed description on what you changed.
 
