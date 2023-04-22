@@ -1,3 +1,7 @@
+*{
+  cursor: url(../assets/images/cursor-custom.png),auto !important;
+}
+
 body {
   /* min-height: 100vh; */
   background-image: url(../assets/images/grid.jpg);
