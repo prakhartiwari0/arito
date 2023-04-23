@@ -49,7 +49,10 @@ The WebApp, because of our lovely **open source community**, is now becoming muc
 
 <p align="center"><strong>Arito App v2.7.2 Video</strong></p>
 
-https://user-images.githubusercontent.com/65062036/213378174-722322c9-d8c5-4a0d-9759-bc6061189a49.mp4
+
+
+https://user-images.githubusercontent.com/65062036/233817831-776081b7-0dcf-4bd2-a425-18a3f6d5345a.mp4
+
 
 
 
