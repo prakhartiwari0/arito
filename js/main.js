@@ -13,7 +13,6 @@ window.onbeforeunload = function (e) {
 const main_form_div = document.querySelector('.test_form');
 const form_submit_btn = document.querySelector('#submit_test_form');
 form_submit_btn.addEventListener('click', (e) => {
-  e.preventDefault();
   getValues();
 });
 
