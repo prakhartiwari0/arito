@@ -581,12 +581,3 @@ function newTest() {
 
 retestButton.addEventListener('click', retakeTest);
 newTestButton.addEventListener('click', newTest);
-
-function validate_no_of_ques() {
-  let n=document.getElementById("no_of_ques").value
-  console.log(n)
-  if(n<1 || n>55){
-    alert("Invalid number of questions!\nThe number of questions should be between 1 and 56")
-    
-  }else return true;
-}
