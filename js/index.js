@@ -1,7 +1,7 @@
 let topbtn = document.getElementsByClassName("back-to-top")[0];
 
 window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 20) {
+    if (window.pageYOffset > 300) {
         topbtn.classList.add("active");
     } else {
         topbtn.classList.remove("active");
