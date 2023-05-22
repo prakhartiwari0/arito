@@ -122,6 +122,17 @@ body {
   background-color: var(--pink);
 }
 
+.error{
+  padding: 10px;
+  display: none;
+}
+
+.error.display-error{
+  display: block;
+  margin-bottom: 20px;
+  transform: translateY(-0.2);
+}
+
 /* --------------- TEST PAGE --------------- */
 .test_page {
   /* display: flex; */
