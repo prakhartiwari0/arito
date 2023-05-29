@@ -63,7 +63,7 @@ prev_btn.addEventListener('click', prevQuestion);
 next_btn.addEventListener('click', nextQuestion);
 
 const submit_test_form = document.getElementById('submit_test_form');
-const student_name = document.getElementById('student_name');
+let student_name = document.getElementById('student_name');
 const regex = /^[a-zA-Z\s]+$/; // Regex pattern to match only alphabetic characters and spaces
 
 submit_test_form.addEventListener('click', function(event) {
