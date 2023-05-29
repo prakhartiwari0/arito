@@ -62,6 +62,19 @@ question_done_btn.addEventListener('click', getAnswer)
 prev_btn.addEventListener('click', prevQuestion);
 next_btn.addEventListener('click', nextQuestion);
 
+const submit_test_form = document.getElementById('submit_test_form');
+const student_name = document.getElementById('student_name');
+const regex = /^[a-zA-Z\s]+$/; // Regex pattern to match only alphabetic characters and spaces
+
+submit_test_form.addEventListener('click', function(event) {
+  const isValid = regex.test(student_name.value);
+  if (!isValid) {
+    event.preventDefault(); // Prevents form submission
+    alert("Name should contain only alphabets.");
+  }
+});
+
+
 // ENGINE OF THE TEST
 // 1. Decide up and down numbers
 // 2. Decide the sign
