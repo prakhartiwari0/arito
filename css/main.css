@@ -290,6 +290,12 @@ body {
   background-color: yellow;
 }
 
+.ques_error{
+  margin-top: 10px;
+  color: red;
+  background-color: rgb(255, 227, 227);
+}
+
 @media screen and (max-width: 480px) {
   .question_container {
     margin-bottom: 2em;
