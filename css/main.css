@@ -409,7 +409,8 @@ a.button {
   font-size:medium;
   background-color: var(--pink);
   border: 2px solid black;
-  padding: 0.2rem 1rem;
+  border-radius: 12% 88% 11% 89% / 91% 13% 87% 9%;
+  padding: 0.4rem 1rem;
   transition: transform 0.1s;
   cursor: pointer;
   display: flex;
@@ -418,6 +419,7 @@ a.button {
 .result_page .results_page_navigation_div .retest_button:active {
   background-color: var(--light-pink);
   transform: scale(0.8);
+  border-radius: 12% 88% 11% 89% / 91% 13% 87% 9%;
 }
 
 .result_page .results_page_navigation_div .new_test_button {
