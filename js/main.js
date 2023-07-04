@@ -13,7 +13,8 @@ window.onbeforeunload = function (e) {
 const main_form_div = document.querySelector('.test_form');
 const form_submit_btn = document.querySelector('#submit_test_form');
 form_submit_btn.addEventListener('click', (e) => {
-  getValues();
+  if((document.querySelector('#student_name').value).length>25) alert("Please enter name between 0-25 characters");
+  else getValues();
 });
 
 // STARTING TEST NODES REFERENCES
