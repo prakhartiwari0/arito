@@ -5,8 +5,6 @@ body {
   background-image: url("../assets/images/Arito_Colors_Cover.png");
   background-repeat: no-repeat;
   background-size: cover;
-  overflow-x: hidden;
-  /* scroll-behavior: smooth; */
 }
 
 .front {
