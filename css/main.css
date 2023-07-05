@@ -25,12 +25,20 @@ body {
   font-size: 5em;
   color: var(--pink);
   letter-spacing: 0.1em;
-  animation-name: fidgeting;
+  /* animation-name: fidgeting;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
   z-index: -1;
-  text-shadow: 2px 2px 1px black;
+  text-shadow: 2px 2px 1px black; */
+  transition: transform 0.5s;
+
 }
+
+.test_form:hover h1{
+  transform: scale(1.1);
+}
+
+
 
 .main_form {
   display: flex;
