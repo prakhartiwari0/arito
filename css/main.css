@@ -419,7 +419,6 @@ a.button {
 .result_page .results_page_navigation_div .retest_button:active {
   background-color: var(--light-pink);
   transform: scale(0.8);
-  border-radius: 12% 88% 11% 89% / 91% 13% 87% 9%;
 }
 
 .result_page .results_page_navigation_div .new_test_button {
