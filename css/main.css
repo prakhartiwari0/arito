@@ -681,3 +681,7 @@ input[type="range"]:focus::-ms-fill-lower {
 input[type="range"]:focus::-ms-fill-upper {
   background: var(--pink);
 }
+.spanIcon{
+  color: black;
+  font-size: 60px;
+}

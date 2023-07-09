@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/basic.css" />
     <link rel="shortcut icon" href="../assets/images/Arito_favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <body>
 
 
@@ -85,8 +86,12 @@
 
     <div class="test_page">
     <header>
-        <h1 class="test_title"></h1>
-        <h2 class="question_details">Question: <span class="q_number"></span>/<span class="total_qs"></span> </h2>
+      
+      <a href="https://arito.netlify.app/"><span class="material-symbols-outlined spanIcon">
+        home
+        </span></a>
+      <h1 class="test_title"></h1>
+      <h2 class="question_details">Question: <span class="q_number"></span>/<span class="total_qs"></span> </h2>
     </header>
 
     <div class="question_container">
@@ -155,7 +160,7 @@
           </div>
           <div class="form_element">
             <label for="no_of_ques" id="no_of_ques_label">No. of Questions (below 56)</label>
-            <input type="number" name="no_of_ques" id="no_of_ques" min="1" max="55" required/>
+            <input type="number" name="no_of_ques" id="no_of_ques" min="5" max="55" required/><!--A normal quiz have a minimum of 5 questions-->
           </div>
 
           <div class="form_element negmark_div">
