@@ -115,7 +115,7 @@ function generateNumbers_and_sign(diff_lvl, sign) {
   } else if (sign === 'multiplication') {
     arithmetic_sign = 'x';
   } else if (sign === 'division') {
-    arithmetic_sign = '/';
+    arithmetic_sign = '÷';
   }
 
   // AVOIDING REPEATING PREVIOUS QUESTION's NUMBERS
