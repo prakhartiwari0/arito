@@ -343,6 +343,16 @@ body {
 }
 
 /* --------------- RESULT PAGE --------------- */
+.front_results_page {
+  position: relative;
+ 
+}
+.confetti{  
+ position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; 
+}
 a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
@@ -379,9 +389,11 @@ a.button {
 .result_page .front_results_page .results_text_div {
   font-size: 3rem;
   text-align: left;
+   z-index: 2; 
 }
 .result_page .front_results_page .results_text_div > span {
   display: block;
+   z-index: 2; 
 }
 
 .result_page .front_results_page .salutation_text {
@@ -413,29 +425,36 @@ a.button {
   transition: transform 0.1s;
   cursor: pointer;
   display: flex;
+   z-index: 2 ;
 }
 
 .result_page .results_page_navigation_div .retest_button:active {
   background-color: var(--light-pink);
   transform: scale(0.8);
+   z-index: 2 ;
 }
 
 .result_page .results_page_navigation_div .new_test_button {
   background-color: var(--light-green);
+   z-index: 2 ;
 }
 
 .result_page .results_page_navigation_div .new_test_button:active {
   background-color: var(--green);
+   z-index: 2 ;
 }
 .result_page .results_page_navigation_div .back_to_home_page{
   background-color: var(--light-pink);
+   z-index: 2 ;
 }
 .result_page .results_page_navigation_div .back_to_home_page:active {
   background-color: var(--pink);
+   z-index: 2 ;
 }
 .result_page .results_page_navigation_div .back_to_home_page:hover {
   background-color: var(--pink);
   transform: scale(0.8);
+   z-index: 2 ;
 }
 .result_page .front_results_page {
   width: 100%;
@@ -475,17 +494,21 @@ a.button {
   justify-content: end;
   align-items: center;
   text-decoration: underline;
+   z-index: 2; 
 }
 .result_page .all_questions_div .question_number_span .q_num {
   margin-left: 0.5rem;
   font-size: 2.5rem;
   font-weight: 800;
+   z-index: 2; 
 }
 .result_page .all_questions_div .question-serialno .question_number_span {
   text-decoration: underline;
+   z-index: 2; 
 }
 .result_page .all_questions_div .question-serialno.wrongly_answered {
   border: 5px red solid;
+   z-index: 2; 
 }
 .result_page .all_questions_div .question-serialno.wrongly_answered::before {
   content: "\2717";
@@ -494,9 +517,11 @@ a.button {
   align-self: flex-start;
   text-shadow: var(--text-shadow-outline-effect);
   position: absolute;
+   z-index: 2; 
 }
 .result_page .all_questions_div .question-serialno.rightly_answered {
   border: 5px green solid;
+   z-index: 2; 
 }
 .result_page .all_questions_div .question-serialno.rightly_answered::before {
   content: "\2713";
@@ -505,15 +530,18 @@ a.button {
   align-self: flex-start;
   text-shadow: var(--text-shadow-outline-effect);
   position: absolute;
+   z-index: 2; 
 }
 
 .result_page .all_questions_div .question-serialno .q_numbers_div {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  z-index: 2; 
 }
 .result_page .all_questions_div .question-serialno .q_numbers_div .upNum_div {
   display: flex;
+  z-index: 2; 
 }
 .result_page
   .all_questions_div
@@ -521,6 +549,7 @@ a.button {
   .q_numbers_di
   .downNum_and_sign_divv {
   display: flex;
+     z-index: 2; 
 }
 
 .result_page .all_questions_div .question-serialno .answers_div {
@@ -529,6 +558,7 @@ a.button {
   flex-direction: column;
   align-items: center;
   font-weight: 600;
+  z-index: 2; 
 }
 .result_page
   .all_questions_div
@@ -541,6 +571,7 @@ a.button {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+     z-index: 2 ;
 }
 .result_page
   .all_questions_div
@@ -551,6 +582,7 @@ a.button {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+     z-index: 2 ;
 }
 
 .is_correct {
