@@ -501,7 +501,8 @@ function getValues() {
   if (
     student_name.length < 1 ||
     isNaN(amount_of_questions) ||
-    amount_of_questions > max_questions
+    amount_of_questions > max_questions ||
+    amount_of_questions < 1
   ) {
     return;
   }
