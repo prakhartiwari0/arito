@@ -122,6 +122,17 @@ body {
   background-color: var(--pink);
 }
 
+.error{
+  padding: 10px;
+  display: none;
+}
+
+.error.display-error{
+  display: block;
+  margin-bottom: 20px;
+  transform: translateY(-0.2);
+}
+
 /* --------------- TEST PAGE --------------- */
 .test_page {
   /* display: flex; */
@@ -277,6 +288,12 @@ body {
 
 .test_page .question_div .submit_btn_div .finish {
   background-color: yellow;
+}
+
+.ques_error{
+  margin-top: 10px;
+  color: red;
+  background-color: rgb(255, 227, 227);
 }
 
 @media screen and (max-width: 480px) {

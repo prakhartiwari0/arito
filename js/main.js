@@ -14,6 +14,7 @@ const main_form_div = document.querySelector('.test_form');
 const form_submit_btn = document.querySelector('#submit_test_form');
 form_submit_btn.addEventListener('click', (e) => {
   getValues();
+  e.preventDefault()
 });
 
 // STARTING TEST NODES REFERENCES
@@ -488,6 +489,18 @@ function change_max_attr_val() {
   document.querySelector('#no_of_ques').setAttribute('max', maximum_questions);
 }
 
+function showError(errorElement,errorMessage) {
+  document.querySelector("."+errorElement).classList.add("display-error")
+  document.querySelector("."+errorElement).innerHTML=errorMessage
+}
+
+function clearError() {
+  let errors=document.querySelectorAll(".error")
+  for(let error of errors){
+    error.classList.remove("display-error")
+  }
+}
+
 function getValues() {
   student_name = document.querySelector('#student_name').value;
   q_type = document.querySelector('#questions_type').value;
@@ -499,12 +512,16 @@ function getValues() {
     document.querySelector('#no_of_ques').getAttribute('max')
   );
   if (
-    student_name.length < 1 ||
-    isNaN(amount_of_questions) ||
-    amount_of_questions > max_questions
+    student_name.length < 1
   ) {
     return;
   }
+  clearError()
+  if(isNaN(amount_of_questions) ||
+    amount_of_questions > max_questions || amount_of_questions<1){
+      showError("ques_error","Invalid number of questions!\nPlease enter a value between 1 and 56")
+      return;
+    }
 
   sound_player('click_sound', 'start');
   createStartornotpage();
