@@ -681,3 +681,9 @@ input[type="range"]:focus::-ms-fill-lower {
 input[type="range"]:focus::-ms-fill-upper {
   background: var(--pink);
 }
+.Homepage_Exit{
+  padding: 10px;
+}
+.Homepage_Exit a{
+  padding-right: 12px;
+}
