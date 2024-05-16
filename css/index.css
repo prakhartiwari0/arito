@@ -7,6 +7,35 @@ body {
   background-size: cover;
 }
 
+.back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+  height: 40px;
+  width: 40px;
+  border-radius: 20%;
+  background-color: #bbe29ec0;
+  border: 2px solid rgb(34, 32, 32);
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s ease-in-out;
+}
+
+.back-to-top:hover {
+  transform: scale(1.04);
+}
+
+
+.back-to-top.active {
+  bottom: 3vh;
+  pointer-events: auto;
+  opacity: 1;
+}
+
 .front {
   display: flex;
   flex-direction: column;
