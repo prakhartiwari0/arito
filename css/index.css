@@ -1,3 +1,7 @@
+*{
+  cursor: url(../assets/images/cursor-custom.png),auto !important;
+}
+
 body {
   font-family: "Indie Flower", cursive;
   display: flex;
