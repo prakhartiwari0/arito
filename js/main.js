@@ -40,6 +40,7 @@ const marks_obtained = document.querySelector('.marks_obtained');
 const total_marks = document.querySelector('.total_marks');
 const time_taken = document.querySelector('.time_taken');
 const percent_obtained = document.querySelector('.percent_obtained');
+const canvas = document.getElementById("confettiCanvas");
 
 //VOLUME CONTROL REFERENCES
 const zero_volume_img = document.querySelector('[title="Zero Volume"]');
@@ -278,7 +279,47 @@ function resultGenerator() {
     (marks / amount_of_questions) *
     100
   ).toFixed(2)}`;
-
+let ctx = canvas.getContext("2d");
+  let cx = ctx.canvas.width / 2;
+  let cy = ctx.canvas.height / 2;
+  let confetti = [];
+  const confettiCount = 300;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const gravity = 0.5;
+const terminalVelocity = 5;
+const drag = 0.075;
+const colors = [{ front: 'red', back: 'darkred' },
+{ front: 'green', back: 'darkgreen' },
+{ front: 'blue', back: 'darkblue' },
+{ front: 'yellow', back: 'darkyellow' },
+{ front: 'orange', back: 'darkorange' },
+{ front: 'pink', back: 'darkpink' },
+{ front: 'purple', back: 'darkpurple' },
+{ front: 'turquoise', back: 'darkturquoise' }]; 
+ randomRange = (min, max) => Math.random() * (max - min) + min;
+ initConfetti = () => {  for (let i = 0; i < confettiCount; i++) {  
+    confetti.push({      color: colors[Math.floor(randomRange(0, colors.length))],      
+ dimensions: {x: randomRange(10, 20),y: randomRange(10, 30) },     
+position: {x: randomRange(0, canvas.width),y: canvas.height - 1 },  
+ rotation: randomRange(0, 2 * Math.PI),scale: {x: 1,y: 1 }, 
+velocity: {x: randomRange(-25, 25),y: randomRange(0, -50) } }); 
+ }};
+ render = () => {  ctx.clearRect(0, 0, canvas.width, canvas.height);  
+confetti.forEach((confetto, index) =>{  
+let width = confetto.dimensions.x * confetto.scale.x;    
+let height = confetto.dimensions.y * confetto.scale.y;  
+ctx.translate(confetto.position.x, confetto.position.y);  
+ctx.rotate(confetto.rotation);     
+ confetto.velocity.y = Math.min(confetto.velocity.y + gravity, terminalVelocity);    
+confetto.velocity.x += Math.random() > 0.5 ? Math.random() : -Math.random();    
+confetto.position.y += confetto.velocity.y;              
+ctx.fillStyle = confetto.scale.y > 0 ? confetto.color.front : confetto.color.back;     
+ctx.fillRect(-width / 2, -height / 2, width, height);     
+ctx.setTransform(1, 0, 0, 1, 0, 0);  }); 
+ if (confetti.length <= 10) initConfetti(); 
+window.requestAnimationFrame(render);
+};
   const all_questions_div = document.querySelector('.all_questions_div');
 
   let n = 1;
@@ -320,6 +361,10 @@ function resultGenerator() {
 
     all_questions_div.appendChild(each_question_template);
     n = n + 1;
+  }
+   if (amount_of_questions == marks) {
+    initConfetti();
+    render();
   }
 
   result_page.style.display = 'flex';
