@@ -9,6 +9,52 @@
     <link rel="stylesheet" href="../css/basic.css" />
     <link rel="shortcut icon" href="../assets/images/Arito_favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../css/main.css" />
+    <style>
+      
+      .dark-mode-toggle {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #555;
+        }
+
+        .dark-mode .dark-mode-toggle {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .dark-mode .dark-mode-toggle:hover {
+            background-color: #ddd;
+        }
+      .dark-mode body {
+          background-color: #121212;
+          color:red;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .dark-mode .test_page {
+          background-color: #1e1e1e;
+          background-size: 180%;
+          color: red;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .dark-mode .timer {
+        font-size: 26px;
+          color: #ffcc00;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Add more dark mode styles as needed */
+  </style>
   <body>
 
 
@@ -16,6 +62,8 @@
     <div class="front_results_page">
         <header>
             <h1>Result 🧐</h1>
+            
+
         </header>
         <div class="results_text_div">
 
@@ -87,8 +135,10 @@
     <header>
         <h1 class="test_title"></h1>
         <h2 class="question_details">Question: <span class="q_number"></span>/<span class="total_qs"></span> </h2>
-    </header>
-
+  
+    <div class="timer">Time Left: <span id="time">00:00</span></div>
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+  </header>
     <div class="question_container">
       <button class="prev_question_btn">&#8249;</button>
       <div class="question_div">
@@ -197,7 +247,35 @@
     <audio src="../assets/audio/final_question.mp3" class="final_question">
     <audio src="../assets/audio/click.mp3" class="click_sound">
     <audio src="../assets/audio/test_page_bg_music.mp3" class="test_page_bg_music">
-
+      <script>
+                document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+    
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+                display.textContent = minutes + ":" + seconds;
+    
+                if (--timer < 0) {
+                    timer = 0;
+                    alert("Time's up!");
+                    // You can add any additional actions here, like submitting the test automatically
+                }
+            }, 1000);
+        }
+    
+        window.onload = function () {
+            const timeLimit = 60 * 10; // 10 minutes
+            const display = document.querySelector('#time');
+            startTimer(timeLimit, display);
+        };
+    </script>
   </body>
   <script src="../js/main.js"></script>
   <script src="../js/basic.js"></script>

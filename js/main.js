@@ -224,8 +224,8 @@ function examiner(up_number, down_number, sign_of_question, answer_of_student) {
 function resultGenerator() {
   total_time = end_time - start_time;
   time_taken_seconds = parseInt(total_time / 1000);
-  time_taken_minutes = 00;
-  time_taken_hours = 00;
+  time_taken_minutes = '00';
+  time_taken_hours = '00';
 
   if (time_taken_seconds > 59) {
     time_taken_minutes = parseInt(time_taken_seconds / 60);
@@ -471,6 +471,31 @@ function createStartornotpage() {
   start_now_btn.addEventListener('click', createTestpage);
 }
 
+
+function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = 0;
+            alert("Time's up!");
+            // You can add any additional actions here, like submitting the test automatically
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    const timeLimit = 60 * 10; // 10 minutes
+    const display = document.querySelector('#time');
+    startTimer(timeLimit, display);
+};
 // document.querySelector('#difficulty').addEventListener('change', change_max_attr_val())
 
 function change_max_attr_val() {
